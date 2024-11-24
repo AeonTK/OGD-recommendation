@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>
+        OGD recommendation results survey
+    </title>
+</head>
+
+<body>
+    {% for item  in survey %}
+    
+    <div style="display: flex; justify-content: space-around;">
+        <div title="Main dataset">
+            <p>Description: {{item[0]["description.en"]}}</p>
+            <p>Category: {{item[0]["category"]}}</p>
+        </div>
+        <div style="display: flex;">
+        {% for i in range(len(item[1])) %}
+            <div title="dataset">
+            <p>Description: {{dataset.loc[i]["description.en"]}}</p>
+            <p>Category: {{dataset.loc[i]["category"]}}</p>
+            </div>
+        {% endfor %}
+        </div>
+        <div title="Voting">
+            <select name="Vote" id="vote">
+                <option value="1">1</option>
+                <option value="2">2</option>
+            </select>
+        </div>
+    </div>
+    {% endfor %}
+    <div title="Send email">
+        <label for="name">Your name</label> <input type="text">
+        <button id="submit">Submit</button>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+    <script src="index.js"></script>    
+</body>
+</html>
