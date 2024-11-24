@@ -2,32 +2,50 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-16" />
     <title>
         OGD recommendation results survey
     </title>
+    <style>
+        p{
+            word-wrap: break-word;
+        }
+    </style>
 </head>
 
 <body>
-    {% for item  in survey %}
-    
-    <div style="display: flex; justify-content: space-around;">
-        <div title="Main dataset">
-            <p>Description: {{item[0]["description.en"]}}</p>
-            <p>Category: {{item[0]["category"]}}</p>
+<div style="display: flex; justify-content: space-around; align-items: center;">
+        <div title="Main dataset" style="margin: 2%; min-width: 20%; max-width:20%">
+            <h2>Main dataset</h2>
         </div>
-        <div style="display: flex;">
-        {% for i in range(len(item[1])) %}
-            <div title="dataset">
-            <p>Description: {{dataset.loc[i]["description.en"]}}</p>
-            <p>Category: {{dataset.loc[i]["category"]}}</p>
+        <div style="display: flex; overflow:auto; min-width: 40%;">
+            <h2>Related datasets</h2>
+        </div>
+        <div title="Voting" style="margin: 2%; min-width: 10%;">
+            <h2>Your vote</h2>
+        </div>
+    </div>
+    {% for item  in survey %}
+    <div style="display: flex; justify-content: space-around; align-items: center;">
+        <div title="Main dataset" style="margin: 2%; min-width: 20%; max-width:20%">
+            <p><b>Title</b>: {{item[0]["title.en"]}}</p>
+            <p><b>Description:</b> {{item[0]["description.en"]}}</p>
+            <p><b>Category:</b> {{item[0]["category"]}}</p>
+        </div>
+        <div style="display: flex; overflow:auto; min-width: 40%;">
+        {% for dataset in item[1] %}
+            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <p><b>Title:</b> {{dataset["title.en"]}}</p>
+            <p><b>Description:</b> {{dataset["description.en"]}}</p>
+            <p><b>Category:</b> {{dataset["category"]}}</p>
             </div>
         {% endfor %}
         </div>
-        <div title="Voting">
+        <div title="Voting" style="margin: 2%; min-width: 10%;">
             <select name="Vote" id="vote">
-                <option value="1">1</option>
-                <option value="2">2</option>
+            {% for i in range(1, 11) %}
+                <option value="{{i}}">{{i}}</option>
+            {% endfor %}
             </select>
         </div>
     </div>
