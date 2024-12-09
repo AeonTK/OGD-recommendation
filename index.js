@@ -4,9 +4,18 @@ $(document).ready(function(){
         var email = 'huseynovramilism@gmail.com';
         var subject = 'OGD Survey';
         var emailBody = "";
+        var count = 0;
         $("select").each(function() {
+            if($(this).val()!=1){
+                count++;
+            }
             emailBody += $(this).val() + " "
         })
-        window.location = 'mailto:' + email + '?subject=' + subject + '&body=' +   emailBody;
+        if(count < 10){
+            alert("You should rate at least 10 recommendations")
+        }
+        else{
+            window.location = 'mailto:' + email + '?subject=' + subject + '&body=' +   emailBody;
+        }
     })
 })

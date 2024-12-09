@@ -14,20 +14,38 @@
 </head>
 
 <body>
-    <h1>A recommender system for improved data findability in open government data portals</h1>
-    <p>The research suggests that it is difficult for users of open government data (OGD) portals to find the datasets they are interested in. The objective of our research is to contribute to the solution of this problem by developing a recommendation system for datasets. This recommendation system will output possibly relevant datasets based on the chosen dataset. 
-    This survey is meant to evaluate the effectiveness of this recommendation method approach. <b>Recommended datasets</b> column contains metadata about the datasets that are recommended to user based upon the dataset under <b>Main dataset</b> column. We ask you to rate the quality of recommendation under the <b>Voting</b> column and send results to us with <b>submit</b> button which will redirect you to email results to us. <b>Thank you!</b></p>
+    <div style="display: flex; justify-content:center">
+        <h1>A survey about recommender system for improved data findability in open government data portals</h1>
+    </div>
+    <div style="display: flex; justify-content:center">
+        <p>The research suggests that it is difficult for users of open government data (OGD) portals to find the
+            datasets
+            they are interested in. The objective of our research is to contribute to the solution of this problem by
+            developing a recommendation system for datasets. This recommendation system will output possibly relevant
+            datasets based on the chosen dataset.
+            This survey is meant to evaluate the effectiveness of this recommendation method approach. <b>Recommended
+                datasets</b> column contains metadata about the datasets that are recommended to user based upon the
+            dataset
+            under <b>Main dataset</b> column. We ask you to rate the quality of recommendation under the <b>Rating</b>
+            column and send results to us with <b>submit</b> button which will redirect you to <b>email</b> results to us.
+            <b>Thank you!</b></p>
+    </div>
+     <div style="display: flex; justify-content:center">
+        <p><b>Please note that you need to rate at least 10 recommendations to submit</b></p>
+    </div>
+
     <div style="display: flex; justify-content: space-around; align-items: center;">
         <div title="Main dataset" style="margin: 2%; min-width: 20%; max-width:20%">
             <h2>Main dataset</h2>
         </div>
         <div style="display: flex; overflow:auto; width: 60%;">
-            <h2>Related datasets</h2>
+            <h2>Recommended datasets</h2>
         </div>
-        <div title="Voting" style="margin: 2%; min-width: 10%;">
-            <h2>Your vote</h2>
+        <div title="Rating" style="margin: 2%; min-width: 10%;">
+            <h2>Rating</h2>
         </div>
     </div>
+    <hr />
     {% for item in survey %}
     <div style="display: flex; justify-content: space-around; align-items:start;">
         <div title="Main dataset" style="margin: 2%; min-width: 20%; max-width:20%">
@@ -46,19 +64,25 @@
         </div>
         <div title="Voting" style="margin: 2%; min-width: 10%;">
             <select name="Vote">
-                {% for i in range(1, 11) %}
+                {% for i in range(11) %}
                 <option value="{{i}}">{{i}}</option>
                 {% endfor %}
             </select>
         </div>
     </div>
+    <hr />
+    <br />
+    <br />
+    <br />
     {% endfor %}
     <div style="display: flex; justify-content:center">
-        <label>Your comments and suggestions (optional) </label>
+        <label style="margin-right: 5em">Your comments and suggestions (optional)</label>
         <textarea id="suggestions"></textarea>
     </div>
     <div style="display: flex; justify-content:center" title="Send email">
-        <p><b>Note: </b> By submitting this survey, to consent to the usage of these results in the research.</p>
+        <p><b>Note: </b> By submitting this survey, you consent to the usage of these results in the research.</p>
+    </div>
+    <div style="display: flex; justify-content:center" title="Send email">
         <button id="submit">Submit</button>
     </div>
     <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
