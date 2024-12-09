@@ -6,7 +6,7 @@ $(document).ready(function(){
         var emailBody = "";
         var count = 0;
         $("select").each(function() {
-            if($(this).val()!=1){
+            if($(this).val()!=0){
                 count++;
             }
             emailBody += $(this).val() + " "
@@ -15,6 +15,7 @@ $(document).ready(function(){
             alert("You should rate at least 10 recommendations")
         }
         else{
+            emailBody += $("#suggestions").val();
             window.location = 'mailto:' + email + '?subject=' + subject + '&body=' +   emailBody;
         }
     })
