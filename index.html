@@ -10,83 +10,106 @@
         p {
             word-wrap: break-word;
         }
+
+        body {
+            font-family: "Inter", sans-serif;
+            font-optical-sizing: auto;
+            font-style: normal;
+            background-color: #F5FBFF;
+        }
+
+        #bordered {
+            border-color: #128f8b;
+            border-width: 5em;
+            border: solid;
+        }
     </style>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
 </head>
 
-<body>
-    <div style="display: flex; justify-content:center">
-        <h1>A survey about recommender system for improved data findability in open government data portals</h1>
+<body style="font">
+    <h1 style="padding-top: 1em; padding-left: 1em; padding-bottom: 1em">Survey about recommender system for improved data findability in open government data portals</h1>
+    <div style="display: flex; justify-content:start; padding-left: 2em; padding-right:3em">
+        <p>
+            Dear Participant, <br />
+            Finding relevant datasets in open government data (OGD) portals can be challenging due to the vast amount of
+            available data. The objective of my research is to address this issue by developing a
+            recommendation system that suggests relevant datasets based on a selected dataset. This survey aims to
+            evaluate the effectiveness of my proposed recommendation method. In the survey, the
+            <b>"Main Dataset"</b> column displays the selected dataset, while the <b>"Recommended Datasets"</b> column
+            provides metadata about datasets suggested by our system.<br/>
+            I kindly ask you to rate the quality of these recommendations under the <b>"Rating"</b> column. <i><b>(Please
+                note that you need to rate at least 10 recommendations to submit)</b></i><br/>
+            After completing the survey, please use the submit button, which will redirect you to email your responses
+            to me.<br />
+            Thank you very much for your participation!
+        </p>
     </div>
-    <div style="display: flex; justify-content:center">
-        <p>The research suggests that it is difficult for users of open government data (OGD) portals to find the
-            datasets
-            they are interested in. The objective of our research is to contribute to the solution of this problem by
-            developing a recommendation system for datasets. This recommendation system will output possibly relevant
-            datasets based on the chosen dataset.
-            This survey is meant to evaluate the effectiveness of this recommendation method approach. <b>Recommended
-                datasets</b> column contains metadata about the datasets that are recommended to user based upon the
-            dataset
-            under <b>Main dataset</b> column. We ask you to rate the quality of recommendation under the <b>Rating</b>
-            column and send results to us with <b>submit</b> button which will redirect you to <b>email</b> results to us.
-            <b>Thank you!</b></p>
-    </div>
-     <div style="display: flex; justify-content:center">
-        <p><b>Please note that you need to rate at least 10 recommendations to submit</b></p>
+    <div style="display: flex; justify-content:end; padding-left: 2em; padding-right:3em; padding-bottom: 3em">
+        <p>
+        Ramil Huseynov <br />
+        Master's Student in Computer Science</p>
     </div>
 
-    <div style="display: flex; justify-content: space-around; align-items: center;">
-        <div title="Main dataset" style="margin: 2%; min-width: 20%; max-width:20%">
+    <div style="display: flex; justify-content: space-around; align-items: center; border-top: solid #128f8b">
+        <div title="Main dataset" style="padding: 2%; min-width: 20%; max-width:20%">
             <h2>Main dataset</h2>
         </div>
-        <div style="display: flex; overflow:auto; width: 60%;">
+        <div
+            style="padding: 2%; display: flex; overflow:auto; width: 60%; border-left: solid #128f8b; border-right: solid #128f8b">
             <h2>Recommended datasets</h2>
         </div>
-        <div title="Rating" style="margin: 2%; min-width: 10%;">
+        <div title="Rating" style="padding: 2%; min-width: 10%;">
             <h2>Rating</h2>
         </div>
     </div>
-    <hr />
     
-    <div style="display: flex; justify-content: space-around; align-items:start;">
-        <div title="Main dataset" style="margin: 2%; min-width: 20%; max-width:20%">
+    <div style="display: flex; justify-content: space-around; align-items:start; border-top: solid #128f8b">
+        <div title="Main dataset" style="padding: 2%; min-width: 20%; max-width:20%">
             <p><b>Title</b>: Inspire data set BPL “Schafhof II and Schafhof III (amendment)”</p>
             <p><b>Description:</b> Building plan “Schafhof II and Schafhof III (Change)” of the city of Kirchheim under Teck based on an XPlanung dataset in version 5.0.</p>
             <p><b>Category:</b> Agriculture, fisheries, forestry and food</p>
         </div>
-        <div style="display: flex; overflow:auto; width: 60%;">
+        <div
+            style="padding: 2%; display: flex; overflow:auto; width: 60%; border-left: solid #128f8b; border-right: solid #128f8b">
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> WFS XPlanung BPL “The Lower Ösch Amendment 2”</p>
                 <p><b>Description:</b> WFS service of the development plan “Der Lower Ösch Amendment 2” of the town of Stockach from XPlanung 5.0. Description: The building area is designated as WA..</p>
                 <p><b>Category:</b> Agriculture, fisheries, forestry and food</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Inspire data set BPL “Toe tacker — 3 rd change”</p>
                 <p><b>Description:</b> According to INSPIRE transformed development plan “Zehentacker — 3 rd change” of the city of Heubach based on an XPlanung dataset in version 5.0.</p>
                 <p><b>Category:</b> Agriculture, fisheries, forestry and food</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Inspire data set BPL “Bronnforst”</p>
                 <p><b>Description:</b> According to INSPIRE transformed development plan “Bronnforst” of the municipality of Waldstetten based on an XPlanung dataset in version 5.0.</p>
                 <p><b>Category:</b> Agriculture, fisheries, forestry and food</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> WMS XPlanung BPL “Riedwiesen (3 rd change)”</p>
                 <p><b>Description:</b> WMS service of the development plan “Riedwiesen (3 rd change)” of the city of Aichtal from XPlanung 5.0. Description: Riedwiesen (3 rd amendment); Map available only for northern areas, but scope as a whole (text); Usage: Commercial area.</p>
                 <p><b>Category:</b> Agriculture, fisheries, forestry and food</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> WMS XPlanung BPL “South of the cement road”</p>
                 <p><b>Description:</b> WMS service of the development plan “South of the cement road” of the city of Kirchheim under Teck from XPlanung 5.0. Description: South of the cement road; Usage: MI/GE.</p>
                 <p><b>Category:</b> Agriculture, fisheries, forestry and food</p>
             </div>
             
         </div>
-        <div title="Voting" style="margin: 2%; min-width: 10%;">
+        <div title="Voting" style="padding: 2%; min-width: 10%;">
             <select name="Vote">
                 
                 <option value="0">0</option>
@@ -114,51 +137,48 @@
             </select>
         </div>
     </div>
-    <hr />
-    <br />
-    <br />
-    <br />
     
-    <div style="display: flex; justify-content: space-around; align-items:start;">
-        <div title="Main dataset" style="margin: 2%; min-width: 20%; max-width:20%">
+    <div style="display: flex; justify-content: space-around; align-items:start; border-top: solid #128f8b">
+        <div title="Main dataset" style="padding: 2%; min-width: 20%; max-width:20%">
             <p><b>Title</b>: WFS XPlanung BPL “Döttinger Straße/Wide”</p>
             <p><b>Description:</b> WFS service of the development plan “Döttinger Straße/Wide” of the municipality of Kupferzell from XPlanung 5.0. Description: Usage: WA; Bit Ingenieure AG, Öhringen.</p>
             <p><b>Category:</b> Agriculture, fisheries, forestry and food</p>
         </div>
-        <div style="display: flex; overflow:auto; width: 60%;">
+        <div
+            style="padding: 2%; display: flex; overflow:auto; width: 60%; border-left: solid #128f8b; border-right: solid #128f8b">
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> WFS XPlanung BPL “Spreuergasse Cannstatt”</p>
                 <p><b>Description:</b> WFS service of the development plan “Spreuergasse Cannstatt” of the city of Stuttgart from XPlanung 5.0. Description: Development plan of the city of Stuttgart.</p>
                 <p><b>Category:</b> Agriculture, fisheries, forestry and food</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> WFS XPlanung BPL “Sattelstr./Klabundeweg Untertürkheim”</p>
                 <p><b>Description:</b> WFS service of the development plan “Sattelstr./Klabundeweg Untertürkheim” of the city of Stuttgart from XPlanung 5.0. Description: Development plan of the city of Stuttgart.</p>
                 <p><b>Category:</b> Agriculture, fisheries, forestry and food</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> WFS XPlanung BPL “Refurbishment Uhlbergstraße III”</p>
                 <p><b>Description:</b> WFS service of the development plan “Renovation Uhlbergstraße III” of the city of Filderstadt from XPlanung 5.0. Description: Refurbishment of Uhlbergstraße III; Usage: WED.</p>
                 <p><b>Category:</b> Agriculture, fisheries, forestry and food</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> WFS XPlanning BPL “Foreland (6th Amendment)”</p>
                 <p><b>Description:</b> WFS service of the development plan “Forelanding (6th amendment)” of the municipality of Efringen-Kirchen from XPlanung 5.0. Description: Modification of the construction limit Flst. No 2912/16, 2912/22.</p>
                 <p><b>Category:</b> Agriculture, fisheries, forestry and food</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> WFS XPlanung BPL “Oberstadt Amendment 7”</p>
                 <p><b>Description:</b> WFS service of the development plan “Oberstadt Amendment 7” of the town of Stockach from XPlanung 5.0. Description: The construction area is designated as MI, WB, MK..</p>
                 <p><b>Category:</b> Agriculture, fisheries, forestry and food</p>
             </div>
             
         </div>
-        <div title="Voting" style="margin: 2%; min-width: 10%;">
+        <div title="Voting" style="padding: 2%; min-width: 10%;">
             <select name="Vote">
                 
                 <option value="0">0</option>
@@ -186,51 +206,48 @@
             </select>
         </div>
     </div>
-    <hr />
-    <br />
-    <br />
-    <br />
     
-    <div style="display: flex; justify-content: space-around; align-items:start;">
-        <div title="Main dataset" style="margin: 2%; min-width: 20%; max-width:20%">
+    <div style="display: flex; justify-content: space-around; align-items:start; border-top: solid #128f8b">
+        <div title="Main dataset" style="padding: 2%; min-width: 20%; max-width:20%">
             <p><b>Title</b>: WMS INSPIRE BPL In the Lettenäckern (original)</p>
             <p><b>Description:</b> WMS service of INSPIRE transformed development plan “In the Latvian bakers (original)” of the city of Überlingen based on an XPlanung dataset in version 5.0.</p>
             <p><b>Category:</b> Agriculture, fisheries, forestry and food</p>
         </div>
-        <div style="display: flex; overflow:auto; width: 60%;">
+        <div
+            style="padding: 2%; display: flex; overflow:auto; width: 60%; border-left: solid #128f8b; border-right: solid #128f8b">
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> WMS INSPIRE BPL On the go</p>
                 <p><b>Description:</b> WMS service of the urban development plan “Auf dem Lau” of the city of Meßstetten, transformed according to INSPIRE, based on an XPlanung dataset in version 5.0.</p>
                 <p><b>Category:</b> Agriculture, fisheries, forestry and food</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> WFS XPlanung BPL “The Lower Ösch Amendment 2”</p>
                 <p><b>Description:</b> WFS service of the development plan “Der Lower Ösch Amendment 2” of the town of Stockach from XPlanung 5.0. Description: The building area is designated as WA..</p>
                 <p><b>Category:</b> Agriculture, fisheries, forestry and food</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> WMS XPlanung BPL “Riedwiesen (3 rd change)”</p>
                 <p><b>Description:</b> WMS service of the development plan “Riedwiesen (3 rd change)” of the city of Aichtal from XPlanung 5.0. Description: Riedwiesen (3 rd amendment); Map available only for northern areas, but scope as a whole (text); Usage: Commercial area.</p>
                 <p><b>Category:</b> Agriculture, fisheries, forestry and food</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> WMS XPlanung BPL “South of the cement road”</p>
                 <p><b>Description:</b> WMS service of the development plan “South of the cement road” of the city of Kirchheim under Teck from XPlanung 5.0. Description: South of the cement road; Usage: MI/GE.</p>
                 <p><b>Category:</b> Agriculture, fisheries, forestry and food</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> WMS INSPIRE BPL Bismarckstraße/Zeughausstraße</p>
                 <p><b>Description:</b> WMS service of the building plan “Bismarckstraße/Zeughausstraße” of the city of Tuttlingen, transformed according to INSPIRE, based on an XPlanung dataset in version 5.0.</p>
                 <p><b>Category:</b> Agriculture, fisheries, forestry and food</p>
             </div>
             
         </div>
-        <div title="Voting" style="margin: 2%; min-width: 10%;">
+        <div title="Voting" style="padding: 2%; min-width: 10%;">
             <select name="Vote">
                 
                 <option value="0">0</option>
@@ -258,44 +275,41 @@
             </select>
         </div>
     </div>
-    <hr />
-    <br />
-    <br />
-    <br />
     
-    <div style="display: flex; justify-content: space-around; align-items:start;">
-        <div title="Main dataset" style="margin: 2%; min-width: 20%; max-width:20%">
+    <div style="display: flex; justify-content: space-around; align-items:start; border-top: solid #128f8b">
+        <div title="Main dataset" style="padding: 2%; min-width: 20%; max-width:20%">
             <p><b>Title</b>: BPL No. 2 North slope</p>
             <p><b>Description:</b> The development plan implements the land use concept of the municipality as a binding construction plan into directly applicable law. The development plan specifies which land uses are permitted and prohibited on the ground areas concerned.</p>
             <p><b>Category:</b> Justice, legal system and public safety</p>
         </div>
-        <div style="display: flex; overflow:auto; width: 60%;">
+        <div
+            style="padding: 2%; display: flex; overflow:auto; width: 60%; border-left: solid #128f8b; border-right: solid #128f8b">
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> XPlanning data set BPL “Hohenecker way”</p>
                 <p><b>Description:</b> The development plan (BPL) contains the legally binding settlements for the urban planning order. In principle, the development plan must be developed from the land use plan. The available data is the “Hohenecker Weg” development plan of the city of Freiberg am Neckar from XPlanung 5.0. Description: Hohenecker way.</p>
                 <p><b>Category:</b> Justice, legal system and public safety</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Development plan rounding-out of Jägerackerstraße</p>
                 <p><b>Description:</b> The development plan contains the legally binding fixings for the urban planning order. In principle, the development plan must be developed from the land use plan. Rounding statutes</p>
                 <p><b>Category:</b> Justice, legal system and public safety</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> B-Plan 51.34 Special area west of the B44, north of the A6, Sandhofer Weg right (IKEA)</p>
                 <p><b>Description:</b> The development plan contains the legally binding fixings for the urban planning order. In principle, the development plan must be developed from the land use plan. Development plan of the city of Mannheim, consisting of the surrounding area and a grid representation of the scanned plan in the format Geotiff.</p>
                 <p><b>Category:</b> Justice, legal system and public safety</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> XPlanung dataset BPL “Crossroad East — 1st change”</p>
                 <p><b>Description:</b> The development plan (BPL) contains the legally binding determinations for the urban planning order. In principle, the development plan must be developed from the land use plan. The available data is the development plan “Creuzweg-East — 1st change” of the city of Vaihingen an der Enz from XPlanung 5.0. Description: Crossroads East — 1st change.</p>
                 <p><b>Category:</b> Justice, legal system and public safety</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Register of land and buildings, district of Kościerzyna, Nowa Kiszewa, cadastral area 220604_2.0018 (POWIAT2206)</p>
                 <p><b>Description:</b> Land and buildings (real estate cataster) is a uniform for the country, regularly updated collection of information about land, buildings and premises, their owners and other natural or legal persons who control these lands, buildings and premises. The cadastral map is an element of the state geodetic and cardographic resource and is carried out at the level of counties. It is conducted in different scales 1:500 to 1:5000 depending on the content density for the whole country.
 The contents of the cadastral map are the following elements:
@@ -306,7 +320,7 @@ a) the names of the units of the main three-stage territorial division of the st
             </div>
             
         </div>
-        <div title="Voting" style="margin: 2%; min-width: 10%;">
+        <div title="Voting" style="padding: 2%; min-width: 10%;">
             <select name="Vote">
                 
                 <option value="0">0</option>
@@ -334,51 +348,48 @@ a) the names of the units of the main three-stage territorial division of the st
             </select>
         </div>
     </div>
-    <hr />
-    <br />
-    <br />
-    <br />
     
-    <div style="display: flex; justify-content: space-around; align-items:start;">
-        <div title="Main dataset" style="margin: 2%; min-width: 20%; max-width:20%">
+    <div style="display: flex; justify-content: space-around; align-items:start; border-top: solid #128f8b">
+        <div title="Main dataset" style="padding: 2%; min-width: 20%; max-width:20%">
             <p><b>Title</b>: Oberbergkirchen: Schools of general education</p>
             <p><b>Description:</b> Schools of general education: Municipalities, Schools, Teachers, Classes, Pupils, Weekly Lessons, Types of Schools of General Education, School Years</p>
             <p><b>Category:</b> Science and technology</p>
         </div>
-        <div style="display: flex; overflow:auto; width: 60%;">
+        <div
+            style="padding: 2%; display: flex; overflow:auto; width: 60%; border-left: solid #128f8b; border-right: solid #128f8b">
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Wasserburg (Lake Constance): Schools of general education</p>
                 <p><b>Description:</b> Schools of general education: Municipalities, Schools, Teachers, Classes, Pupils, Weekly Lessons, Types of Schools of General Education, School Years</p>
                 <p><b>Category:</b> Science and technology</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Mickhausen: Schools of general education</p>
                 <p><b>Description:</b> Municipalities, Schools, Teachers, Classes, Pupils, Weekly Lessons, Types of Schools of General Education, School Years</p>
                 <p><b>Category:</b> Education, culture and sport</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Thiersheim, M: Schools of general education</p>
                 <p><b>Description:</b> Municipalities, Schools, Teachers, Classes, Pupils, Weekly Lessons, Types of Schools of General Education, School Years</p>
                 <p><b>Category:</b> Science and technology</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Stammham: Schools of general education</p>
                 <p><b>Description:</b> Municipalities, Schools, Teachers, Classes, Pupils, Weekly Lessons, Types of Schools of General Education, School Years</p>
                 <p><b>Category:</b> Education, culture and sport</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Kleinsendelbach: Schools of general education</p>
                 <p><b>Description:</b> Schools of general education: Municipalities, Schools, Teachers, Classes, Pupils, Weekly Lessons, Types of Schools of General Education, School Years</p>
                 <p><b>Category:</b> Science and technology</p>
             </div>
             
         </div>
-        <div title="Voting" style="margin: 2%; min-width: 10%;">
+        <div title="Voting" style="padding: 2%; min-width: 10%;">
             <select name="Vote">
                 
                 <option value="0">0</option>
@@ -406,51 +417,48 @@ a) the names of the units of the main three-stage territorial division of the st
             </select>
         </div>
     </div>
-    <hr />
-    <br />
-    <br />
-    <br />
     
-    <div style="display: flex; justify-content: space-around; align-items:start;">
-        <div title="Main dataset" style="margin: 2%; min-width: 20%; max-width:20%">
+    <div style="display: flex; justify-content: space-around; align-items:start; border-top: solid #128f8b">
+        <div title="Main dataset" style="padding: 2%; min-width: 20%; max-width:20%">
             <p><b>Title</b>: State map 1:5 000 new form raster data - Pardubice 0-1</p>
             <p><b>Description:</b> The product represents a new design of the State Map at a scale of 1:5,000 in raster form, whose advantages are recency and colour processing. The map contains planimetry based on cadastral map, altimetry adopted from the altimetry part of ZABAGED and map lettering based on database of geographic names Geonames and abbreviations of feature type signification coming up from attributes of selected ZABAGED features. The cartographic visualisation is solved automatically without manual works of a cartographer. This new design of the SM 5 is repeatedly generated once a year on the part of the Czech territory where the vector form of cadastral map is available. Therefore, part of export units (map sheets of SM 5) has not a full coverage (price of such export unit is then proportionally reduced).</p>
             <p><b>Category:</b> Justice, legal system and public safety</p>
         </div>
-        <div style="display: flex; overflow:auto; width: 60%;">
+        <div
+            style="padding: 2%; display: flex; overflow:auto; width: 60%; border-left: solid #128f8b; border-right: solid #128f8b">
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> State map 1:5 000 new form raster data - Havlíčkův Brod 5-4</p>
                 <p><b>Description:</b> The product represents a new design of the State Map at a scale of 1:5,000 in raster form, whose advantages are recency and colour processing. The map contains planimetry based on cadastral map, altimetry adopted from the altimetry part of ZABAGED and map lettering based on database of geographic names Geonames and abbreviations of feature type signification coming up from attributes of selected ZABAGED features. The cartographic visualisation is solved automatically without manual works of a cartographer. This new design of the SM 5 is repeatedly generated once a year on the part of the Czech territory where the vector form of cadastral map is available. Therefore, part of export units (map sheets of SM 5) has not a full coverage (price of such export unit is then proportionally reduced).</p>
                 <p><b>Category:</b> Justice, legal system and public safety</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> State map 1:5 000 new form raster data - Liberec 6-9</p>
                 <p><b>Description:</b> The product represents a new design of the State Map at a scale of 1:5,000 in raster form, whose advantages are recency and colour processing. The map contains planimetry based on cadastral map, altimetry adopted from the altimetry part of ZABAGED and map lettering based on database of geographic names Geonames and abbreviations of feature type signification coming up from attributes of selected ZABAGED features. The cartographic visualisation is solved automatically without manual works of a cartographer. This new design of the SM 5 is repeatedly generated once a year on the part of the Czech territory where the vector form of cadastral map is available. Therefore, part of export units (map sheets of SM 5) has not a full coverage (price of such export unit is then proportionally reduced).</p>
                 <p><b>Category:</b> Justice, legal system and public safety</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> State map 1:5 000 new form raster data - Znojmo 1-1</p>
                 <p><b>Description:</b> The product represents a new design of the State Map at a scale of 1:5,000 in raster form, whose advantages are recency and colour processing. The map contains planimetry based on cadastral map, altimetry adopted from the altimetry part of ZABAGED and map lettering based on database of geographic names Geonames and abbreviations of feature type signification coming up from attributes of selected ZABAGED features. The cartographic visualisation is solved automatically without manual works of a cartographer. This new design of the SM 5 is repeatedly generated once a year on the part of the Czech territory where the vector form of cadastral map is available. Therefore, part of export units (map sheets of SM 5) has not a full coverage (price of such export unit is then proportionally reduced).</p>
                 <p><b>Category:</b> Justice, legal system and public safety</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> SM 1:5000 cadastral component raster data - Polička 5-5</p>
                 <p><b>Description:</b> The data were created by transformation of vector cadastral component of SM 5 to raster file. In territories, where vector SM 5 has not been created yet, the cadastral and altimetry components were created by scanning of individual printing masters of planimetry and altimetry from the last issue of the State Map 1:5,000 - derived. The cadastral component does not contain parcel numbers.</p>
                 <p><b>Category:</b> Justice, legal system and public safety</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> State map 1:5 000 new form raster data - Žatec 0-6</p>
                 <p><b>Description:</b> The product represents a new design of the State Map at a scale of 1:5,000 in raster form, whose advantages are recency and colour processing. The map contains planimetry based on cadastral map, altimetry adopted from the altimetry part of ZABAGED and map lettering based on database of geographic names Geonames and abbreviations of feature type signification coming up from attributes of selected ZABAGED features. The cartographic visualisation is solved automatically without manual works of a cartographer. This new design of the SM 5 is repeatedly generated once a year on the part of the Czech territory where the vector form of cadastral map is available. Therefore, part of export units (map sheets of SM 5) has not a full coverage (price of such export unit is then proportionally reduced).</p>
                 <p><b>Category:</b> Justice, legal system and public safety</p>
             </div>
             
         </div>
-        <div title="Voting" style="margin: 2%; min-width: 10%;">
+        <div title="Voting" style="padding: 2%; min-width: 10%;">
             <select name="Vote">
                 
                 <option value="0">0</option>
@@ -478,51 +486,48 @@ a) the names of the units of the main three-stage territorial division of the st
             </select>
         </div>
     </div>
-    <hr />
-    <br />
-    <br />
-    <br />
     
-    <div style="display: flex; justify-content: space-around; align-items:start;">
-        <div title="Main dataset" style="margin: 2%; min-width: 20%; max-width:20%">
+    <div style="display: flex; justify-content: space-around; align-items:start; border-top: solid #128f8b">
+        <div title="Main dataset" style="padding: 2%; min-width: 20%; max-width:20%">
             <p><b>Title</b>: SM 1:5000 altimetry component raster data - Brandýs nad Labem 5-7</p>
             <p><b>Description:</b> Raster altimetry component of SM 5 is based on vector file of contour lines from ZABAGED®. However, this product has not been updated contrary to ZABAGED® since 2007.</p>
             <p><b>Category:</b> Environment</p>
         </div>
-        <div style="display: flex; overflow:auto; width: 60%;">
+        <div
+            style="padding: 2%; display: flex; overflow:auto; width: 60%; border-left: solid #128f8b; border-right: solid #128f8b">
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> SM 1:5000 altimetry component raster data - Chotěboř 1-6</p>
                 <p><b>Description:</b> Raster altimetry component of SM 5 is based on vector file of contour lines from ZABAGED®. However, this product has not been updated contrary to ZABAGED® since 2007.</p>
                 <p><b>Category:</b> Environment</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> SM 1:5000 altimetry component vector data - Vlašim 0-4</p>
                 <p><b>Description:</b> Vector altimetry component of SM 5 is based on vector file of contour lines from ZABAGED®. However, this product has not been updated contrary to ZABAGED® since 2007.</p>
                 <p><b>Category:</b> Environment</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> SM 1:5000 altimetry component raster data - Mladá Boleslav 1-6</p>
                 <p><b>Description:</b> Raster altimetry component of SM 5 is based on vector file of contour lines from ZABAGED®. However, this product has not been updated contrary to ZABAGED® since 2007.</p>
                 <p><b>Category:</b> Environment</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> SM 1:5000 altimetry component vector data - Volary 9-5</p>
                 <p><b>Description:</b> Vector altimetry component of SM 5 is based on vector file of contour lines from ZABAGED®. However, this product has not been updated contrary to ZABAGED® since 2007.</p>
                 <p><b>Category:</b> Environment</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> SM 1:5000 altimetry component raster data - Moravské Budějovice 7-0</p>
                 <p><b>Description:</b> Raster altimetry component of SM 5 is based on vector file of contour lines from ZABAGED®. However, this product has not been updated contrary to ZABAGED® since 2007.</p>
                 <p><b>Category:</b> Environment</p>
             </div>
             
         </div>
-        <div title="Voting" style="margin: 2%; min-width: 10%;">
+        <div title="Voting" style="padding: 2%; min-width: 10%;">
             <select name="Vote">
                 
                 <option value="0">0</option>
@@ -550,51 +555,48 @@ a) the names of the units of the main three-stage territorial division of the st
             </select>
         </div>
     </div>
-    <hr />
-    <br />
-    <br />
-    <br />
     
-    <div style="display: flex; justify-content: space-around; align-items:start;">
-        <div title="Main dataset" style="margin: 2%; min-width: 20%; max-width:20%">
+    <div style="display: flex; justify-content: space-around; align-items:start; border-top: solid #128f8b">
+        <div title="Main dataset" style="padding: 2%; min-width: 20%; max-width:20%">
             <p><b>Title</b>: Cadastral cartography — Municipality of TREGNAGO</p>
             <p><b>Description:</b> Cadastral cartography</p>
             <p><b>Category:</b> Justice, legal system and public safety</p>
         </div>
-        <div style="display: flex; overflow:auto; width: 60%;">
+        <div
+            style="padding: 2%; display: flex; overflow:auto; width: 60%; border-left: solid #128f8b; border-right: solid #128f8b">
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Cadastral cartography — Municipality of CENTALLO</p>
                 <p><b>Description:</b> Cadastral cartography</p>
                 <p><b>Category:</b> Justice, legal system and public safety</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Cadastral cartography — Municipality of Marcellinara</p>
                 <p><b>Description:</b> Cadastral cartography</p>
                 <p><b>Category:</b> Justice, legal system and public safety</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Cadastral cartography — Municipality of BEMA</p>
                 <p><b>Description:</b> Cadastral cartography</p>
                 <p><b>Category:</b> Justice, legal system and public safety</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Cadastral cartography — Municipality of Catenanuova</p>
                 <p><b>Description:</b> Cadastral cartography</p>
                 <p><b>Category:</b> Justice, legal system and public safety</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Cadastral cartography — Municipality of Vottignasco</p>
                 <p><b>Description:</b> Cadastral cartography</p>
                 <p><b>Category:</b> Justice, legal system and public safety</p>
             </div>
             
         </div>
-        <div title="Voting" style="margin: 2%; min-width: 10%;">
+        <div title="Voting" style="padding: 2%; min-width: 10%;">
             <select name="Vote">
                 
                 <option value="0">0</option>
@@ -622,13 +624,9 @@ a) the names of the units of the main three-stage territorial division of the st
             </select>
         </div>
     </div>
-    <hr />
-    <br />
-    <br />
-    <br />
     
-    <div style="display: flex; justify-content: space-around; align-items:start;">
-        <div title="Main dataset" style="margin: 2%; min-width: 20%; max-width:20%">
+    <div style="display: flex; justify-content: space-around; align-items:start; border-top: solid #128f8b">
+        <div title="Main dataset" style="padding: 2%; min-width: 20%; max-width:20%">
             <p><b>Title</b>: reported corona cases — data on age groups</p>
             <p><b>Description:</b> This record contains the reported case numbers grouped by age group
 
@@ -649,15 +647,16 @@ The data published here are based on the figures provided by the districts and n
 [More data and charts on Corona in Schleswig-Holstein](https://www.schleswig-holstein.de/DE/Schwerpunkte/Coronavirus/Zahlen/zahlen_node.html)</p>
             <p><b>Category:</b> Health</p>
         </div>
-        <div style="display: flex; overflow:auto; width: 60%;">
+        <div
+            style="padding: 2%; display: flex; overflow:auto; width: 60%; border-left: solid #128f8b; border-right: solid #128f8b">
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Number of cases of COVID-19 in Sweden by age group</p>
                 <p><b>Description:</b> This dataset shows statistics for COVID-19 in Sweden on the number of reported confirmed cases, intensively managed disease cases and deaths per age group.</p>
                 <p><b>Category:</b> Health</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> reported Corona cases Circle data</p>
                 <p><b>Description:</b> The following fields are included: 
 
@@ -681,7 +680,7 @@ The data published here are based on the figures provided by the districts and n
                 <p><b>Category:</b> Health</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> reported corona cases Circle data</p>
                 <p><b>Description:</b> The following fields are included: 
 
@@ -705,20 +704,20 @@ The data published here is based on the figures communicated by the districts an
                 <p><b>Category:</b> Health</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> People Registered Deaf or Hard of hearing</p>
                 <p><b>Description:</b> Contains detailed information on people registered with Councils that have Social Services Responsibilities (CSSRs) in England as being severely hearing impaired (deaf) or hearing impaired (hard of hearing). This data was collected every three years, but was discontinued from 2010.  Further details can be found in the accompanying report.</p>
                 <p><b>Category:</b> Health</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Total population according to having attended emergency services in the last 12 months and social classes based on the occupation of the reference person. Canary Islands. 2015-2021</p>
                 <p><b>Description:</b> This table provides data for 2015 and 2021 on the estimated total population in the Canary Islands according to whether they have attended emergency services in the last 12 months and social classes based on the occupation of the reference person.</p>
                 <p><b>Category:</b> Health</p>
             </div>
             
         </div>
-        <div title="Voting" style="margin: 2%; min-width: 10%;">
+        <div title="Voting" style="padding: 2%; min-width: 10%;">
             <select name="Vote">
                 
                 <option value="0">0</option>
@@ -746,32 +745,29 @@ The data published here is based on the figures communicated by the districts an
             </select>
         </div>
     </div>
-    <hr />
-    <br />
-    <br />
-    <br />
     
-    <div style="display: flex; justify-content: space-around; align-items:start;">
-        <div title="Main dataset" style="margin: 2%; min-width: 20%; max-width:20%">
+    <div style="display: flex; justify-content: space-around; align-items:start; border-top: solid #128f8b">
+        <div title="Main dataset" style="padding: 2%; min-width: 20%; max-width:20%">
             <p><b>Title</b>: First language of the population aged 16 or over by territory and age groups. Euskal Herria (%).</p>
             <p><b>Description:</b> The Sociolinguistic Survey tries to deepen the knowledge, use and family transmission of Basque, as well as promote it. The aim of this survey is to obtain official statistical information on the use of linguistic interaction between people. It is performed every five years to the population over 15 years. More information on the https://www.euskadi.eus/estadisticas-del-departamento-de-cultura-y-politica-linguistica/web01-s2kultur/es/ departmental statistical portal.</p>
             <p><b>Category:</b> Education, culture and sport</p>
         </div>
-        <div style="display: flex; overflow:auto; width: 60%;">
+        <div
+            style="padding: 2%; display: flex; overflow:auto; width: 60%; border-left: solid #128f8b; border-right: solid #128f8b">
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Year 9 students with the lowest grade E in geography, municipal schools, share (%)</p>
                 <p><b>Description:</b> All data refer to pupils in schools with grades according to the target and knowledge-related grading system. Students in year 9 with the lowest grade E in geography, municipal schools, share (%). Refers to pupils in municipal schools located in the municipality regardless of where they are registered. Data is available according to gender breakdown.</p>
                 <p><b>Category:</b> Education, culture and sport</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> How Much Do People Value Future Generations? Climate Change, Trust, and Public Support for Future-Oriented Policies - Data from China</p>
                 <p><b>Description:</b> Do people care about future generations? Moral philosophers say we should, but it is unclear whether laypeople agree. In particular, humanity’s inadequate efforts to mitigate climate change could be due to public indifference or heavy discounting of future generations’ well-being. Using surveys and survey experiments in four countries—Sweden, Spain, South Korea, and China—we found that most people say they care about future generations, and would be willing to reduce their standard of living so that people can enjoy better lives in the future. However, not everyone who says they care supports two public actions that could be taken for the benefit of future generations: policies to reduce either global warming or national debt. We find evidence that much of people’s apparent lack of concern for future generations is actually due to distrust of major social institutions, and associated doubts about the effectiveness of future-oriented policies.</p>
                 <p><b>Category:</b> Education, culture and sport</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> % of men aged 25-64 with lower secondary education</p>
                 <p><b>Description:</b> Education level refers to the highest level of education successfully completed. The data comes from the 2021 Census conducted by Statbel. The percentages are calculated on the basis of known diplomas. Missing persons represent in Wallonia, in 2021, 4.58% of 25-64 year olds.  
 
@@ -779,20 +775,20 @@ Other education-related indicators have been calculated from Census 2021 and are
                 <p><b>Category:</b> Education, culture and sport</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Number of university and college-level diplomas obtained in 2018 by institution and faculty (Daily work schedule)</p>
                 <p><b>Description:</b> Number of university and college-level diplomas obtained in 2018 by institution and faculty (Daily work schedule)</p>
                 <p><b>Category:</b> Education, culture and sport</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Register of beneficiaries of the National Operational Programme other than educational institutions (Suppliers)@it</p>
                 <p><b>Description:</b> The data flow contains the registry of beneficiaries who have applied to a calls for proposal issued by the NOP (Suppliers)@en</p>
                 <p><b>Category:</b> Education, culture and sport</p>
             </div>
             
         </div>
-        <div title="Voting" style="margin: 2%; min-width: 10%;">
+        <div title="Voting" style="padding: 2%; min-width: 10%;">
             <select name="Vote">
                 
                 <option value="0">0</option>
@@ -820,44 +816,41 @@ Other education-related indicators have been calculated from Census 2021 and are
             </select>
         </div>
     </div>
-    <hr />
-    <br />
-    <br />
-    <br />
     
-    <div style="display: flex; justify-content: space-around; align-items:start;">
-        <div title="Main dataset" style="margin: 2%; min-width: 20%; max-width:20%">
+    <div style="display: flex; justify-content: space-around; align-items:start; border-top: solid #128f8b">
+        <div title="Main dataset" style="padding: 2%; min-width: 20%; max-width:20%">
             <p><b>Title</b>: B-Plan 6-054 Long Cheeks — WMS (INSPIRE)</p>
             <p><b>Description:</b> Inspire-compliant development plan 6-054 of the city of Freiburg as a Web Map Service (OGC:WMS).</p>
             <p><b>Category:</b> Agriculture, fisheries, forestry and food</p>
         </div>
-        <div style="display: flex; overflow:auto; width: 60%;">
+        <div
+            style="padding: 2%; display: flex; overflow:auto; width: 60%; border-left: solid #128f8b; border-right: solid #128f8b">
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> WMS XPlanung BPL “Riedwiesen (3 rd change)”</p>
                 <p><b>Description:</b> WMS service of the development plan “Riedwiesen (3 rd change)” of the city of Aichtal from XPlanung 5.0. Description: Riedwiesen (3 rd amendment); Map available only for northern areas, but scope as a whole (text); Usage: Commercial area.</p>
                 <p><b>Category:</b> Agriculture, fisheries, forestry and food</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> WMS INSPIRE BPL Motzerstraße (Flst 432 and 433-1)</p>
                 <p><b>Description:</b> WMS service of the urban development plan “Motzerstraße (Flst 432 and 433-1) — Construction Line Lifting” of the municipality of Benningen am Neckar, which was transformed according to INSPIRE, based on an XPlanung dataset in version 5.0.</p>
                 <p><b>Category:</b> Agriculture, fisheries, forestry and food</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Inspire B-Plan 2-086 Corner area Karlsruher Strasse, Komturstraße, Waldkircher Straße (formerly Omnia area) — WMS</p>
                 <p><b>Description:</b> Inspire-compliant development plan 2-086 of the city of Freiburg as a Web Map Service (OGC:WMS).</p>
                 <p><b>Category:</b> Agriculture, fisheries, forestry and food</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> B-Plan 755 Building block Karl-Friedrich-, Kriegs-, Lamm- und Erbprinzenstraße (WMS)</p>
                 <p><b>Description:</b> Development plans of the city of Karlsruhe as a Web Map Service (WMS).</p>
                 <p><b>Category:</b> Agriculture, fisheries, forestry and food</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> B-Plan 619a Neureuter Hauptstraße — Gartenberge
 1st section (Bärenweg to Gässle) 
 (WMS)</p>
@@ -866,7 +859,7 @@ Other education-related indicators have been calculated from Census 2021 and are
             </div>
             
         </div>
-        <div title="Voting" style="margin: 2%; min-width: 10%;">
+        <div title="Voting" style="padding: 2%; min-width: 10%;">
             <select name="Vote">
                 
                 <option value="0">0</option>
@@ -894,51 +887,48 @@ Other education-related indicators have been calculated from Census 2021 and are
             </select>
         </div>
     </div>
-    <hr />
-    <br />
-    <br />
-    <br />
     
-    <div style="display: flex; justify-content: space-around; align-items:start;">
-        <div title="Main dataset" style="margin: 2%; min-width: 20%; max-width:20%">
+    <div style="display: flex; justify-content: space-around; align-items:start; border-top: solid #128f8b">
+        <div title="Main dataset" style="padding: 2%; min-width: 20%; max-width:20%">
             <p><b>Title</b>: Population. From 0 to 14 years (% of total). Districts of the Canary Islands. 01/01/2011. Thematic map of coroplets of 5 intervals per quantiles</p>
             <p><b>Description:</b> This thematic map of coroplets represents the demographic indicator __Population. From 0 to 14 years (% over total)__, for the territorial delimitation of __districts__ of the Canary Islands, from the Municipal Register of Inhabitants (PMH) to this date.</p>
             <p><b>Category:</b> Population and society</p>
         </div>
-        <div style="display: flex; overflow:auto; width: 60%;">
+        <div
+            style="padding: 2%; display: flex; overflow:auto; width: 60%; border-left: solid #128f8b; border-right: solid #128f8b">
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Turnover in manufacturing (value index): Germany, months, original and adjusted data, sales direction, economic sectors (2-4-digit hierarchy)</p>
                 <p><b>Description:</b> Turnover in manufacturing (value index): Germany, months, original and adjusted data, sales direction, economic sectors (2-4-digit hierarchy)</p>
                 <p><b>Category:</b> Population and society</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Employees, turnover in the main construction industry: Germany, months, economic sectors</p>
                 <p><b>Description:</b> Employees, turnover in the main construction industry: Germany, months, economic sectors</p>
                 <p><b>Category:</b> Population and society</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Ratio of recipients of basic allowances: Germany,Reporting month in quarter, Nationality, Gender,Age groups</p>
                 <p><b>Description:</b> Ratio of recipients of basic allowances: Germany,Reporting month in quarter, Nationality, Gender,Age groups</p>
                 <p><b>Category:</b> Population and society</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Households receiving financial assistance for 10-12 months during the year, region, share (%)</p>
                 <p><b>Description:</b> Number of households beneficiaries of long-term financial assistance during the year divided by the number of households recipients of aid during the calendar year. Long-term assistance lasts 10-12 months during the year. Refers to the region.</p>
                 <p><b>Category:</b> Population and society</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Number of employed persons between 15 and 64 years old who can take whole days off for family reasons, by occupation</p>
                 <p><b>Description:</b> Number of employed persons between 15 and 64 years old who can take whole days off for family reasons, by occupation</p>
                 <p><b>Category:</b> Population and society</p>
             </div>
             
         </div>
-        <div title="Voting" style="margin: 2%; min-width: 10%;">
+        <div title="Voting" style="padding: 2%; min-width: 10%;">
             <select name="Vote">
                 
                 <option value="0">0</option>
@@ -966,13 +956,9 @@ Other education-related indicators have been calculated from Census 2021 and are
             </select>
         </div>
     </div>
-    <hr />
-    <br />
-    <br />
-    <br />
     
-    <div style="display: flex; justify-content: space-around; align-items:start;">
-        <div title="Main dataset" style="margin: 2%; min-width: 20%; max-width:20%">
+    <div style="display: flex; justify-content: space-around; align-items:start; border-top: solid #128f8b">
+        <div title="Main dataset" style="padding: 2%; min-width: 20%; max-width:20%">
             <p><b>Title</b>: Enterprises in the main construction industry according to WZ-2 digits in June in Süsel</p>
             <p><b>Description:</b> Industry, construction, handicrafts — Main construction — Construction enterprises according to WZ 2 digits in June in Süsel
 
@@ -983,15 +969,16 @@ Other education-related indicators have been calculated from Census 2021 and are
 Statistical Office for Hamburg and Schleswig-Holstein</p>
             <p><b>Category:</b> Population and society</p>
         </div>
-        <div style="display: flex; overflow:auto; width: 60%;">
+        <div
+            style="padding: 2%; display: flex; overflow:auto; width: 60%; border-left: solid #128f8b; border-right: solid #128f8b">
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Employees, turnover in the main construction industry: Germany, months, economic sectors</p>
                 <p><b>Description:</b> Employees, turnover in the main construction industry: Germany, months, economic sectors</p>
                 <p><b>Category:</b> Population and society</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Manufacturing establishments by economic department in Westerborstel</p>
                 <p><b>Description:</b> Industry, construction, crafts and crafts — manufacturing — by economic division in Westerborstel
 
@@ -1003,7 +990,7 @@ Statistical Office for Hamburg and Schleswig-Holstein</p>
                 <p><b>Category:</b> Population and society</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Establishments in the manufacturing sector by economic department in Egbek</p>
                 <p><b>Description:</b> Industry, construction, crafts and crafts — manufacturing — establishments in the manufacturing sector by economic department in Eggebk
 
@@ -1015,7 +1002,7 @@ Statistical Office for Hamburg and Schleswig-Holstein</p>
                 <p><b>Category:</b> Population and society</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Total number of approved apartments (new construction and construction) in Brammer</p>
                 <p><b>Description:</b> Construction activity, housing — Building permits — Total number of approved apartments (new construction and construction) in Brammer
 
@@ -1027,14 +1014,14 @@ Statistical Office for Hamburg and Schleswig-Holstein</p>
                 <p><b>Category:</b> Population and society</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Votes by candidacy according to districts and sections of the municipal elections of 1999 in Fuerteventura.</p>
                 <p><b>Description:</b> Votes by candidacy according to districts and sections of the municipal elections of 1999 in Fuerteventura.</p>
                 <p><b>Category:</b> Population and society</p>
             </div>
             
         </div>
-        <div title="Voting" style="margin: 2%; min-width: 10%;">
+        <div title="Voting" style="padding: 2%; min-width: 10%;">
             <select name="Vote">
                 
                 <option value="0">0</option>
@@ -1062,51 +1049,48 @@ Statistical Office for Hamburg and Schleswig-Holstein</p>
             </select>
         </div>
     </div>
-    <hr />
-    <br />
-    <br />
-    <br />
     
-    <div style="display: flex; justify-content: space-around; align-items:start;">
-        <div title="Main dataset" style="margin: 2%; min-width: 20%; max-width:20%">
+    <div style="display: flex; justify-content: space-around; align-items:start; border-top: solid #128f8b">
+        <div title="Main dataset" style="padding: 2%; min-width: 20%; max-width:20%">
             <p><b>Title</b>: Imperial Obligatory Imprints of the Stable Cadastre 1:2880 - Moravia and Silesia - Dlouhomilov - 0455-1-004</p>
             <p><b>Description:</b> Colour raster copies of so called Imperial Obligatory Imprints of the Stable Cadastre 1:2880 - Moravia and Silesia. These maps originate in 1826-1843 and originally were intended for archiving in the Central Archive of Cadastre of Lands in Vienna. After declaration of the Czechoslovak Republic they were handed over to Prague in frame of separation of archives. In contrast to so called Original Maps of Stable Cadastre they record the original state of landscape without drawings of later changes. Up to now they belong to the most demanded and to the most used Archives of the Central Archive of Surveying and Cadastre. There are approximately 3300 cadastral maps in approx. 15 thousands map sheets for the territory of Moravia and Silesia. In cadastral districts where these maps were not retained, these maps are being continuously replaced by original maps of the stable cadastre.</p>
             <p><b>Category:</b> Justice, legal system and public safety</p>
         </div>
-        <div style="display: flex; overflow:auto; width: 60%;">
+        <div
+            style="padding: 2%; display: flex; overflow:auto; width: 60%; border-left: solid #128f8b; border-right: solid #128f8b">
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Imperial Obligatory Imprints of the Stable Cadastre 1:2880 - Bohemia - Zliv - 9281-1-007</p>
                 <p><b>Description:</b> Colour raster copies of so called Imperial Obligatory Imprints of the Stable Cadastre 1:2880 - Bohemia. These maps originate in 1826-1843 and originally were intended for archiving in the Central Archive of Cadastre of Lands in Vienna. After declaration of the Czechoslovak Republic they were handed over to Prague in frame of separation of archives. In contrast to so called Original Maps of Stable Cadastre they record the original state of landscape without drawings of later changes. Up to now they belong to the most demanded and to the most used Archival documents of the Central Archive of Surveying and Cadastre. There are approximately 8400 cadastral maps in approx. 31 thousands map sheets for the territory of Bohemia. In cadastral districts where these maps were not retained, these maps are being continuously replaced by original maps of the stable cadastre.</p>
                 <p><b>Category:</b> Justice, legal system and public safety</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Imperial Obligatory Imprints of the Stable Cadastre 1:2880 - Bohemia - Dolní Stakory - 1390-1-002</p>
                 <p><b>Description:</b> Colour raster copies of so called Imperial Obligatory Imprints of the Stable Cadastre 1:2880 - Bohemia. These maps originate in 1826-1843 and originally were intended for archiving in the Central Archive of Cadastre of Lands in Vienna. After declaration of the Czechoslovak Republic they were handed over to Prague in frame of separation of archives. In contrast to so called Original Maps of Stable Cadastre they record the original state of landscape without drawings of later changes. Up to now they belong to the most demanded and to the most used Archival documents of the Central Archive of Surveying and Cadastre. There are approximately 8400 cadastral maps in approx. 31 thousands map sheets for the territory of Bohemia. In cadastral districts where these maps were not retained, these maps are being continuously replaced by original maps of the stable cadastre.</p>
                 <p><b>Category:</b> Justice, legal system and public safety</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Imperial Obligatory Imprints of the Stable Cadastre 1:2880 - Moravia and Silesia - Vážany - 3289-1-005</p>
                 <p><b>Description:</b> Colour raster copies of so called Imperial Obligatory Imprints of the Stable Cadastre 1:2880 - Moravia and Silesia. These maps originate in 1826-1843 and originally were intended for archiving in the Central Archive of Cadastre of Lands in Vienna. After declaration of the Czechoslovak Republic they were handed over to Prague in frame of separation of archives. In contrast to so called Original Maps of Stable Cadastre they record the original state of landscape without drawings of later changes. Up to now they belong to the most demanded and to the most used Archives of the Central Archive of Surveying and Cadastre. There are approximately 3300 cadastral maps in approx. 15 thousands map sheets for the territory of Moravia and Silesia. In cadastral districts where these maps were not retained, these maps are being continuously replaced by original maps of the stable cadastre.</p>
                 <p><b>Category:</b> Justice, legal system and public safety</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Imperial Obligatory Imprints of the Stable Cadastre 1:2880 - Bohemia - Dobré - 1175-1-002</p>
                 <p><b>Description:</b> Colour raster copies of so called Imperial Obligatory Imprints of the Stable Cadastre 1:2880 - Bohemia. These maps originate in 1826-1843 and originally were intended for archiving in the Central Archive of Cadastre of Lands in Vienna. After declaration of the Czechoslovak Republic they were handed over to Prague in frame of separation of archives. In contrast to so called Original Maps of Stable Cadastre they record the original state of landscape without drawings of later changes. Up to now they belong to the most demanded and to the most used Archival documents of the Central Archive of Surveying and Cadastre. There are approximately 8400 cadastral maps in approx. 31 thousands map sheets for the territory of Bohemia. In cadastral districts where these maps were not retained, these maps are being continuously replaced by original maps of the stable cadastre.</p>
                 <p><b>Category:</b> Justice, legal system and public safety</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Imperial Obligatory Imprints of the Stable Cadastre 1:2880 - Moravia and Silesia - Tyra - 3187-1-006</p>
                 <p><b>Description:</b> Colour raster copies of so called Imperial Obligatory Imprints of the Stable Cadastre 1:2880 - Moravia and Silesia. These maps originate in 1826-1843 and originally were intended for archiving in the Central Archive of Cadastre of Lands in Vienna. After declaration of the Czechoslovak Republic they were handed over to Prague in frame of separation of archives. In contrast to so called Original Maps of Stable Cadastre they record the original state of landscape without drawings of later changes. Up to now they belong to the most demanded and to the most used Archives of the Central Archive of Surveying and Cadastre. There are approximately 3300 cadastral maps in approx. 15 thousands map sheets for the territory of Moravia and Silesia. In cadastral districts where these maps were not retained, these maps are being continuously replaced by original maps of the stable cadastre.</p>
                 <p><b>Category:</b> Justice, legal system and public safety</p>
             </div>
             
         </div>
-        <div title="Voting" style="margin: 2%; min-width: 10%;">
+        <div title="Voting" style="padding: 2%; min-width: 10%;">
             <select name="Vote">
                 
                 <option value="0">0</option>
@@ -1134,51 +1118,48 @@ Statistical Office for Hamburg and Schleswig-Holstein</p>
             </select>
         </div>
     </div>
-    <hr />
-    <br />
-    <br />
-    <br />
     
-    <div style="display: flex; justify-content: space-around; align-items:start;">
-        <div title="Main dataset" style="margin: 2%; min-width: 20%; max-width:20%">
+    <div style="display: flex; justify-content: space-around; align-items:start; border-top: solid #128f8b">
+        <div title="Main dataset" style="padding: 2%; min-width: 20%; max-width:20%">
             <p><b>Title</b>: Base map CR 1:10,000 - colour seamless - 11760616</p>
             <p><b>Description:</b> Since 2001, the ZM 10 is produced using digital technology from the Fundamental Base of Geographic Data of the Czech Republic (ZABAGED®) and the database of geographic names of the Czech Republic Geonames. Data are derived directly from the cartographic database Data10 of technology line IS SMD. The resolution of rasters is 800 dpi and the color depth is 24 bit. The distribution is in TIFF format (LZW compression). The export units are 2x2 km segments with edges parallel to S-JTSK datum axes. Segments are georeferenced in the coordinate system using text files (TFW) for S-JTSK Krovak EN and WGS 84 / UTM zone 33N projections.</p>
             <p><b>Category:</b> Transport</p>
         </div>
-        <div style="display: flex; overflow:auto; width: 60%;">
+        <div
+            style="padding: 2%; display: flex; overflow:auto; width: 60%; border-left: solid #128f8b; border-right: solid #128f8b">
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Base map CR 1:50,000 - colour seamless - 07201150</p>
                 <p><b>Description:</b> Since 2002, the ZM 50 is produced using digital technology from the Fundamental Base of Geographic Data of the Czech Republic (ZABAGED®) and the database of geographic names of the Czech Republic Geonames. The data are derived directly from Data50 cartographic database of IS SMD technology line. These files are by the application server service rasterized with resolution of 800 dpi, 24 bit colours and unified raster palette. The distribution is in TIFF format (LZW compression). The export units are 10x10 km segments with edges parallel to S-JTSK datum axes. Segments are georeferenced in the coordinate system using text files (TFW) for S-JTSK Krovak EN and WGS 84 / UTM zone 33N projections.</p>
                 <p><b>Category:</b> Transport</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Base map CR 1:10,000 - colour seamless - 10000812</p>
                 <p><b>Description:</b> Since 2001, the ZM 10 is produced using digital technology from the Fundamental Base of Geographic Data of the Czech Republic (ZABAGED®) and the database of geographic names of the Czech Republic Geonames. Data are derived directly from the cartographic database Data10 of technology line IS SMD. The resolution of rasters is 800 dpi and the color depth is 24 bit. The distribution is in TIFF format (LZW compression). The export units are 2x2 km segments with edges parallel to S-JTSK datum axes. Segments are georeferenced in the coordinate system using text files (TFW) for S-JTSK Krovak EN and WGS 84 / UTM zone 33N projections.</p>
                 <p><b>Category:</b> Transport</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Base map CR 1:10,000 - colour seamless - 10080862</p>
                 <p><b>Description:</b> Since 2001, the ZM 10 is produced using digital technology from the Fundamental Base of Geographic Data of the Czech Republic (ZABAGED®) and the database of geographic names of the Czech Republic Geonames. Data are derived directly from the cartographic database Data10 of technology line IS SMD. The resolution of rasters is 800 dpi and the color depth is 24 bit. The distribution is in TIFF format (LZW compression). The export units are 2x2 km segments with edges parallel to S-JTSK datum axes. Segments are georeferenced in the coordinate system using text files (TFW) for S-JTSK Krovak EN and WGS 84 / UTM zone 33N projections.</p>
                 <p><b>Category:</b> Transport</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Base map CR 1:10,000 - colour seamless - 10580890</p>
                 <p><b>Description:</b> Since 2001, the ZM 10 is produced using digital technology from the Fundamental Base of Geographic Data of the Czech Republic (ZABAGED®) and the database of geographic names of the Czech Republic Geonames. Data are derived directly from the cartographic database Data10 of technology line IS SMD. The resolution of rasters is 800 dpi and the color depth is 24 bit. The distribution is in TIFF format (LZW compression). The export units are 2x2 km segments with edges parallel to S-JTSK datum axes. Segments are georeferenced in the coordinate system using text files (TFW) for S-JTSK Krovak EN and WGS 84 / UTM zone 33N projections.</p>
                 <p><b>Category:</b> Transport</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Base map CR 1:10,000 - colour seamless - 11720690</p>
                 <p><b>Description:</b> Since 2001, the ZM 10 is produced using digital technology from the Fundamental Base of Geographic Data of the Czech Republic (ZABAGED®) and the database of geographic names of the Czech Republic Geonames. Data are derived directly from the cartographic database Data10 of technology line IS SMD. The resolution of rasters is 800 dpi and the color depth is 24 bit. The distribution is in TIFF format (LZW compression). The export units are 2x2 km segments with edges parallel to S-JTSK datum axes. Segments are georeferenced in the coordinate system using text files (TFW) for S-JTSK Krovak EN and WGS 84 / UTM zone 33N projections.</p>
                 <p><b>Category:</b> Transport</p>
             </div>
             
         </div>
-        <div title="Voting" style="margin: 2%; min-width: 10%;">
+        <div title="Voting" style="padding: 2%; min-width: 10%;">
             <select name="Vote">
                 
                 <option value="0">0</option>
@@ -1206,51 +1187,48 @@ Statistical Office for Hamburg and Schleswig-Holstein</p>
             </select>
         </div>
     </div>
-    <hr />
-    <br />
-    <br />
-    <br />
     
-    <div style="display: flex; justify-content: space-around; align-items:start;">
-        <div title="Main dataset" style="margin: 2%; min-width: 20%; max-width:20%">
+    <div style="display: flex; justify-content: space-around; align-items:start; border-top: solid #128f8b">
+        <div title="Main dataset" style="padding: 2%; min-width: 20%; max-width:20%">
             <p><b>Title</b>: Base map CR 1:10,000 - colour seamless - 10260688</p>
             <p><b>Description:</b> Since 2001, the ZM 10 is produced using digital technology from the Fundamental Base of Geographic Data of the Czech Republic (ZABAGED®) and the database of geographic names of the Czech Republic Geonames. Data are derived directly from the cartographic database Data10 of technology line IS SMD. The resolution of rasters is 800 dpi and the color depth is 24 bit. The distribution is in TIFF format (LZW compression). The export units are 2x2 km segments with edges parallel to S-JTSK datum axes. Segments are georeferenced in the coordinate system using text files (TFW) for S-JTSK Krovak EN and WGS 84 / UTM zone 33N projections.</p>
             <p><b>Category:</b> Government and public sector</p>
         </div>
-        <div style="display: flex; overflow:auto; width: 60%;">
+        <div
+            style="padding: 2%; display: flex; overflow:auto; width: 60%; border-left: solid #128f8b; border-right: solid #128f8b">
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Base map CR 1:50,000 - colour seamless - 06201110</p>
                 <p><b>Description:</b> Since 2002, the ZM 50 is produced using digital technology from the Fundamental Base of Geographic Data of the Czech Republic (ZABAGED®) and the database of geographic names of the Czech Republic Geonames. The data are derived directly from Data50 cartographic database of IS SMD technology line. These files are by the application server service rasterized with resolution of 800 dpi, 24 bit colours and unified raster palette. The distribution is in TIFF format (LZW compression). The export units are 10x10 km segments with edges parallel to S-JTSK datum axes. Segments are georeferenced in the coordinate system using text files (TFW) for S-JTSK Krovak EN and WGS 84 / UTM zone 33N projections.</p>
                 <p><b>Category:</b> Government and public sector</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Base map CR 1:10,000 - colour seamless - 11980600</p>
                 <p><b>Description:</b> Since 2001, the ZM 10 is produced using digital technology from the Fundamental Base of Geographic Data of the Czech Republic (ZABAGED®) and the database of geographic names of the Czech Republic Geonames. Data are derived directly from the cartographic database Data10 of technology line IS SMD. The resolution of rasters is 800 dpi and the color depth is 24 bit. The distribution is in TIFF format (LZW compression). The export units are 2x2 km segments with edges parallel to S-JTSK datum axes. Segments are georeferenced in the coordinate system using text files (TFW) for S-JTSK Krovak EN and WGS 84 / UTM zone 33N projections.</p>
                 <p><b>Category:</b> Government and public sector</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Base map CR 1:10,000 - colour seamless - 11240550</p>
                 <p><b>Description:</b> Since 2001, the ZM 10 is produced using digital technology from the Fundamental Base of Geographic Data of the Czech Republic (ZABAGED®) and the database of geographic names of the Czech Republic Geonames. Data are derived directly from the cartographic database Data10 of technology line IS SMD. The resolution of rasters is 800 dpi and the color depth is 24 bit. The distribution is in TIFF format (LZW compression). The export units are 2x2 km segments with edges parallel to S-JTSK datum axes. Segments are georeferenced in the coordinate system using text files (TFW) for S-JTSK Krovak EN and WGS 84 / UTM zone 33N projections.</p>
                 <p><b>Category:</b> Economy and finance</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Base map CR 1:10,000 - colour seamless - 10200792</p>
                 <p><b>Description:</b> Since 2001, the ZM 10 is produced using digital technology from the Fundamental Base of Geographic Data of the Czech Republic (ZABAGED®) and the database of geographic names of the Czech Republic Geonames. Data are derived directly from the cartographic database Data10 of technology line IS SMD. The resolution of rasters is 800 dpi and the color depth is 24 bit. The distribution is in TIFF format (LZW compression). The export units are 2x2 km segments with edges parallel to S-JTSK datum axes. Segments are georeferenced in the coordinate system using text files (TFW) for S-JTSK Krovak EN and WGS 84 / UTM zone 33N projections.</p>
                 <p><b>Category:</b> Economy and finance</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Base map CR 1:10,000 - colour seamless - 10560736</p>
                 <p><b>Description:</b> Since 2001, the ZM 10 is produced using digital technology from the Fundamental Base of Geographic Data of the Czech Republic (ZABAGED®) and the database of geographic names of the Czech Republic Geonames. Data are derived directly from the cartographic database Data10 of technology line IS SMD. The resolution of rasters is 800 dpi and the color depth is 24 bit. The distribution is in TIFF format (LZW compression). The export units are 2x2 km segments with edges parallel to S-JTSK datum axes. Segments are georeferenced in the coordinate system using text files (TFW) for S-JTSK Krovak EN and WGS 84 / UTM zone 33N projections.</p>
                 <p><b>Category:</b> Government and public sector</p>
             </div>
             
         </div>
-        <div title="Voting" style="margin: 2%; min-width: 10%;">
+        <div title="Voting" style="padding: 2%; min-width: 10%;">
             <select name="Vote">
                 
                 <option value="0">0</option>
@@ -1278,51 +1256,48 @@ Statistical Office for Hamburg and Schleswig-Holstein</p>
             </select>
         </div>
     </div>
-    <hr />
-    <br />
-    <br />
-    <br />
     
-    <div style="display: flex; justify-content: space-around; align-items:start;">
-        <div title="Main dataset" style="margin: 2%; min-width: 20%; max-width:20%">
+    <div style="display: flex; justify-content: space-around; align-items:start; border-top: solid #128f8b">
+        <div title="Main dataset" style="padding: 2%; min-width: 20%; max-width:20%">
             <p><b>Title</b>: XPlanung dataset BPL “Kapellfeld III”</p>
             <p><b>Description:</b> The development plan (BPL) contains the legally binding determinations for the urban planning order. In principle, the development plan must be developed from the land use plan. The available data is the development plan “Kapellfeld III” of the city of Bopfingen from XPlanung 5.0. Description: The development plan contains the legally binding determinations for the urban planning system. In addition, the development plan must be developed from the land use plan.</p>
             <p><b>Category:</b> Agriculture, fisheries, forestry and food</p>
         </div>
-        <div style="display: flex; overflow:auto; width: 60%;">
+        <div
+            style="padding: 2%; display: flex; overflow:auto; width: 60%; border-left: solid #128f8b; border-right: solid #128f8b">
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Inspire data set BPL “Schafhof II and Schafhof III (amendment)”</p>
                 <p><b>Description:</b> Building plan “Schafhof II and Schafhof III (Change)” of the city of Kirchheim under Teck based on an XPlanung dataset in version 5.0.</p>
                 <p><b>Category:</b> Agriculture, fisheries, forestry and food</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Inspire data set BPL “Toe tacker — 3 rd change”</p>
                 <p><b>Description:</b> According to INSPIRE transformed development plan “Zehentacker — 3 rd change” of the city of Heubach based on an XPlanung dataset in version 5.0.</p>
                 <p><b>Category:</b> Agriculture, fisheries, forestry and food</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Inspire data set BPL “Bronnforst”</p>
                 <p><b>Description:</b> According to INSPIRE transformed development plan “Bronnforst” of the municipality of Waldstetten based on an XPlanung dataset in version 5.0.</p>
                 <p><b>Category:</b> Agriculture, fisheries, forestry and food</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> XPlanung dataset BPL “Rappenäcker Ebene”</p>
                 <p><b>Description:</b> The development plan (BPL) contains the legally binding determinations for the urban planning order. In principle, the development plan must be developed from the land use plan. The available data is the development plan “Rappenäcker Ebene” of the municipality of Rechberghausen from XPlanung 5.0. Description: The development plan contains the legally binding determinations for the urban planning system. In principle, the development plan must be developed from the land use plan. Rechberghausen, QualifiedBPlan ‘Rappenäcker Ebene’ WA.</p>
                 <p><b>Category:</b> Agriculture, fisheries, forestry and food</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> XPlanung dataset BPL “Jahnstraße Süd”</p>
                 <p><b>Description:</b> The development plan (BPL) contains the legally binding determinations for the urban planning order. In principle, the development plan must be developed from the land use plan. The available data is the development plan “Jahnstraße Süd” of the city of Stuttgart from XPlanung 5.0. Description: Development plan of the city of Stuttgart.</p>
                 <p><b>Category:</b> Agriculture, fisheries, forestry and food</p>
             </div>
             
         </div>
-        <div title="Voting" style="margin: 2%; min-width: 10%;">
+        <div title="Voting" style="padding: 2%; min-width: 10%;">
             <select name="Vote">
                 
                 <option value="0">0</option>
@@ -1350,51 +1325,48 @@ Statistical Office for Hamburg and Schleswig-Holstein</p>
             </select>
         </div>
     </div>
-    <hr />
-    <br />
-    <br />
-    <br />
     
-    <div style="display: flex; justify-content: space-around; align-items:start;">
-        <div title="Main dataset" style="margin: 2%; min-width: 20%; max-width:20%">
+    <div style="display: flex; justify-content: space-around; align-items:start; border-top: solid #128f8b">
+        <div title="Main dataset" style="padding: 2%; min-width: 20%; max-width:20%">
             <p><b>Title</b>: WFS INSPIRE BPL Strict</p>
             <p><b>Description:</b> WFS service of the urban development plan “Streng” of the city of Heubach, transformed according to INSPIRE, based on an XPlanung dataset in version 5.0.</p>
             <p><b>Category:</b> Agriculture, fisheries, forestry and food</p>
         </div>
-        <div style="display: flex; overflow:auto; width: 60%;">
+        <div
+            style="padding: 2%; display: flex; overflow:auto; width: 60%; border-left: solid #128f8b; border-right: solid #128f8b">
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> WFS INSPIRE BPL Gränzbotenareal revision</p>
                 <p><b>Description:</b> WFS service of the city of Tuttlingen’s “Gränzbotenareal revision” development plan, transformed to INSPIRE, based on an XPlanung dataset in version 5.0.</p>
                 <p><b>Category:</b> Agriculture, fisheries, forestry and food</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> WFS INSPIRE BPL</p>
                 <p><b>Description:</b> WFS service of INSPIRE transformed urban development plan “” volumes based on an XPlanung dataset in version 5.0.</p>
                 <p><b>Category:</b> Agriculture, fisheries, forestry and food</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> WFS INSPIRE BPL Dörrebrunnen</p>
                 <p><b>Description:</b> WFS service of the urban development plan “Dörrebrunnen” of the city of Walldürn, transformed according to INSPIRE, based on an XPlanung dataset in version 5.0.</p>
                 <p><b>Category:</b> Agriculture, fisheries, forestry and food</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> WFS INSPIRE BPL Westlich Au in the Beechs</p>
                 <p><b>Description:</b> WFS service of the INSPIRE urban development plan “Western Au in the Beech” of the city of Bruchsal based on an XPlanung dataset in version 5.0.</p>
                 <p><b>Category:</b> Agriculture, fisheries, forestry and food</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> WFS XPlanung BPL “Spreuergasse Cannstatt”</p>
                 <p><b>Description:</b> WFS service of the development plan “Spreuergasse Cannstatt” of the city of Stuttgart from XPlanung 5.0. Description: Development plan of the city of Stuttgart.</p>
                 <p><b>Category:</b> Agriculture, fisheries, forestry and food</p>
             </div>
             
         </div>
-        <div title="Voting" style="margin: 2%; min-width: 10%;">
+        <div title="Voting" style="padding: 2%; min-width: 10%;">
             <select name="Vote">
                 
                 <option value="0">0</option>
@@ -1422,32 +1394,29 @@ Statistical Office for Hamburg and Schleswig-Holstein</p>
             </select>
         </div>
     </div>
-    <hr />
-    <br />
-    <br />
-    <br />
     
-    <div style="display: flex; justify-content: space-around; align-items:start;">
-        <div title="Main dataset" style="margin: 2%; min-width: 20%; max-width:20%">
+    <div style="display: flex; justify-content: space-around; align-items:start; border-top: solid #128f8b">
+        <div title="Main dataset" style="padding: 2%; min-width: 20%; max-width:20%">
             <p><b>Title</b>: Map of radon concentration in soil air</p>
             <p><b>Description:</b> The data show the distribution of the concentration of radioactive noble gas radon-222 in the ground-level air at 1 m depth. Radon-222 is a colourless, odorless and tasteless radioactive noble gas. It is of natural origin and is mainly released from the ground and from building materials. In this way, it enters the free atmosphere or the interior air of buildings. (Five to ten percent of all lung cancers in the population are attributed to exposure to radon-222 and its decay products in buildings according to current research results).</p>
             <p><b>Category:</b> Environment</p>
         </div>
-        <div style="display: flex; overflow:auto; width: 60%;">
+        <div
+            style="padding: 2%; display: flex; overflow:auto; width: 60%; border-left: solid #128f8b; border-right: solid #128f8b">
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Inspire distribution of species in Germany — occurrences</p>
                 <p><b>Description:</b> The INSPIRE download service Distribution of species in Germany — occurrences provides nationwide occurrence records in accordance with the requirements of the INSPIRE Directive Annex III topic. The data set contains species observation data in Annexes II, IV and V to the Fauna Flora Habitats Directive (Directive 92/43/EEC). The data of the Federal States and the Federal Government are merged and made available once a year by the Federal Office for Nature Conservation into harmonised reference date data sets. The service does not contain information on sensitive species.</p>
                 <p><b>Category:</b> Environment</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> General Depth of IJsselmeer area 1935</p>
                 <p><b>Description:</b> Soil height model of the IJsselmeer area, consisting of a grid (100m x 100m). Soil depth in centimetres compared to NAP. The model was calculated on the basis of a scan of the map IJsselmeer e.o., Depth map made according to measurements of the Dienst der Zuiderzeewerken. The stamp on the card states: Directorate of the Wieringermeer, Noordoostpolderwerken, archive Arch. Div., Form C5, studbook no. 117082. On this map, the Wieringermeer has been reclaimed and the Noordoostpolder and the Afsluitdijk have been drawn. The map is therefore probably from around 1935. The scan is georeferenced according to the national triangular system on the basis of the co-rdinate crosses present on the original map. The original analogue map is in the possession of the Cultural Heritage Agency of the Netherlands.</p>
                 <p><b>Category:</b> Environment</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Waarnemingen.be - Hymenoptera occurrences in Flanders and the Brussels Capital Region, Belgium</p>
                 <p><b>Description:</b> Waarnemingen.be - Hymenoptera occurrences in Flanders and the Brussels Capital Region, Belgium is a species occurrence dataset published by Natuurpunt. The dataset contains over 260,000 bee, wasp and ant (Hymenoptera) occurrences of 1,188 naturally occurring species (native, vagrant or migrant species), recorded by volunteers (citizen scientists), mainly since 2008. The occurrences are derived from the database http://www.waarnemingen.be, hosted at the nature conservation NGO Natuurpunt in collaboration with Stichting Natuurinformatie. Standardized information regarding the occurrence's sex, lifeStage, reproductiveCondition, behavior, occurrenceRemarks, and samplingProtocol is included as well.
 
@@ -1459,7 +1428,7 @@ The publication of this dataset is supported by INBO and funded by Research Foun
                 <p><b>Category:</b> Environment</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Inspire Register of Protected Areas — Bathing Water Areas</p>
                 <p><b>Description:</b> This Dataset represents a Snapshot taken in September 2016 for the purpose of the WFD RBMP Cycle 2.
 
@@ -1467,14 +1436,14 @@ Bathing Water Area profiles referred to in Regulation 5 is to consist of a descr
                 <p><b>Category:</b> Environment</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Annual levels of pollutants in ambient air from modeling in the Brittany region in 2015</p>
                 <p><b>Description:</b> Annual levels of regulated pollutants (PM10, SO2, NO2, CO, O3, C6H6) in ambient air from modeling in the Brittany region in 2015. Two metrics are available: annual average, peak level.</p>
                 <p><b>Category:</b> Environment</p>
             </div>
             
         </div>
-        <div title="Voting" style="margin: 2%; min-width: 10%;">
+        <div title="Voting" style="padding: 2%; min-width: 10%;">
             <select name="Vote">
                 
                 <option value="0">0</option>
@@ -1502,51 +1471,48 @@ Bathing Water Area profiles referred to in Regulation 5 is to consist of a descr
             </select>
         </div>
     </div>
-    <hr />
-    <br />
-    <br />
-    <br />
     
-    <div style="display: flex; justify-content: space-around; align-items:start;">
-        <div title="Main dataset" style="margin: 2%; min-width: 20%; max-width:20%">
+    <div style="display: flex; justify-content: space-around; align-items:start; border-top: solid #128f8b">
+        <div title="Main dataset" style="padding: 2%; min-width: 20%; max-width:20%">
             <p><b>Title</b>: Groundwater (1132643300099) Chemistry</p>
             <p><b>Description:</b> The measuring point 1132643300099 (measuring point number: 1132643300099) is used to monitor the chemical state.</p>
             <p><b>Category:</b> Environment</p>
         </div>
-        <div style="display: flex; overflow:auto; width: 60%;">
+        <div
+            style="padding: 2%; display: flex; overflow:auto; width: 60%; border-left: solid #128f8b; border-right: solid #128f8b">
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Groundwater (AMPFING 607) Upper groundwater layer</p>
                 <p><b>Description:</b> The measuring point AMPFING 607 (measuring point no.: 21117) is used to monitor the groundwater level in the upper aquifer.</p>
                 <p><b>Category:</b> Environment</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Rivers of Festenbach (Br. Festenbach) Biology, chemistry</p>
                 <p><b>Description:</b> The measuring point Br. Festenbach (measuring point no.: 11992) is located in the waters of Festenbach. The measuring point is used to monitor the biological state, the chemical state.</p>
                 <p><b>Category:</b> Environment</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Groundwater (Otzing-7851) Upper groundwater layer</p>
                 <p><b>Description:</b> The measuring point Otzing-7851 (measuring point no.: 7851) is used to monitor the groundwater level in the upper aquifer.</p>
                 <p><b>Category:</b> Environment</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Groundwater (4120852700081) Chemistry</p>
                 <p><b>Description:</b> The measuring point 4120852700081 (measuring point no.: 4120852700081) is used to monitor the chemical state.</p>
                 <p><b>Category:</b> Environment</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Groundwater (1131773800357) Chemistry</p>
                 <p><b>Description:</b> The measuring point 1131773800357 (measuring point number: 1131773800357) is used to monitor the chemical state.</p>
                 <p><b>Category:</b> Environment</p>
             </div>
             
         </div>
-        <div title="Voting" style="margin: 2%; min-width: 10%;">
+        <div title="Voting" style="padding: 2%; min-width: 10%;">
             <select name="Vote">
                 
                 <option value="0">0</option>
@@ -1574,51 +1540,48 @@ Bathing Water Area profiles referred to in Regulation 5 is to consist of a descr
             </select>
         </div>
     </div>
-    <hr />
-    <br />
-    <br />
-    <br />
     
-    <div style="display: flex; justify-content: space-around; align-items:start;">
-        <div title="Main dataset" style="margin: 2%; min-width: 20%; max-width:20%">
+    <div style="display: flex; justify-content: space-around; align-items:start; border-top: solid #128f8b">
+        <div title="Main dataset" style="padding: 2%; min-width: 20%; max-width:20%">
             <p><b>Title</b>: Inspire-Dataset BPL “Fischbacher Straße Extension”</p>
             <p><b>Description:</b> According to INSPIRE transformed development plan “Fischbacher Straße Extension” of the city of Ochsenhausen based on an XPlanung dataset in version 5.0.</p>
             <p><b>Category:</b> Justice, legal system and public safety</p>
         </div>
-        <div style="display: flex; overflow:auto; width: 60%;">
+        <div
+            style="padding: 2%; display: flex; overflow:auto; width: 60%; border-left: solid #128f8b; border-right: solid #128f8b">
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> XPlanung dataset BPL “Creuzwegäcker — 2nd change”</p>
                 <p><b>Description:</b> The development plan (BPL) contains the legally binding determinations for the urban planning order. In principle, the development plan must be developed from the land use plan. The available data is the development plan “Creuzwegäcker — 2nd change” of the town of Steinheim an der Murr from XPlanung 5.0. Description: Kreuzwegäcker — 2nd change.</p>
                 <p><b>Category:</b> Justice, legal system and public safety</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Inspire data set BPL “Mountain”</p>
                 <p><b>Description:</b> According to INSPIRE transformed development plan “mountain” of the municipality of Achstetten based on an XPlanung dataset in version 5.0.</p>
                 <p><b>Category:</b> Justice, legal system and public safety</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> XPlanung dataset BPL “Altinger Straße”</p>
                 <p><b>Description:</b> The development plan (BPL) contains the legally binding determinations for the urban planning order. In principle, the development plan must be developed from the land use plan. The available data is the development plan “Altinger Straße” of the city of Sindelfingen from XPlanung 5.0. Description: Altinger Strasse;.</p>
                 <p><b>Category:</b> Justice, legal system and public safety</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> XPlanning data set BPL “Hohenecker way”</p>
                 <p><b>Description:</b> The development plan (BPL) contains the legally binding settlements for the urban planning order. In principle, the development plan must be developed from the land use plan. The available data is the “Hohenecker Weg” development plan of the city of Freiberg am Neckar from XPlanung 5.0. Description: Hohenecker way.</p>
                 <p><b>Category:</b> Justice, legal system and public safety</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> XPlanung dataset BPL “Neckar- und Seestraße”</p>
                 <p><b>Description:</b> The development plan (BPL) contains the legally binding determinations for the urban planning order. In principle, the development plan must be developed from the land use plan. The available data is the development plan “Neckar- und Seestraße” of the municipality of Ingersheim from XPlanung 5.0. Description: Neckar and Seestraße.</p>
                 <p><b>Category:</b> Justice, legal system and public safety</p>
             </div>
             
         </div>
-        <div title="Voting" style="margin: 2%; min-width: 10%;">
+        <div title="Voting" style="padding: 2%; min-width: 10%;">
             <select name="Vote">
                 
                 <option value="0">0</option>
@@ -1646,51 +1609,48 @@ Bathing Water Area profiles referred to in Regulation 5 is to consist of a descr
             </select>
         </div>
     </div>
-    <hr />
-    <br />
-    <br />
-    <br />
     
-    <div style="display: flex; justify-content: space-around; align-items:start;">
-        <div title="Main dataset" style="margin: 2%; min-width: 20%; max-width:20%">
+    <div style="display: flex; justify-content: space-around; align-items:start; border-top: solid #128f8b">
+        <div title="Main dataset" style="padding: 2%; min-width: 20%; max-width:20%">
             <p><b>Title</b>: XPlanung dataset BPL “Hub roof structures/incisions”</p>
             <p><b>Description:</b> The development plan (BPL) contains the legally binding determinations for the urban planning order. In principle, the development plan must be developed from the land use plan. The available data is the development plan “Hube Roof structures/incisions” of the municipality of Straubenhardt from XPlanung 5.0. Description: Lifting roof structures/incisions.</p>
             <p><b>Category:</b> Justice, legal system and public safety</p>
         </div>
-        <div style="display: flex; overflow:auto; width: 60%;">
+        <div
+            style="padding: 2%; display: flex; overflow:auto; width: 60%; border-left: solid #128f8b; border-right: solid #128f8b">
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> XPlanung dataset BPL “Creuzwegäcker — 2nd change”</p>
                 <p><b>Description:</b> The development plan (BPL) contains the legally binding determinations for the urban planning order. In principle, the development plan must be developed from the land use plan. The available data is the development plan “Creuzwegäcker — 2nd change” of the town of Steinheim an der Murr from XPlanung 5.0. Description: Kreuzwegäcker — 2nd change.</p>
                 <p><b>Category:</b> Justice, legal system and public safety</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> XPlanning data set BPL “Hohenecker way”</p>
                 <p><b>Description:</b> The development plan (BPL) contains the legally binding settlements for the urban planning order. In principle, the development plan must be developed from the land use plan. The available data is the “Hohenecker Weg” development plan of the city of Freiberg am Neckar from XPlanung 5.0. Description: Hohenecker way.</p>
                 <p><b>Category:</b> Justice, legal system and public safety</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> XPlanning data set BPL “Laiser Öschle – 2nd Amendment”</p>
                 <p><b>Description:</b> The development plan (BPL) contains the legally binding settlements for the urban planning order. In principle, the development plan must be developed from the land use plan. The available data is the development plan “Laiser Öschle – 2nd Amendment” of the municipality of Sigmaringendorf from XPlanung 5.0. Description: Laiser Öschle – 2nd amendment.</p>
                 <p><b>Category:</b> Justice, legal system and public safety</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> XPlanning data set BPL “Haufental”</p>
                 <p><b>Description:</b> The development plan (BPL) contains the legally binding settlements for the urban planning order. In principle, the development plan must be developed from the land use plan. The available data is the development plan “Haufental” of the municipality of Niefern-Öschelbronn from XPlanung 5.0. Description: Haufental, priority use WA.</p>
                 <p><b>Category:</b> Justice, legal system and public safety</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> XPlanung data set BPL “Construction plan Sinzheim Nord Subpart 1 1st modification”</p>
                 <p><b>Description:</b> The development plan (BPL) contains the legally binding determinations for the urban planning order. In principle, the development plan must be developed from the land use plan. The available data is the development plan “Sinzheim Nord Development Plan 1 1. Modification” of the municipality of Sinzheim from XPlanung 5.0. Description: Development plan Sinzheim Nord Subpart 1 1. Change.</p>
                 <p><b>Category:</b> Justice, legal system and public safety</p>
             </div>
             
         </div>
-        <div title="Voting" style="margin: 2%; min-width: 10%;">
+        <div title="Voting" style="padding: 2%; min-width: 10%;">
             <select name="Vote">
                 
                 <option value="0">0</option>
@@ -1718,13 +1678,9 @@ Bathing Water Area profiles referred to in Regulation 5 is to consist of a descr
             </select>
         </div>
     </div>
-    <hr />
-    <br />
-    <br />
-    <br />
     
-    <div style="display: flex; justify-content: space-around; align-items:start;">
-        <div title="Main dataset" style="margin: 2%; min-width: 20%; max-width:20%">
+    <div style="display: flex; justify-content: space-around; align-items:start; border-top: solid #128f8b">
+        <div title="Main dataset" style="padding: 2%; min-width: 20%; max-width:20%">
             <p><b>Title</b>: Register of land and buildings, voivodship, Kobyłka municipality, 07, cadastral area 143401_1.0007 (POWIAT1434)</p>
             <p><b>Description:</b> Land and buildings (real estate cataster) is a uniform for the country, regularly updated collection of information about land, buildings and premises, their owners and other natural or legal persons who control these lands, buildings and premises. The cadastral map is an element of the state geodetic and cardographic resource and is carried out at the level of counties. It is conducted in different scales 1:500 to 1:5000 depending on the content density for the whole country. The contents of the cadastral map are the following elements:
 1) Limits:
@@ -1732,27 +1688,28 @@ States, units of basic three-stage territorial division of the State, cadastral 
 a) the names of the units of the main three-stage territorial division of the state, b) the designation of the cadastral unit and the perimeter, c) the names of streets, squares, gala, watercourses, reservoirs and other physiographic objects, d) public road numbers assigned on the basis of regulations on public roads, e) order and registration numbers of buildings.</p>
             <p><b>Category:</b> Justice, legal system and public safety</p>
         </div>
-        <div style="display: flex; overflow:auto; width: 60%;">
+        <div
+            style="padding: 2%; display: flex; overflow:auto; width: 60%; border-left: solid #128f8b; border-right: solid #128f8b">
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Development plans of the municipality of Durlangen (INSPIRE)</p>
                 <p><b>Description:</b> This data set includes the legally binding and INSPIRE-relevant development plans of the municipality of Durlangen with WMS presentation and WFS download services (INSPIRE GML)</p>
                 <p><b>Category:</b> Justice, legal system and public safety</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Development plan rounding-out of Jägerackerstraße</p>
                 <p><b>Description:</b> The development plan contains the legally binding fixings for the urban planning order. In principle, the development plan must be developed from the land use plan. Rounding statutes</p>
                 <p><b>Category:</b> Justice, legal system and public safety</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> B-Plan 51.34 Special area west of the B44, north of the A6, Sandhofer Weg right (IKEA)</p>
                 <p><b>Description:</b> The development plan contains the legally binding fixings for the urban planning order. In principle, the development plan must be developed from the land use plan. Development plan of the city of Mannheim, consisting of the surrounding area and a grid representation of the scanned plan in the format Geotiff.</p>
                 <p><b>Category:</b> Justice, legal system and public safety</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Development plan “Am Blasiusberg BE 2”</p>
                 <p><b>Description:</b> The development plan “Am Blasiusberg BE 2” of the municipality of Tholey shows the permitted use on the areas marked in the plan.
 
@@ -1760,7 +1717,7 @@ Detailed explanations by specialist staff can be requested from the relevant dep
                 <p><b>Category:</b> Justice, legal system and public safety</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Project and development plan no. W12 Schiffbauer Straße — City of Beeskow</p>
                 <p><b>Description:</b> As a binding construction plan, the project and development plan implements an object-related project planning into directly applicable law.
 The same rules apply to him as a project-related development plan, which are also relevant for the development plan.</p>
@@ -1768,7 +1725,7 @@ The same rules apply to him as a project-related development plan, which are als
             </div>
             
         </div>
-        <div title="Voting" style="margin: 2%; min-width: 10%;">
+        <div title="Voting" style="padding: 2%; min-width: 10%;">
             <select name="Vote">
                 
                 <option value="0">0</option>
@@ -1796,51 +1753,48 @@ The same rules apply to him as a project-related development plan, which are als
             </select>
         </div>
     </div>
-    <hr />
-    <br />
-    <br />
-    <br />
     
-    <div style="display: flex; justify-content: space-around; align-items:start;">
-        <div title="Main dataset" style="margin: 2%; min-width: 20%; max-width:20%">
+    <div style="display: flex; justify-content: space-around; align-items:start; border-top: solid #128f8b">
+        <div title="Main dataset" style="padding: 2%; min-width: 20%; max-width:20%">
             <p><b>Title</b>: Imperial Obligatory Imprints of the Stable Cadastre 1:2880 - Moravia and Silesia - Zadní Arnoštov - 3540-1-005</p>
             <p><b>Description:</b> Colour raster copies of so called Imperial Obligatory Imprints of the Stable Cadastre 1:2880 - Moravia and Silesia. These maps originate in 1826-1843 and originally were intended for archiving in the Central Archive of Cadastre of Lands in Vienna. After declaration of the Czechoslovak Republic they were handed over to Prague in frame of separation of archives. In contrast to so called Original Maps of Stable Cadastre they record the original state of landscape without drawings of later changes. Up to now they belong to the most demanded and to the most used Archives of the Central Archive of Surveying and Cadastre. There are approximately 3300 cadastral maps in approx. 15 thousands map sheets for the territory of Moravia and Silesia. In cadastral districts where these maps were not retained, these maps are being continuously replaced by original maps of the stable cadastre.</p>
             <p><b>Category:</b> Justice, legal system and public safety</p>
         </div>
-        <div style="display: flex; overflow:auto; width: 60%;">
+        <div
+            style="padding: 2%; display: flex; overflow:auto; width: 60%; border-left: solid #128f8b; border-right: solid #128f8b">
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Imperial Obligatory Imprints of the Stable Cadastre 1:2880 - Bohemia - Zliv - 9281-1-007</p>
                 <p><b>Description:</b> Colour raster copies of so called Imperial Obligatory Imprints of the Stable Cadastre 1:2880 - Bohemia. These maps originate in 1826-1843 and originally were intended for archiving in the Central Archive of Cadastre of Lands in Vienna. After declaration of the Czechoslovak Republic they were handed over to Prague in frame of separation of archives. In contrast to so called Original Maps of Stable Cadastre they record the original state of landscape without drawings of later changes. Up to now they belong to the most demanded and to the most used Archival documents of the Central Archive of Surveying and Cadastre. There are approximately 8400 cadastral maps in approx. 31 thousands map sheets for the territory of Bohemia. In cadastral districts where these maps were not retained, these maps are being continuously replaced by original maps of the stable cadastre.</p>
                 <p><b>Category:</b> Justice, legal system and public safety</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Imperial Obligatory Imprints of the Stable Cadastre 1:2880 - Bohemia - Dolní Stakory - 1390-1-002</p>
                 <p><b>Description:</b> Colour raster copies of so called Imperial Obligatory Imprints of the Stable Cadastre 1:2880 - Bohemia. These maps originate in 1826-1843 and originally were intended for archiving in the Central Archive of Cadastre of Lands in Vienna. After declaration of the Czechoslovak Republic they were handed over to Prague in frame of separation of archives. In contrast to so called Original Maps of Stable Cadastre they record the original state of landscape without drawings of later changes. Up to now they belong to the most demanded and to the most used Archival documents of the Central Archive of Surveying and Cadastre. There are approximately 8400 cadastral maps in approx. 31 thousands map sheets for the territory of Bohemia. In cadastral districts where these maps were not retained, these maps are being continuously replaced by original maps of the stable cadastre.</p>
                 <p><b>Category:</b> Justice, legal system and public safety</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Imperial Obligatory Imprints of the Stable Cadastre 1:2880 - Moravia and Silesia - Vážany - 3289-1-005</p>
                 <p><b>Description:</b> Colour raster copies of so called Imperial Obligatory Imprints of the Stable Cadastre 1:2880 - Moravia and Silesia. These maps originate in 1826-1843 and originally were intended for archiving in the Central Archive of Cadastre of Lands in Vienna. After declaration of the Czechoslovak Republic they were handed over to Prague in frame of separation of archives. In contrast to so called Original Maps of Stable Cadastre they record the original state of landscape without drawings of later changes. Up to now they belong to the most demanded and to the most used Archives of the Central Archive of Surveying and Cadastre. There are approximately 3300 cadastral maps in approx. 15 thousands map sheets for the territory of Moravia and Silesia. In cadastral districts where these maps were not retained, these maps are being continuously replaced by original maps of the stable cadastre.</p>
                 <p><b>Category:</b> Justice, legal system and public safety</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Imperial Obligatory Imprints of the Stable Cadastre 1:2880 - Bohemia - Dobré - 1175-1-002</p>
                 <p><b>Description:</b> Colour raster copies of so called Imperial Obligatory Imprints of the Stable Cadastre 1:2880 - Bohemia. These maps originate in 1826-1843 and originally were intended for archiving in the Central Archive of Cadastre of Lands in Vienna. After declaration of the Czechoslovak Republic they were handed over to Prague in frame of separation of archives. In contrast to so called Original Maps of Stable Cadastre they record the original state of landscape without drawings of later changes. Up to now they belong to the most demanded and to the most used Archival documents of the Central Archive of Surveying and Cadastre. There are approximately 8400 cadastral maps in approx. 31 thousands map sheets for the territory of Bohemia. In cadastral districts where these maps were not retained, these maps are being continuously replaced by original maps of the stable cadastre.</p>
                 <p><b>Category:</b> Justice, legal system and public safety</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Imperial Obligatory Imprints of the Stable Cadastre 1:2880 - Moravia and Silesia - Tyra - 3187-1-006</p>
                 <p><b>Description:</b> Colour raster copies of so called Imperial Obligatory Imprints of the Stable Cadastre 1:2880 - Moravia and Silesia. These maps originate in 1826-1843 and originally were intended for archiving in the Central Archive of Cadastre of Lands in Vienna. After declaration of the Czechoslovak Republic they were handed over to Prague in frame of separation of archives. In contrast to so called Original Maps of Stable Cadastre they record the original state of landscape without drawings of later changes. Up to now they belong to the most demanded and to the most used Archives of the Central Archive of Surveying and Cadastre. There are approximately 3300 cadastral maps in approx. 15 thousands map sheets for the territory of Moravia and Silesia. In cadastral districts where these maps were not retained, these maps are being continuously replaced by original maps of the stable cadastre.</p>
                 <p><b>Category:</b> Justice, legal system and public safety</p>
             </div>
             
         </div>
-        <div title="Voting" style="margin: 2%; min-width: 10%;">
+        <div title="Voting" style="padding: 2%; min-width: 10%;">
             <select name="Vote">
                 
                 <option value="0">0</option>
@@ -1868,26 +1822,23 @@ The same rules apply to him as a project-related development plan, which are als
             </select>
         </div>
     </div>
-    <hr />
-    <br />
-    <br />
-    <br />
     
-    <div style="display: flex; justify-content: space-around; align-items:start;">
-        <div title="Main dataset" style="margin: 2%; min-width: 20%; max-width:20%">
+    <div style="display: flex; justify-content: space-around; align-items:start; border-top: solid #128f8b">
+        <div title="Main dataset" style="padding: 2%; min-width: 20%; max-width:20%">
             <p><b>Title</b>: Cadastral map of the Czech Republic  - k.ú. Klecany</p>
             <p><b>Description:</b> Cadastral map is a binding state map series of large scale. Its contents are points of minor horizontal geodetic control, planimetry and map lettering. It can have the form of digital map, analogue map or digitized map. More: Cadastral Notice No. 26/2007 Sb. as amended.</p>
             <p><b>Category:</b> Justice, legal system and public safety</p>
         </div>
-        <div style="display: flex; overflow:auto; width: 60%;">
+        <div
+            style="padding: 2%; display: flex; overflow:auto; width: 60%; border-left: solid #128f8b; border-right: solid #128f8b">
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> B-Plan 51.34 Special area west of the B44, north of the A6, Sandhofer Weg right (IKEA)</p>
                 <p><b>Description:</b> The development plan contains the legally binding fixings for the urban planning order. In principle, the development plan must be developed from the land use plan. Development plan of the city of Mannheim, consisting of the surrounding area and a grid representation of the scanned plan in the format Geotiff.</p>
                 <p><b>Category:</b> Justice, legal system and public safety</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Register of land and buildings, district of Kościerzyna, Nowa Kiszewa, cadastral area 220604_2.0018 (POWIAT2206)</p>
                 <p><b>Description:</b> Land and buildings (real estate cataster) is a uniform for the country, regularly updated collection of information about land, buildings and premises, their owners and other natural or legal persons who control these lands, buildings and premises. The cadastral map is an element of the state geodetic and cardographic resource and is carried out at the level of counties. It is conducted in different scales 1:500 to 1:5000 depending on the content density for the whole country.
 The contents of the cadastral map are the following elements:
@@ -1897,19 +1848,19 @@ a) the names of the units of the main three-stage territorial division of the st
                 <p><b>Category:</b> Justice, legal system and public safety</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Register of land and buildings, Vołomin district, Nowe Grabie, cadastral area 143412_5.0005 (POWIAT1434)</p>
                 <p><b>Description:</b> Land and buildings (real estate cataster) is a uniform for the country, regularly updated collection of information about land, buildings and premises, their owners and other natural or legal persons who control these lands, buildings and premises. The cadastral map is an element of the state geodetic and cardographic resource and is carried out at the level of counties. It is conducted in different scales 1:500 to 1:5000 depending on the content density for the whole country. The contents of the cadastral map are the following elements: 1) Limits: States, units of basic three-stage territorial division of the State, cadastral units, divisions, parcels, 2) marking of border points, distinguishing points, the location of which has been determined in the appropriate manner and with the required accuracy, among them — points permanently stabilised in the field, 3) contours of land areas and their designation, 4) contours of soil classes and their designation, 5) contours of buildings, 6) numbers of cadastral parcels, 7) boundaries of statistical areas and their designation, 8) descriptive and informational data, and in particular: a) the names of the units of the main three-stage territorial division of the state, b) the designation of the cadastral unit and the perimeter, c) the names of streets, squares, gala, watercourses, reservoirs and other physiographic objects, d) public road numbers assigned on the basis of regulations on public roads, e) order and registration numbers of buildings.</p>
                 <p><b>Category:</b> Justice, legal system and public safety</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Register of land and buildings, Poznań district, municipality of Suchy Las, Jelonek, cadastral area 302115_2.0008</p>
                 <p><b>Description:</b> Land and buildings (real estate cataster) is a uniform for the country, regularly updated collection of information about land, buildings and premises, their owners and other natural or legal persons who control these lands, buildings and premises. The cadastral map is an element of the state geodetic and cardographic resource and is carried out at the level of counties. It is conducted in different scales 1:500 to 1:5000 depending on the content density for the whole country. The contents of the cadastral map are the following elements: 1) Limits: States, units of basic three-stage territorial division of the State, cadastral units, divisions, parcels, 2) marking of border points, distinguishing points, the location of which has been determined in the appropriate manner and with the required accuracy, among them — points permanently stabilised in the field, 3) contours of land areas and their designation, 4) contours of soil classes and their designation, 5) contours of buildings, 6) numbers of cadastral parcels, 7) boundaries of statistical areas and their designation, 8) descriptive and informational data, and in particular: a) the names of the units of the main three-stage territorial division of the state, b) the designation of the cadastral unit and the perimeter, c) the names of streets, squares, gala, watercourses, reservoirs and other physiographic objects, d) public road numbers assigned on the basis of regulations on public roads, e) order and registration numbers of buildings.</p>
                 <p><b>Category:</b> Justice, legal system and public safety</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Register of land and buildings, Minsk district, municipality, Mała Wieś, cadastral area 141212_5.0015 (POWIAT1412)</p>
                 <p><b>Description:</b> Land and buildings (real estate cataster) is a uniform for the country, regularly updated collection of information about land, buildings and premises, their owners and other natural or legal persons who control these lands, buildings and premises. The cadastral map is an element of the state geodetic and cardographic resource and is carried out at the level of counties. It is conducted in different scales 1:500 to 1:5000 depending on the content density for the whole country. The contents of the cadastral map are the following elements: 1) Limits: States, units of basic three-stage territorial division of the State, cadastral units, divisions, parcels, 2) marking of border points, distinguishing points, the location of which has been determined in the appropriate manner and with the required accuracy, among them — points permanently stabilised in the field, 3) contours of land areas and their designation, 4) contours of soil classes and their designation, 5) contours of buildings, 6) numbers of cadastral parcels, 7) boundaries of statistical areas and their designation, 8) descriptive and informational data, and in particular: a) the names of the units of the main three-stage territorial division of the state, b) the designation of the cadastral unit and the perimeter, c) the names of streets, squares, gala, watercourses, reservoirs and other physiographic objects, d) public road numbers assigned on the basis of regulations on public roads, e) order and registration numbers of buildings. Land and buildings (real estate cataster) is a uniform for the country, regularly updated collection of information about land, buildings and premises, their owners and other natural or legal persons who control these lands, buildings and premises. The cadastral map is an element of the state geodetic and cardographic resource and is carried out at the level of counties. It is conducted in different scales 1:500 to 1:5000 depending on the content density for the whole country.
 The contents of the cadastral map are the following elements:
@@ -1920,7 +1871,7 @@ a) the names of the units of the main three-stage territorial division of the st
             </div>
             
         </div>
-        <div title="Voting" style="margin: 2%; min-width: 10%;">
+        <div title="Voting" style="padding: 2%; min-width: 10%;">
             <select name="Vote">
                 
                 <option value="0">0</option>
@@ -1948,51 +1899,48 @@ a) the names of the units of the main three-stage territorial division of the st
             </select>
         </div>
     </div>
-    <hr />
-    <br />
-    <br />
-    <br />
     
-    <div style="display: flex; justify-content: space-around; align-items:start;">
-        <div title="Main dataset" style="margin: 2%; min-width: 20%; max-width:20%">
+    <div style="display: flex; justify-content: space-around; align-items:start; border-top: solid #128f8b">
+        <div title="Main dataset" style="padding: 2%; min-width: 20%; max-width:20%">
             <p><b>Title</b>: Soul Support Path, 1. Change</p>
             <p><b>Description:</b> The development plan contains the legally binding determinations for the urban planning system. In principle, the development plan must be developed from the land use plan.</p>
             <p><b>Category:</b> Agriculture, fisheries, forestry and food</p>
         </div>
-        <div style="display: flex; overflow:auto; width: 60%;">
+        <div
+            style="padding: 2%; display: flex; overflow:auto; width: 60%; border-left: solid #128f8b; border-right: solid #128f8b">
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Atomic feed) — Development plan — Gosewehr (origin plan), City of Sulingen</p>
                 <p><b>Description:</b> Atomic feed) — Development plan — Gosewehr (origin plan), City of Sulingen</p>
                 <p><b>Category:</b> Agriculture, fisheries, forestry and food</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> XPlanung dataset BPL “In the seventeenerle/Kyffhäuser/Teutoburger-/Föhrichstr. Feuerbach”</p>
                 <p><b>Description:</b> The development plan (BPL) contains the legally binding determinations for the urban planning order. In principle, the development plan must be developed from the land use plan. The available data is the development plan “Im Seventeenerle/Kyffhäuser-/Teutoburger-/Föhrichstr. Feuerbach” of the city of Stuttgart from XPlanung 5.0. Description: Development plan of the city of Stuttgart.</p>
                 <p><b>Category:</b> Agriculture, fisheries, forestry and food</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Atomic feed on the development plan 063, “Varel City, partly replaced by 11st Amendment”, 08. Amendment — City of Varel</p>
                 <p><b>Description:</b> Atomic feed on the development plan 063, “Varel City, partly replaced by 11st Amendment”, 08. Amendment — City of Varel</p>
                 <p><b>Category:</b> Agriculture, fisheries, forestry and food</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> INSPIRE dataset BPL ‘Northern breadth of rule (2nd amendment)’</p>
                 <p><b>Description:</b> Development plan ‘Herrschaftsbreite Nord (2nd Amendment)’ of the municipality of Illerkirchberg, transformed according to INSPIRE, based on an XPlanung data set in version 5.0.</p>
                 <p><b>Category:</b> Agriculture, fisheries, forestry and food</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> XPlanning data set BPL “Krettenbach 2nd Amendment”</p>
                 <p><b>Description:</b> The development plan (BPL) contains the legally binding settlements for the urban planning order. In principle, the development plan must be developed from the land use plan. The available data is the development plan “Krettenbach 2nd Amendment” of the municipality of Birenbach from XPlanung 5.0. Description: The development plan contains the legally binding fixings for the urban planning order. In principle, the development plan must be developed from the land use plan. Municipality Birenbach, QualifiedBPlan ‘Krettenbach 2. Amendment’ (2nd amendment) GEe.</p>
                 <p><b>Category:</b> Agriculture, fisheries, forestry and food</p>
             </div>
             
         </div>
-        <div title="Voting" style="margin: 2%; min-width: 10%;">
+        <div title="Voting" style="padding: 2%; min-width: 10%;">
             <select name="Vote">
                 
                 <option value="0">0</option>
@@ -2020,20 +1968,17 @@ a) the names of the units of the main three-stage territorial division of the st
             </select>
         </div>
     </div>
-    <hr />
-    <br />
-    <br />
-    <br />
     
-    <div style="display: flex; justify-content: space-around; align-items:start;">
-        <div title="Main dataset" style="margin: 2%; min-width: 20%; max-width:20%">
+    <div style="display: flex; justify-content: space-around; align-items:start; border-top: solid #128f8b">
+        <div title="Main dataset" style="padding: 2%; min-width: 20%; max-width:20%">
             <p><b>Title</b>: GTS Bulletin: PWRE25 EDZW - Pictorial information (Binary coded) (details are described in the abstract)</p>
             <p><b>Description:</b> The PWRE25 TTAAii Data Designators decode as: T1 (P): Pictorial information (Binary coded) T1T2 (PW): Wind A2 (E): 24 hours forecast T1ii (P25): 250 hPa (Remarks from Volume-C: WAFS W+T  H+24  FL 340 (ICAO C))</p>
             <p><b>Category:</b> Science and technology</p>
         </div>
-        <div style="display: flex; overflow:auto; width: 60%;">
+        <div
+            style="padding: 2%; display: flex; overflow:auto; width: 60%; border-left: solid #128f8b; border-right: solid #128f8b">
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> GTS Bulletin: IUKD31 EDZW - Observational data (Binary coded) - BUFR (details are described in the abstract)</p>
                 <p><b>Description:</b> The IUKD31 TTAAii Data Designators decode as: T1 (I): Observational data (Binary coded) - BUFR T1T2 (IU): Upper air T1T2A1 (IUK): Radio soundings from fixed land stations (up to 100 hPa) A2 (D): 90°E - 0° northern hemisphere(The bulletin collects reports from stations: 10238;Bergen;) (Remarks from Volume-C: High resolution 2 sec., BUFR309057)
 
@@ -2042,32 +1987,32 @@ at 00, 06, 12, 18 UTC</p>
                 <p><b>Category:</b> Science and technology</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> GTS Bulletin: ISHD77 AMDW - Observational data (Binary coded) - BUFR (details are described in the abstract)</p>
                 <p><b>Description:</b> The ISHD77 TTAAii Data Designators decode as: T1 (I): Observational data (Binary coded) - BUFR T1T2 (IS): Surface/sea level A2 (D): 90°E - 0° northern hemisphere (Remarks from Volume-C: NATIONAL AUTOMATIC SYNOP - NATIONAL PART)</p>
                 <p><b>Category:</b> Science and technology</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> GTS Bulletin: FQEN64 EDZW - Forecast (details are described in the abstract)</p>
                 <p><b>Description:</b> The FQEN64 TTAAii Data Designators decode as: T1 (F): Forecast T1T2 (FQ): Other shipping A1A2 (EN): Northern Europe (Remarks from Volume-C: Nautical warnings NCC HAMBURG (IN GERMAN))</p>
                 <p><b>Category:</b> Science and technology</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> GTS Bulletin: ISAH02 HKLT - Observational data (Binary coded) - BUFR (details are described in the abstract)</p>
                 <p><b>Description:</b> The ISAH02 TTAAii Data Designators decode as: T1 (I): Observational data (Binary coded) - BUFR T1T2 (IS): Surface/sea level T1T2A1 (ISA): Routinely scheduled observations for distribution from automatic (fixed or mobile) land stations (e.g. 0000, 0100, … or 0220, 0240, 0300, …, or 0715, 0745, ... UTC) A2 (H): 90°E - 0° tropical belt(The bulletin collects reports from stations: HKLT;) (Remarks from Volume-C: XXX)</p>
                 <p><b>Category:</b> Science and technology</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> GTS Bulletin: HTXP50 EDZW - Grid point information (GRIB) (details are described in the abstract)</p>
                 <p><b>Description:</b> The HTXP50 TTAAii Data Designators decode as: T1 (H): Grid point information (GRIB) T1T2 (HT): Temperature A1 (X): Global Area (area not definable) A2 (P): 132 hours forecast T1ii (H50): 500 hPa (Remarks from Volume-C: H+ 132 (GLOBAL MODEL) TEMPERATURE 500 HPA)</p>
                 <p><b>Category:</b> Science and technology</p>
             </div>
             
         </div>
-        <div title="Voting" style="margin: 2%; min-width: 10%;">
+        <div title="Voting" style="padding: 2%; min-width: 10%;">
             <select name="Vote">
                 
                 <option value="0">0</option>
@@ -2095,51 +2040,48 @@ at 00, 06, 12, 18 UTC</p>
             </select>
         </div>
     </div>
-    <hr />
-    <br />
-    <br />
-    <br />
     
-    <div style="display: flex; justify-content: space-around; align-items:start;">
-        <div title="Main dataset" style="margin: 2%; min-width: 20%; max-width:20%">
+    <div style="display: flex; justify-content: space-around; align-items:start; border-top: solid #128f8b">
+        <div title="Main dataset" style="padding: 2%; min-width: 20%; max-width:20%">
             <p><b>Title</b>: B-Plan 493 Im Schwalbenloch Süd (WMS)</p>
             <p><b>Description:</b> Development plans of the city of Karlsruhe as a Web Map Service (WMS).</p>
             <p><b>Category:</b> Agriculture, fisheries, forestry and food</p>
         </div>
-        <div style="display: flex; overflow:auto; width: 60%;">
+        <div
+            style="padding: 2%; display: flex; overflow:auto; width: 60%; border-left: solid #128f8b; border-right: solid #128f8b">
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> WMS XPlanung BPL “Riedwiesen (3 rd change)”</p>
                 <p><b>Description:</b> WMS service of the development plan “Riedwiesen (3 rd change)” of the city of Aichtal from XPlanung 5.0. Description: Riedwiesen (3 rd amendment); Map available only for northern areas, but scope as a whole (text); Usage: Commercial area.</p>
                 <p><b>Category:</b> Agriculture, fisheries, forestry and food</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> XPlanning data set BPL "WA/WR "Krautgartenäcker, Lochstück, Nußbaumäcker" - 7th amendment"</p>
                 <p><b>Description:</b> The zoning plan (BPL) contains the legally binding stipulations for the urban planning order. In principle, the development plan must be developed from the land use plan. The available data are the development plan "WA/WR "Krautgartenäcker, Lochstück, Nußbaumäcker" - 7th amendment" of the town of Stutensee from XPlanung 5.0. Description: Origin B plan (=Resetting - replaces Origin B plan) and B plans 1st amendment or addition to 6th amendment available.</p>
                 <p><b>Category:</b> Agriculture, fisheries, forestry and food</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> WMS INSPIRE BPL Motzerstraße (Flst 432 and 433-1)</p>
                 <p><b>Description:</b> WMS service of the urban development plan “Motzerstraße (Flst 432 and 433-1) — Construction Line Lifting” of the municipality of Benningen am Neckar, which was transformed according to INSPIRE, based on an XPlanung dataset in version 5.0.</p>
                 <p><b>Category:</b> Agriculture, fisheries, forestry and food</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Inspire B-Plan 2-086 Corner area Karlsruher Strasse, Komturstraße, Waldkircher Straße (formerly Omnia area) — WMS</p>
                 <p><b>Description:</b> Inspire-compliant development plan 2-086 of the city of Freiburg as a Web Map Service (OGC:WMS).</p>
                 <p><b>Category:</b> Agriculture, fisheries, forestry and food</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Z – Herds, 2nd Amendment/Z_B_2015(WFS)</p>
                 <p><b>Description:</b> Surround the development plans of the city of Villingen-Schwenningen as a Web Feature Service (WFS)</p>
                 <p><b>Category:</b> Agriculture, fisheries, forestry and food</p>
             </div>
             
         </div>
-        <div title="Voting" style="margin: 2%; min-width: 10%;">
+        <div title="Voting" style="padding: 2%; min-width: 10%;">
             <select name="Vote">
                 
                 <option value="0">0</option>
@@ -2167,51 +2109,48 @@ at 00, 06, 12, 18 UTC</p>
             </select>
         </div>
     </div>
-    <hr />
-    <br />
-    <br />
-    <br />
     
-    <div style="display: flex; justify-content: space-around; align-items:start;">
-        <div title="Main dataset" style="margin: 2%; min-width: 20%; max-width:20%">
+    <div style="display: flex; justify-content: space-around; align-items:start; border-top: solid #128f8b">
+        <div title="Main dataset" style="padding: 2%; min-width: 20%; max-width:20%">
             <p><b>Title</b>: WMS XPlanung BPL “Cold Air Snow — Winn Pipe Path/Asmus Blade”</p>
             <p><b>Description:</b> WMS service of the development plan “Cold Air Snow — Gewann Rohrweg/Asmuskblade” of the city of Bad Wimpfen from XPlanung 5.0. Description:  Usage: GR.</p>
             <p><b>Category:</b> Agriculture, fisheries, forestry and food</p>
         </div>
-        <div style="display: flex; overflow:auto; width: 60%;">
+        <div
+            style="padding: 2%; display: flex; overflow:auto; width: 60%; border-left: solid #128f8b; border-right: solid #128f8b">
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Inspire data set BPL “Schafhof II and Schafhof III (amendment)”</p>
                 <p><b>Description:</b> Building plan “Schafhof II and Schafhof III (Change)” of the city of Kirchheim under Teck based on an XPlanung dataset in version 5.0.</p>
                 <p><b>Category:</b> Agriculture, fisheries, forestry and food</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> WMS INSPIRE BPL On the go</p>
                 <p><b>Description:</b> WMS service of the urban development plan “Auf dem Lau” of the city of Meßstetten, transformed according to INSPIRE, based on an XPlanung dataset in version 5.0.</p>
                 <p><b>Category:</b> Agriculture, fisheries, forestry and food</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> WFS XPlanung BPL “The Lower Ösch Amendment 2”</p>
                 <p><b>Description:</b> WFS service of the development plan “Der Lower Ösch Amendment 2” of the town of Stockach from XPlanung 5.0. Description: The building area is designated as WA..</p>
                 <p><b>Category:</b> Agriculture, fisheries, forestry and food</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Inspire data set BPL “Toe tacker — 3 rd change”</p>
                 <p><b>Description:</b> According to INSPIRE transformed development plan “Zehentacker — 3 rd change” of the city of Heubach based on an XPlanung dataset in version 5.0.</p>
                 <p><b>Category:</b> Agriculture, fisheries, forestry and food</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> WMS XPlanung BPL “Riedwiesen (3 rd change)”</p>
                 <p><b>Description:</b> WMS service of the development plan “Riedwiesen (3 rd change)” of the city of Aichtal from XPlanung 5.0. Description: Riedwiesen (3 rd amendment); Map available only for northern areas, but scope as a whole (text); Usage: Commercial area.</p>
                 <p><b>Category:</b> Agriculture, fisheries, forestry and food</p>
             </div>
             
         </div>
-        <div title="Voting" style="margin: 2%; min-width: 10%;">
+        <div title="Voting" style="padding: 2%; min-width: 10%;">
             <select name="Vote">
                 
                 <option value="0">0</option>
@@ -2239,44 +2178,41 @@ at 00, 06, 12, 18 UTC</p>
             </select>
         </div>
     </div>
-    <hr />
-    <br />
-    <br />
-    <br />
     
-    <div style="display: flex; justify-content: space-around; align-items:start;">
-        <div title="Main dataset" style="margin: 2%; min-width: 20%; max-width:20%">
+    <div style="display: flex; justify-content: space-around; align-items:start; border-top: solid #128f8b">
+        <div title="Main dataset" style="padding: 2%; min-width: 20%; max-width:20%">
             <p><b>Title</b>: Hohenaltheim: Employees subject to social security contributions</p>
             <p><b>Description:</b> Employees subject to social security contributions: Municipalities,Employees at the place of work/employees at the place of residence,Economic sectors, Reference dates</p>
             <p><b>Category:</b> Economy and finance</p>
         </div>
-        <div style="display: flex; overflow:auto; width: 60%;">
+        <div
+            style="padding: 2%; display: flex; overflow:auto; width: 60%; border-left: solid #128f8b; border-right: solid #128f8b">
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Kutzenhausen: Employees subject to social security contributions</p>
                 <p><b>Description:</b> Employees subject to social security contributions: Municipalities,Employees at the place of work/employees at the place of residence,Economic sectors, Reference dates</p>
                 <p><b>Category:</b> Economy and finance</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Rottal-Inn Lkr: Employees subject to social security contributions</p>
                 <p><b>Description:</b> Employees subject to social security contributions: Municipalities,Employees at the place of work/employees at the place of residence,Stichtage</p>
                 <p><b>Category:</b> Economy and finance</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Nassenfels, M: Employees subject to social security contributions</p>
                 <p><b>Description:</b> Municipalities,Employees at the place of work/employees at the place of residence,Economic sectors, Reference dates</p>
                 <p><b>Category:</b> Economy and finance</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Index of sales in commerce in the Basque Country by quarter and historical territory Gross data. Current prices.</p>
                 <p><b>Description:</b> The operation Trade Index (CI) offers a set of indicators of a conjunctural nature of the evolution of sales and of the personnel employed in the Trade sector in the Basque Country, both at current prices and at constant prices. Sales are also estimated by Historical Territory. The trade sector includes the sale and repair of motor vehicles, wholesale trade (agricultural and food products, other non-food consumer products, semi-finished and scrap products and machinery and equipment) and retail trade (food, rest and automotive fuel). Divisions 45, 46 and 47 of Section G of the National Classification of Economic Activities, CNAE-2009.Corrected indices of calendar effects provide comparable estimates in year-on-year terms, while seasonally adjusted indices are provided for quarter-on-quarter comparisons.</p>
                 <p><b>Category:</b> Economy and finance</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Persons between 15 and 74 years of age born abroad, depending on their knowledge of spoken Spanish, before their arrival in Spain, by autonomous community and city. EPA (API identifier: /tpx/MercadoLaboral_1403/EPA_M_7986/a2021_8674/l0/02002.px)</p>
                 <p><b>Description:</b> Table of INEBase
 Persons between 15 and 74 years of age born abroad, depending on their knowledge of spoken Spanish, before their arrival in Spain, by autonomous community and city. Economically Active Population Survey</p>
@@ -2284,7 +2220,7 @@ Persons between 15 and 74 years of age born abroad, depending on their knowledge
             </div>
             
         </div>
-        <div title="Voting" style="margin: 2%; min-width: 10%;">
+        <div title="Voting" style="padding: 2%; min-width: 10%;">
             <select name="Vote">
                 
                 <option value="0">0</option>
@@ -2312,26 +2248,23 @@ Persons between 15 and 74 years of age born abroad, depending on their knowledge
             </select>
         </div>
     </div>
-    <hr />
-    <br />
-    <br />
-    <br />
     
-    <div style="display: flex; justify-content: space-around; align-items:start;">
-        <div title="Main dataset" style="margin: 2%; min-width: 20%; max-width:20%">
+    <div style="display: flex; justify-content: space-around; align-items:start; border-top: solid #128f8b">
+        <div title="Main dataset" style="padding: 2%; min-width: 20%; max-width:20%">
             <p><b>Title</b>: Registered employed population between 35 and 44 years of age. Annual average. Regions of the Canary Islands. 2016. Thematic map of coroplets of 5 intervals per quantiles</p>
             <p><b>Description:</b> This thematic map of coroplets represents the labor indicator __Registered salaried population from 35 to 44 years of age. Annual average__, calculated as 'Employed population registered in the reference period with ages from 35 to 44 years' for the territorial delimitation of __comarcas__ of the Canary Islands, based on administrative population and labour market records in the reference quarter.</p>
             <p><b>Category:</b> Economy and finance</p>
         </div>
-        <div style="display: flex; overflow:auto; width: 60%;">
+        <div
+            style="padding: 2%; display: flex; overflow:auto; width: 60%; border-left: solid #128f8b; border-right: solid #128f8b">
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Advice centres in the district of Vorpommern-Greifswald</p>
                 <p><b>Description:</b> This dataset contains facilities in the district of Vorpommern-Greifswald, which offer different types of support and assistance.</p>
                 <p><b>Category:</b> Economy and finance</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Collection of Greek National Spatial Plans</p>
                 <p><b>Description:</b> Dataset, 268KB, 5 txt files, national spatial plans (general, aquaculture, tourism, industry, RES, detention facilities)
 
@@ -2339,7 +2272,7 @@ This dataset has been created within the framework of the European Language Reso
                 <p><b>Category:</b> Economy and finance</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Register of land and buildings, district of Kościerzyna, Nowa Kiszewa, cadastral area 220604_2.0018 (POWIAT2206)</p>
                 <p><b>Description:</b> Land and buildings (real estate cataster) is a uniform for the country, regularly updated collection of information about land, buildings and premises, their owners and other natural or legal persons who control these lands, buildings and premises. The cadastral map is an element of the state geodetic and cardographic resource and is carried out at the level of counties. It is conducted in different scales 1:500 to 1:5000 depending on the content density for the whole country.
 The contents of the cadastral map are the following elements:
@@ -2349,20 +2282,20 @@ a) the names of the units of the main three-stage territorial division of the st
                 <p><b>Category:</b> Justice, legal system and public safety</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Register of land and buildings, Vołomin district, Nowe Grabie, cadastral area 143412_5.0005 (POWIAT1434)</p>
                 <p><b>Description:</b> Land and buildings (real estate cataster) is a uniform for the country, regularly updated collection of information about land, buildings and premises, their owners and other natural or legal persons who control these lands, buildings and premises. The cadastral map is an element of the state geodetic and cardographic resource and is carried out at the level of counties. It is conducted in different scales 1:500 to 1:5000 depending on the content density for the whole country. The contents of the cadastral map are the following elements: 1) Limits: States, units of basic three-stage territorial division of the State, cadastral units, divisions, parcels, 2) marking of border points, distinguishing points, the location of which has been determined in the appropriate manner and with the required accuracy, among them — points permanently stabilised in the field, 3) contours of land areas and their designation, 4) contours of soil classes and their designation, 5) contours of buildings, 6) numbers of cadastral parcels, 7) boundaries of statistical areas and their designation, 8) descriptive and informational data, and in particular: a) the names of the units of the main three-stage territorial division of the state, b) the designation of the cadastral unit and the perimeter, c) the names of streets, squares, gala, watercourses, reservoirs and other physiographic objects, d) public road numbers assigned on the basis of regulations on public roads, e) order and registration numbers of buildings.</p>
                 <p><b>Category:</b> Justice, legal system and public safety</p>
             </div>
             
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> Network of underground pipelines of the Community of the Region of Pamplona</p>
                 <p><b>Description:</b> Files containing the information that the Community of the Region of Pamplona deems necessary for the coordination of underground pipelines and works design studies.</p>
                 <p><b>Category:</b> Economy and finance</p>
             </div>
             
         </div>
-        <div title="Voting" style="margin: 2%; min-width: 10%;">
+        <div title="Voting" style="padding: 2%; min-width: 10%;">
             <select name="Vote">
                 
                 <option value="0">0</option>
@@ -2390,10 +2323,6 @@ a) the names of the units of the main three-stage territorial division of the st
             </select>
         </div>
     </div>
-    <hr />
-    <br />
-    <br />
-    <br />
     
     <div style="display: flex; justify-content:center">
         <label style="margin-right: 5em">Your comments and suggestions (optional)</label>

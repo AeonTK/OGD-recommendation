@@ -10,59 +10,82 @@
         p {
             word-wrap: break-word;
         }
+
+        body {
+            font-family: "Inter", sans-serif;
+            font-optical-sizing: auto;
+            font-style: normal;
+            background-color: #F5FBFF;
+        }
+
+        #bordered {
+            border-color: #128f8b;
+            border-width: 5em;
+            border: solid;
+        }
     </style>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
 </head>
 
-<body>
-    <div style="display: flex; justify-content:center">
-        <h1>A survey about recommender system for improved data findability in open government data portals</h1>
+<body style="font">
+    <h1 style="padding-top: 1em; padding-left: 1em; padding-bottom: 1em">Survey about recommender system for improved data findability in open government data portals</h1>
+    <div style="display: flex; justify-content:start; padding-left: 2em; padding-right:3em">
+        <p>
+            Dear Participant, <br />
+            Finding relevant datasets in open government data (OGD) portals can be challenging due to the vast amount of
+            available data. The objective of my research is to address this issue by developing a
+            recommendation system that suggests relevant datasets based on a selected dataset. This survey aims to
+            evaluate the effectiveness of my proposed recommendation method. In the survey, the
+            <b>"Main Dataset"</b> column displays the selected dataset, while the <b>"Recommended Datasets"</b> column
+            provides metadata about datasets suggested by our system.<br/>
+            I kindly ask you to rate the quality of these recommendations under the <b>"Rating"</b> column. <i><b>(Please
+                note that you need to rate at least 10 recommendations to submit)</b></i><br/>
+            After completing the survey, please use the submit button, which will redirect you to email your responses
+            to me.<br />
+            Thank you very much for your participation!
+        </p>
     </div>
-    <div style="display: flex; justify-content:center">
-        <p>The research suggests that it is difficult for users of open government data (OGD) portals to find the
-            datasets
-            they are interested in. The objective of our research is to contribute to the solution of this problem by
-            developing a recommendation system for datasets. This recommendation system will output possibly relevant
-            datasets based on the chosen dataset.
-            This survey is meant to evaluate the effectiveness of this recommendation method approach. <b>Recommended
-                datasets</b> column contains metadata about the datasets that are recommended to user based upon the
-            dataset
-            under <b>Main dataset</b> column. We ask you to rate the quality of recommendation under the <b>Rating</b>
-            column and send results to us with <b>submit</b> button which will redirect you to <b>email</b> results to us.
-            <b>Thank you!</b></p>
-    </div>
-     <div style="display: flex; justify-content:center">
-        <p><b>Please note that you need to rate at least 10 recommendations to submit</b></p>
+    <div style="display: flex; justify-content:end; padding-left: 2em; padding-right:3em; padding-bottom: 3em">
+        <p>
+        Ramil Huseynov <br />
+        Master's Student in Computer Science</p>
     </div>
 
-    <div style="display: flex; justify-content: space-around; align-items: center;">
-        <div title="Main dataset" style="margin: 2%; min-width: 20%; max-width:20%">
+    <div style="display: flex; justify-content: space-around; align-items: center; border-top: solid #128f8b">
+        <div title="Main dataset" style="padding: 2%; min-width: 20%; max-width:20%">
             <h2>Main dataset</h2>
         </div>
-        <div style="display: flex; overflow:auto; width: 60%;">
+        <div
+            style="padding: 2%; display: flex; overflow:auto; width: 60%; border-left: solid #128f8b; border-right: solid #128f8b">
             <h2>Recommended datasets</h2>
         </div>
-        <div title="Rating" style="margin: 2%; min-width: 10%;">
+        <div title="Rating" style="padding: 2%; min-width: 10%;">
             <h2>Rating</h2>
         </div>
     </div>
-    <hr />
     {% for item in survey %}
-    <div style="display: flex; justify-content: space-around; align-items:start;">
-        <div title="Main dataset" style="margin: 2%; min-width: 20%; max-width:20%">
+    <div style="display: flex; justify-content: space-around; align-items:start; border-top: solid #128f8b">
+        <div title="Main dataset" style="padding: 2%; min-width: 20%; max-width:20%">
             <p><b>Title</b>: {{item[0]["title.en"]}}</p>
             <p><b>Description:</b> {{item[0]["description.en"]}}</p>
             <p><b>Category:</b> {{item[0]["category"]}}</p>
         </div>
-        <div style="display: flex; overflow:auto; width: 60%;">
+        <div
+            style="padding: 2%; display: flex; overflow:auto; width: 60%; border-left: solid #128f8b; border-right: solid #128f8b">
             {% for dataset in item[1] %}
-            <div title="dataset" style="margin: 1%; min-width: 20em;">
+            <div title="dataset" style="padding: 1%; min-width: 20em;">
                 <p><b>Title:</b> {{dataset["title.en"]}}</p>
                 <p><b>Description:</b> {{dataset["description.en"]}}</p>
                 <p><b>Category:</b> {{dataset["category"]}}</p>
             </div>
             {% endfor %}
         </div>
-        <div title="Voting" style="margin: 2%; min-width: 10%;">
+        <div title="Voting" style="padding: 2%; min-width: 10%;">
             <select name="Vote">
                 {% for i in range(11) %}
                 <option value="{{i}}">{{i}}</option>
@@ -70,10 +93,6 @@
             </select>
         </div>
     </div>
-    <hr />
-    <br />
-    <br />
-    <br />
     {% endfor %}
     <div style="display: flex; justify-content:center">
         <label style="margin-right: 5em">Your comments and suggestions (optional)</label>
