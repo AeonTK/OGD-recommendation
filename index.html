@@ -7,6 +7,70 @@
         OGD recommendation results survey
     </title>
     <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        :root {
+            --select-border: #128f8b;
+            --select-focus: blue;
+            --select-arrow: var(--select-border);
+        }
+
+        select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background-color: transparent;
+            border: none;
+            padding: 0 1em 0 0;
+            margin: 0;
+            width: 100%;
+            font-family: inherit;
+            font-size: inherit;
+            cursor: inherit;
+            line-height: inherit;
+            z-index: 1;
+            outline: none;
+        }
+
+        select::-ms-expand {
+            display: none;
+        }
+
+        .select {
+            display: grid;
+            grid-template-areas: "select";
+            align-items: center;
+            position: relative;
+            min-width: 15ch;
+            max-width: 30ch;
+            border: 1px solid var(--select-border);
+            border-radius: 0.25em;
+            padding: 0.25em 0.5em;
+            font-size: 1.25rem;
+            cursor: pointer;
+            line-height: 1.1;
+            background-color: #fff;
+            background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
+        }
+
+        .select select,
+        .select::after {
+            grid-area: select;
+        }
+
+        .select::after {
+            content: "";
+            width: 0.8em;
+            height: 0.5em;
+            background-color: var(--select-arrow);
+            clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+            justify-self: end;
+        }
+
         p {
             word-wrap: break-word;
         }
@@ -23,6 +87,59 @@
             border-width: 5em;
             border: solid;
         }
+
+        textarea {
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+
+        textarea {
+            padding: 10px;
+            max-width: 100%;
+            line-height: 1.5;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-shadow: 1px 1px 1px #999;
+        }
+
+        @media screen and (-ms-high-contrast: active) {
+            button.button {
+                border: 2px solid currentcolor;
+            }
+        }
+
+        button.button {
+            border: none;
+            background-color: transparent;
+            font-family: inherit;
+            padding: 0;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            align-self: start;
+            background-color: #128f8b;
+            color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
+            padding: 0.25em 0.75em;
+            min-width: 10ch;
+            min-height: 44px;
+            text-align: center;
+            line-height: 1.1;
+            transition: 220ms all ease-in-out;
+        }
+
+        button.button:hover,
+        button.button:active {
+            background-color: #127c79;
+        }
+
+        button.button:focus {
+            outline-style: solid;
+            outline-color: transparent;
+            box-shadow: 0 0 0 4px #0f706d;
+        }
     </style>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,7 +150,8 @@
 </head>
 
 <body style="font">
-    <h1 style="padding-top: 1em; padding-left: 1em; padding-bottom: 1em">Survey about recommender system for improved data findability in open government data portals</h1>
+    <h1 style="padding-top: 1em; padding-left: 1em; padding-bottom: 1em">Survey about recommender system for improved
+        data findability in open government data portals</h1>
     <div style="display: flex; justify-content:start; padding-left: 2em; padding-right:3em">
         <p>
             Dear Participant, <br />
@@ -42,9 +160,10 @@
             recommendation system that suggests relevant datasets based on a selected dataset. This survey aims to
             evaluate the effectiveness of my proposed recommendation method. In the survey, the
             <b>"Main Dataset"</b> column displays the selected dataset, while the <b>"Recommended Datasets"</b> column
-            provides metadata about datasets suggested by our system.<br/>
-            I kindly ask you to rate the quality of these recommendations under the <b>"Rating"</b> column. <i><b>(Please
-                note that you need to rate at least 10 recommendations to submit)</b></i><br/>
+            provides metadata about datasets suggested by our system.<br />
+            I kindly ask you to rate the quality of these recommendations under the <b>"Rating"</b> column.
+            <i><b>(Please
+                    note that you need to rate at least 10 recommendations to submit)</b></i><br />
             After completing the survey, please use the submit button, which will redirect you to email your responses
             to me.<br />
             Thank you very much for your participation!
@@ -52,8 +171,8 @@
     </div>
     <div style="display: flex; justify-content:end; padding-left: 2em; padding-right:3em; padding-bottom: 3em">
         <p>
-        Ramil Huseynov <br />
-        Master's Student in Software Engineering</p>
+            Ramil Huseynov <br />
+            Master's Student in Software Engineering</p>
     </div>
 
     <div style="display: flex; justify-content: space-around; align-items: center; border-top: solid #128f8b">
@@ -109,15 +228,17 @@
             </div>
             
         </div>
-        <div title="Voting" style="padding: 2%; min-width: 10%;">
-            <select name="Vote">
-                <option value="0">Rate</option>
-                <option value="1">Very irrelevant</option>
-                <option value="2">Irrelevant</option>
-                <option value="3">Neutral</option>
-                <option value="4">Relevant</option>
-                <option value="5">Very relevant</option>
-            </select>
+        <div title="Voting" style="padding-top: 2%; min-width: 10%;">
+            <div class="select">
+                <select name="Vote">
+                    <option value="0">Rate</option>
+                    <option value="1">Very irrelevant</option>
+                    <option value="2">Irrelevant</option>
+                    <option value="3">Neutral</option>
+                    <option value="4">Relevant</option>
+                    <option value="5">Very relevant</option>
+                </select>
+            </div>
         </div>
     </div>
     
@@ -161,15 +282,17 @@
             </div>
             
         </div>
-        <div title="Voting" style="padding: 2%; min-width: 10%;">
-            <select name="Vote">
-                <option value="0">Rate</option>
-                <option value="1">Very irrelevant</option>
-                <option value="2">Irrelevant</option>
-                <option value="3">Neutral</option>
-                <option value="4">Relevant</option>
-                <option value="5">Very relevant</option>
-            </select>
+        <div title="Voting" style="padding-top: 2%; min-width: 10%;">
+            <div class="select">
+                <select name="Vote">
+                    <option value="0">Rate</option>
+                    <option value="1">Very irrelevant</option>
+                    <option value="2">Irrelevant</option>
+                    <option value="3">Neutral</option>
+                    <option value="4">Relevant</option>
+                    <option value="5">Very relevant</option>
+                </select>
+            </div>
         </div>
     </div>
     
@@ -213,15 +336,17 @@
             </div>
             
         </div>
-        <div title="Voting" style="padding: 2%; min-width: 10%;">
-            <select name="Vote">
-                <option value="0">Rate</option>
-                <option value="1">Very irrelevant</option>
-                <option value="2">Irrelevant</option>
-                <option value="3">Neutral</option>
-                <option value="4">Relevant</option>
-                <option value="5">Very relevant</option>
-            </select>
+        <div title="Voting" style="padding-top: 2%; min-width: 10%;">
+            <div class="select">
+                <select name="Vote">
+                    <option value="0">Rate</option>
+                    <option value="1">Very irrelevant</option>
+                    <option value="2">Irrelevant</option>
+                    <option value="3">Neutral</option>
+                    <option value="4">Relevant</option>
+                    <option value="5">Very relevant</option>
+                </select>
+            </div>
         </div>
     </div>
     
@@ -269,15 +394,17 @@ a) the names of the units of the main three-stage territorial division of the st
             </div>
             
         </div>
-        <div title="Voting" style="padding: 2%; min-width: 10%;">
-            <select name="Vote">
-                <option value="0">Rate</option>
-                <option value="1">Very irrelevant</option>
-                <option value="2">Irrelevant</option>
-                <option value="3">Neutral</option>
-                <option value="4">Relevant</option>
-                <option value="5">Very relevant</option>
-            </select>
+        <div title="Voting" style="padding-top: 2%; min-width: 10%;">
+            <div class="select">
+                <select name="Vote">
+                    <option value="0">Rate</option>
+                    <option value="1">Very irrelevant</option>
+                    <option value="2">Irrelevant</option>
+                    <option value="3">Neutral</option>
+                    <option value="4">Relevant</option>
+                    <option value="5">Very relevant</option>
+                </select>
+            </div>
         </div>
     </div>
     
@@ -321,15 +448,17 @@ a) the names of the units of the main three-stage territorial division of the st
             </div>
             
         </div>
-        <div title="Voting" style="padding: 2%; min-width: 10%;">
-            <select name="Vote">
-                <option value="0">Rate</option>
-                <option value="1">Very irrelevant</option>
-                <option value="2">Irrelevant</option>
-                <option value="3">Neutral</option>
-                <option value="4">Relevant</option>
-                <option value="5">Very relevant</option>
-            </select>
+        <div title="Voting" style="padding-top: 2%; min-width: 10%;">
+            <div class="select">
+                <select name="Vote">
+                    <option value="0">Rate</option>
+                    <option value="1">Very irrelevant</option>
+                    <option value="2">Irrelevant</option>
+                    <option value="3">Neutral</option>
+                    <option value="4">Relevant</option>
+                    <option value="5">Very relevant</option>
+                </select>
+            </div>
         </div>
     </div>
     
@@ -373,15 +502,17 @@ a) the names of the units of the main three-stage territorial division of the st
             </div>
             
         </div>
-        <div title="Voting" style="padding: 2%; min-width: 10%;">
-            <select name="Vote">
-                <option value="0">Rate</option>
-                <option value="1">Very irrelevant</option>
-                <option value="2">Irrelevant</option>
-                <option value="3">Neutral</option>
-                <option value="4">Relevant</option>
-                <option value="5">Very relevant</option>
-            </select>
+        <div title="Voting" style="padding-top: 2%; min-width: 10%;">
+            <div class="select">
+                <select name="Vote">
+                    <option value="0">Rate</option>
+                    <option value="1">Very irrelevant</option>
+                    <option value="2">Irrelevant</option>
+                    <option value="3">Neutral</option>
+                    <option value="4">Relevant</option>
+                    <option value="5">Very relevant</option>
+                </select>
+            </div>
         </div>
     </div>
     
@@ -425,15 +556,17 @@ a) the names of the units of the main three-stage territorial division of the st
             </div>
             
         </div>
-        <div title="Voting" style="padding: 2%; min-width: 10%;">
-            <select name="Vote">
-                <option value="0">Rate</option>
-                <option value="1">Very irrelevant</option>
-                <option value="2">Irrelevant</option>
-                <option value="3">Neutral</option>
-                <option value="4">Relevant</option>
-                <option value="5">Very relevant</option>
-            </select>
+        <div title="Voting" style="padding-top: 2%; min-width: 10%;">
+            <div class="select">
+                <select name="Vote">
+                    <option value="0">Rate</option>
+                    <option value="1">Very irrelevant</option>
+                    <option value="2">Irrelevant</option>
+                    <option value="3">Neutral</option>
+                    <option value="4">Relevant</option>
+                    <option value="5">Very relevant</option>
+                </select>
+            </div>
         </div>
     </div>
     
@@ -477,15 +610,17 @@ a) the names of the units of the main three-stage territorial division of the st
             </div>
             
         </div>
-        <div title="Voting" style="padding: 2%; min-width: 10%;">
-            <select name="Vote">
-                <option value="0">Rate</option>
-                <option value="1">Very irrelevant</option>
-                <option value="2">Irrelevant</option>
-                <option value="3">Neutral</option>
-                <option value="4">Relevant</option>
-                <option value="5">Very relevant</option>
-            </select>
+        <div title="Voting" style="padding-top: 2%; min-width: 10%;">
+            <div class="select">
+                <select name="Vote">
+                    <option value="0">Rate</option>
+                    <option value="1">Very irrelevant</option>
+                    <option value="2">Irrelevant</option>
+                    <option value="3">Neutral</option>
+                    <option value="4">Relevant</option>
+                    <option value="5">Very relevant</option>
+                </select>
+            </div>
         </div>
     </div>
     
@@ -581,15 +716,17 @@ The data published here is based on the figures communicated by the districts an
             </div>
             
         </div>
-        <div title="Voting" style="padding: 2%; min-width: 10%;">
-            <select name="Vote">
-                <option value="0">Rate</option>
-                <option value="1">Very irrelevant</option>
-                <option value="2">Irrelevant</option>
-                <option value="3">Neutral</option>
-                <option value="4">Relevant</option>
-                <option value="5">Very relevant</option>
-            </select>
+        <div title="Voting" style="padding-top: 2%; min-width: 10%;">
+            <div class="select">
+                <select name="Vote">
+                    <option value="0">Rate</option>
+                    <option value="1">Very irrelevant</option>
+                    <option value="2">Irrelevant</option>
+                    <option value="3">Neutral</option>
+                    <option value="4">Relevant</option>
+                    <option value="5">Very relevant</option>
+                </select>
+            </div>
         </div>
     </div>
     
@@ -635,15 +772,17 @@ Other education-related indicators have been calculated from Census 2021 and are
             </div>
             
         </div>
-        <div title="Voting" style="padding: 2%; min-width: 10%;">
-            <select name="Vote">
-                <option value="0">Rate</option>
-                <option value="1">Very irrelevant</option>
-                <option value="2">Irrelevant</option>
-                <option value="3">Neutral</option>
-                <option value="4">Relevant</option>
-                <option value="5">Very relevant</option>
-            </select>
+        <div title="Voting" style="padding-top: 2%; min-width: 10%;">
+            <div class="select">
+                <select name="Vote">
+                    <option value="0">Rate</option>
+                    <option value="1">Very irrelevant</option>
+                    <option value="2">Irrelevant</option>
+                    <option value="3">Neutral</option>
+                    <option value="4">Relevant</option>
+                    <option value="5">Very relevant</option>
+                </select>
+            </div>
         </div>
     </div>
     
@@ -689,15 +828,17 @@ Other education-related indicators have been calculated from Census 2021 and are
             </div>
             
         </div>
-        <div title="Voting" style="padding: 2%; min-width: 10%;">
-            <select name="Vote">
-                <option value="0">Rate</option>
-                <option value="1">Very irrelevant</option>
-                <option value="2">Irrelevant</option>
-                <option value="3">Neutral</option>
-                <option value="4">Relevant</option>
-                <option value="5">Very relevant</option>
-            </select>
+        <div title="Voting" style="padding-top: 2%; min-width: 10%;">
+            <div class="select">
+                <select name="Vote">
+                    <option value="0">Rate</option>
+                    <option value="1">Very irrelevant</option>
+                    <option value="2">Irrelevant</option>
+                    <option value="3">Neutral</option>
+                    <option value="4">Relevant</option>
+                    <option value="5">Very relevant</option>
+                </select>
+            </div>
         </div>
     </div>
     
@@ -741,15 +882,17 @@ Other education-related indicators have been calculated from Census 2021 and are
             </div>
             
         </div>
-        <div title="Voting" style="padding: 2%; min-width: 10%;">
-            <select name="Vote">
-                <option value="0">Rate</option>
-                <option value="1">Very irrelevant</option>
-                <option value="2">Irrelevant</option>
-                <option value="3">Neutral</option>
-                <option value="4">Relevant</option>
-                <option value="5">Very relevant</option>
-            </select>
+        <div title="Voting" style="padding-top: 2%; min-width: 10%;">
+            <div class="select">
+                <select name="Vote">
+                    <option value="0">Rate</option>
+                    <option value="1">Very irrelevant</option>
+                    <option value="2">Irrelevant</option>
+                    <option value="3">Neutral</option>
+                    <option value="4">Relevant</option>
+                    <option value="5">Very relevant</option>
+                </select>
+            </div>
         </div>
     </div>
     
@@ -817,15 +960,17 @@ Statistical Office for Hamburg and Schleswig-Holstein</p>
             </div>
             
         </div>
-        <div title="Voting" style="padding: 2%; min-width: 10%;">
-            <select name="Vote">
-                <option value="0">Rate</option>
-                <option value="1">Very irrelevant</option>
-                <option value="2">Irrelevant</option>
-                <option value="3">Neutral</option>
-                <option value="4">Relevant</option>
-                <option value="5">Very relevant</option>
-            </select>
+        <div title="Voting" style="padding-top: 2%; min-width: 10%;">
+            <div class="select">
+                <select name="Vote">
+                    <option value="0">Rate</option>
+                    <option value="1">Very irrelevant</option>
+                    <option value="2">Irrelevant</option>
+                    <option value="3">Neutral</option>
+                    <option value="4">Relevant</option>
+                    <option value="5">Very relevant</option>
+                </select>
+            </div>
         </div>
     </div>
     
@@ -869,15 +1014,17 @@ Statistical Office for Hamburg and Schleswig-Holstein</p>
             </div>
             
         </div>
-        <div title="Voting" style="padding: 2%; min-width: 10%;">
-            <select name="Vote">
-                <option value="0">Rate</option>
-                <option value="1">Very irrelevant</option>
-                <option value="2">Irrelevant</option>
-                <option value="3">Neutral</option>
-                <option value="4">Relevant</option>
-                <option value="5">Very relevant</option>
-            </select>
+        <div title="Voting" style="padding-top: 2%; min-width: 10%;">
+            <div class="select">
+                <select name="Vote">
+                    <option value="0">Rate</option>
+                    <option value="1">Very irrelevant</option>
+                    <option value="2">Irrelevant</option>
+                    <option value="3">Neutral</option>
+                    <option value="4">Relevant</option>
+                    <option value="5">Very relevant</option>
+                </select>
+            </div>
         </div>
     </div>
     
@@ -921,15 +1068,17 @@ Statistical Office for Hamburg and Schleswig-Holstein</p>
             </div>
             
         </div>
-        <div title="Voting" style="padding: 2%; min-width: 10%;">
-            <select name="Vote">
-                <option value="0">Rate</option>
-                <option value="1">Very irrelevant</option>
-                <option value="2">Irrelevant</option>
-                <option value="3">Neutral</option>
-                <option value="4">Relevant</option>
-                <option value="5">Very relevant</option>
-            </select>
+        <div title="Voting" style="padding-top: 2%; min-width: 10%;">
+            <div class="select">
+                <select name="Vote">
+                    <option value="0">Rate</option>
+                    <option value="1">Very irrelevant</option>
+                    <option value="2">Irrelevant</option>
+                    <option value="3">Neutral</option>
+                    <option value="4">Relevant</option>
+                    <option value="5">Very relevant</option>
+                </select>
+            </div>
         </div>
     </div>
     
@@ -973,15 +1122,17 @@ Statistical Office for Hamburg and Schleswig-Holstein</p>
             </div>
             
         </div>
-        <div title="Voting" style="padding: 2%; min-width: 10%;">
-            <select name="Vote">
-                <option value="0">Rate</option>
-                <option value="1">Very irrelevant</option>
-                <option value="2">Irrelevant</option>
-                <option value="3">Neutral</option>
-                <option value="4">Relevant</option>
-                <option value="5">Very relevant</option>
-            </select>
+        <div title="Voting" style="padding-top: 2%; min-width: 10%;">
+            <div class="select">
+                <select name="Vote">
+                    <option value="0">Rate</option>
+                    <option value="1">Very irrelevant</option>
+                    <option value="2">Irrelevant</option>
+                    <option value="3">Neutral</option>
+                    <option value="4">Relevant</option>
+                    <option value="5">Very relevant</option>
+                </select>
+            </div>
         </div>
     </div>
     
@@ -1025,15 +1176,17 @@ Statistical Office for Hamburg and Schleswig-Holstein</p>
             </div>
             
         </div>
-        <div title="Voting" style="padding: 2%; min-width: 10%;">
-            <select name="Vote">
-                <option value="0">Rate</option>
-                <option value="1">Very irrelevant</option>
-                <option value="2">Irrelevant</option>
-                <option value="3">Neutral</option>
-                <option value="4">Relevant</option>
-                <option value="5">Very relevant</option>
-            </select>
+        <div title="Voting" style="padding-top: 2%; min-width: 10%;">
+            <div class="select">
+                <select name="Vote">
+                    <option value="0">Rate</option>
+                    <option value="1">Very irrelevant</option>
+                    <option value="2">Irrelevant</option>
+                    <option value="3">Neutral</option>
+                    <option value="4">Relevant</option>
+                    <option value="5">Very relevant</option>
+                </select>
+            </div>
         </div>
     </div>
     
@@ -1077,15 +1230,17 @@ Statistical Office for Hamburg and Schleswig-Holstein</p>
             </div>
             
         </div>
-        <div title="Voting" style="padding: 2%; min-width: 10%;">
-            <select name="Vote">
-                <option value="0">Rate</option>
-                <option value="1">Very irrelevant</option>
-                <option value="2">Irrelevant</option>
-                <option value="3">Neutral</option>
-                <option value="4">Relevant</option>
-                <option value="5">Very relevant</option>
-            </select>
+        <div title="Voting" style="padding-top: 2%; min-width: 10%;">
+            <div class="select">
+                <select name="Vote">
+                    <option value="0">Rate</option>
+                    <option value="1">Very irrelevant</option>
+                    <option value="2">Irrelevant</option>
+                    <option value="3">Neutral</option>
+                    <option value="4">Relevant</option>
+                    <option value="5">Very relevant</option>
+                </select>
+            </div>
         </div>
     </div>
     
@@ -1137,15 +1292,17 @@ Bathing Water Area profiles referred to in Regulation 5 is to consist of a descr
             </div>
             
         </div>
-        <div title="Voting" style="padding: 2%; min-width: 10%;">
-            <select name="Vote">
-                <option value="0">Rate</option>
-                <option value="1">Very irrelevant</option>
-                <option value="2">Irrelevant</option>
-                <option value="3">Neutral</option>
-                <option value="4">Relevant</option>
-                <option value="5">Very relevant</option>
-            </select>
+        <div title="Voting" style="padding-top: 2%; min-width: 10%;">
+            <div class="select">
+                <select name="Vote">
+                    <option value="0">Rate</option>
+                    <option value="1">Very irrelevant</option>
+                    <option value="2">Irrelevant</option>
+                    <option value="3">Neutral</option>
+                    <option value="4">Relevant</option>
+                    <option value="5">Very relevant</option>
+                </select>
+            </div>
         </div>
     </div>
     
@@ -1189,15 +1346,17 @@ Bathing Water Area profiles referred to in Regulation 5 is to consist of a descr
             </div>
             
         </div>
-        <div title="Voting" style="padding: 2%; min-width: 10%;">
-            <select name="Vote">
-                <option value="0">Rate</option>
-                <option value="1">Very irrelevant</option>
-                <option value="2">Irrelevant</option>
-                <option value="3">Neutral</option>
-                <option value="4">Relevant</option>
-                <option value="5">Very relevant</option>
-            </select>
+        <div title="Voting" style="padding-top: 2%; min-width: 10%;">
+            <div class="select">
+                <select name="Vote">
+                    <option value="0">Rate</option>
+                    <option value="1">Very irrelevant</option>
+                    <option value="2">Irrelevant</option>
+                    <option value="3">Neutral</option>
+                    <option value="4">Relevant</option>
+                    <option value="5">Very relevant</option>
+                </select>
+            </div>
         </div>
     </div>
     
@@ -1241,15 +1400,17 @@ Bathing Water Area profiles referred to in Regulation 5 is to consist of a descr
             </div>
             
         </div>
-        <div title="Voting" style="padding: 2%; min-width: 10%;">
-            <select name="Vote">
-                <option value="0">Rate</option>
-                <option value="1">Very irrelevant</option>
-                <option value="2">Irrelevant</option>
-                <option value="3">Neutral</option>
-                <option value="4">Relevant</option>
-                <option value="5">Very relevant</option>
-            </select>
+        <div title="Voting" style="padding-top: 2%; min-width: 10%;">
+            <div class="select">
+                <select name="Vote">
+                    <option value="0">Rate</option>
+                    <option value="1">Very irrelevant</option>
+                    <option value="2">Irrelevant</option>
+                    <option value="3">Neutral</option>
+                    <option value="4">Relevant</option>
+                    <option value="5">Very relevant</option>
+                </select>
+            </div>
         </div>
     </div>
     
@@ -1293,15 +1454,17 @@ Bathing Water Area profiles referred to in Regulation 5 is to consist of a descr
             </div>
             
         </div>
-        <div title="Voting" style="padding: 2%; min-width: 10%;">
-            <select name="Vote">
-                <option value="0">Rate</option>
-                <option value="1">Very irrelevant</option>
-                <option value="2">Irrelevant</option>
-                <option value="3">Neutral</option>
-                <option value="4">Relevant</option>
-                <option value="5">Very relevant</option>
-            </select>
+        <div title="Voting" style="padding-top: 2%; min-width: 10%;">
+            <div class="select">
+                <select name="Vote">
+                    <option value="0">Rate</option>
+                    <option value="1">Very irrelevant</option>
+                    <option value="2">Irrelevant</option>
+                    <option value="3">Neutral</option>
+                    <option value="4">Relevant</option>
+                    <option value="5">Very relevant</option>
+                </select>
+            </div>
         </div>
     </div>
     
@@ -1351,15 +1514,17 @@ The same rules apply to him as a project-related development plan, which are als
             </div>
             
         </div>
-        <div title="Voting" style="padding: 2%; min-width: 10%;">
-            <select name="Vote">
-                <option value="0">Rate</option>
-                <option value="1">Very irrelevant</option>
-                <option value="2">Irrelevant</option>
-                <option value="3">Neutral</option>
-                <option value="4">Relevant</option>
-                <option value="5">Very relevant</option>
-            </select>
+        <div title="Voting" style="padding-top: 2%; min-width: 10%;">
+            <div class="select">
+                <select name="Vote">
+                    <option value="0">Rate</option>
+                    <option value="1">Very irrelevant</option>
+                    <option value="2">Irrelevant</option>
+                    <option value="3">Neutral</option>
+                    <option value="4">Relevant</option>
+                    <option value="5">Very relevant</option>
+                </select>
+            </div>
         </div>
     </div>
     
@@ -1403,15 +1568,17 @@ The same rules apply to him as a project-related development plan, which are als
             </div>
             
         </div>
-        <div title="Voting" style="padding: 2%; min-width: 10%;">
-            <select name="Vote">
-                <option value="0">Rate</option>
-                <option value="1">Very irrelevant</option>
-                <option value="2">Irrelevant</option>
-                <option value="3">Neutral</option>
-                <option value="4">Relevant</option>
-                <option value="5">Very relevant</option>
-            </select>
+        <div title="Voting" style="padding-top: 2%; min-width: 10%;">
+            <div class="select">
+                <select name="Vote">
+                    <option value="0">Rate</option>
+                    <option value="1">Very irrelevant</option>
+                    <option value="2">Irrelevant</option>
+                    <option value="3">Neutral</option>
+                    <option value="4">Relevant</option>
+                    <option value="5">Very relevant</option>
+                </select>
+            </div>
         </div>
     </div>
     
@@ -1463,15 +1630,17 @@ a) the names of the units of the main three-stage territorial division of the st
             </div>
             
         </div>
-        <div title="Voting" style="padding: 2%; min-width: 10%;">
-            <select name="Vote">
-                <option value="0">Rate</option>
-                <option value="1">Very irrelevant</option>
-                <option value="2">Irrelevant</option>
-                <option value="3">Neutral</option>
-                <option value="4">Relevant</option>
-                <option value="5">Very relevant</option>
-            </select>
+        <div title="Voting" style="padding-top: 2%; min-width: 10%;">
+            <div class="select">
+                <select name="Vote">
+                    <option value="0">Rate</option>
+                    <option value="1">Very irrelevant</option>
+                    <option value="2">Irrelevant</option>
+                    <option value="3">Neutral</option>
+                    <option value="4">Relevant</option>
+                    <option value="5">Very relevant</option>
+                </select>
+            </div>
         </div>
     </div>
     
@@ -1515,15 +1684,17 @@ a) the names of the units of the main three-stage territorial division of the st
             </div>
             
         </div>
-        <div title="Voting" style="padding: 2%; min-width: 10%;">
-            <select name="Vote">
-                <option value="0">Rate</option>
-                <option value="1">Very irrelevant</option>
-                <option value="2">Irrelevant</option>
-                <option value="3">Neutral</option>
-                <option value="4">Relevant</option>
-                <option value="5">Very relevant</option>
-            </select>
+        <div title="Voting" style="padding-top: 2%; min-width: 10%;">
+            <div class="select">
+                <select name="Vote">
+                    <option value="0">Rate</option>
+                    <option value="1">Very irrelevant</option>
+                    <option value="2">Irrelevant</option>
+                    <option value="3">Neutral</option>
+                    <option value="4">Relevant</option>
+                    <option value="5">Very relevant</option>
+                </select>
+            </div>
         </div>
     </div>
     
@@ -1570,15 +1741,17 @@ at 00, 06, 12, 18 UTC</p>
             </div>
             
         </div>
-        <div title="Voting" style="padding: 2%; min-width: 10%;">
-            <select name="Vote">
-                <option value="0">Rate</option>
-                <option value="1">Very irrelevant</option>
-                <option value="2">Irrelevant</option>
-                <option value="3">Neutral</option>
-                <option value="4">Relevant</option>
-                <option value="5">Very relevant</option>
-            </select>
+        <div title="Voting" style="padding-top: 2%; min-width: 10%;">
+            <div class="select">
+                <select name="Vote">
+                    <option value="0">Rate</option>
+                    <option value="1">Very irrelevant</option>
+                    <option value="2">Irrelevant</option>
+                    <option value="3">Neutral</option>
+                    <option value="4">Relevant</option>
+                    <option value="5">Very relevant</option>
+                </select>
+            </div>
         </div>
     </div>
     
@@ -1622,15 +1795,17 @@ at 00, 06, 12, 18 UTC</p>
             </div>
             
         </div>
-        <div title="Voting" style="padding: 2%; min-width: 10%;">
-            <select name="Vote">
-                <option value="0">Rate</option>
-                <option value="1">Very irrelevant</option>
-                <option value="2">Irrelevant</option>
-                <option value="3">Neutral</option>
-                <option value="4">Relevant</option>
-                <option value="5">Very relevant</option>
-            </select>
+        <div title="Voting" style="padding-top: 2%; min-width: 10%;">
+            <div class="select">
+                <select name="Vote">
+                    <option value="0">Rate</option>
+                    <option value="1">Very irrelevant</option>
+                    <option value="2">Irrelevant</option>
+                    <option value="3">Neutral</option>
+                    <option value="4">Relevant</option>
+                    <option value="5">Very relevant</option>
+                </select>
+            </div>
         </div>
     </div>
     
@@ -1674,15 +1849,17 @@ at 00, 06, 12, 18 UTC</p>
             </div>
             
         </div>
-        <div title="Voting" style="padding: 2%; min-width: 10%;">
-            <select name="Vote">
-                <option value="0">Rate</option>
-                <option value="1">Very irrelevant</option>
-                <option value="2">Irrelevant</option>
-                <option value="3">Neutral</option>
-                <option value="4">Relevant</option>
-                <option value="5">Very relevant</option>
-            </select>
+        <div title="Voting" style="padding-top: 2%; min-width: 10%;">
+            <div class="select">
+                <select name="Vote">
+                    <option value="0">Rate</option>
+                    <option value="1">Very irrelevant</option>
+                    <option value="2">Irrelevant</option>
+                    <option value="3">Neutral</option>
+                    <option value="4">Relevant</option>
+                    <option value="5">Very relevant</option>
+                </select>
+            </div>
         </div>
     </div>
     
@@ -1727,15 +1904,17 @@ Persons between 15 and 74 years of age born abroad, depending on their knowledge
             </div>
             
         </div>
-        <div title="Voting" style="padding: 2%; min-width: 10%;">
-            <select name="Vote">
-                <option value="0">Rate</option>
-                <option value="1">Very irrelevant</option>
-                <option value="2">Irrelevant</option>
-                <option value="3">Neutral</option>
-                <option value="4">Relevant</option>
-                <option value="5">Very relevant</option>
-            </select>
+        <div title="Voting" style="padding-top: 2%; min-width: 10%;">
+            <div class="select">
+                <select name="Vote">
+                    <option value="0">Rate</option>
+                    <option value="1">Very irrelevant</option>
+                    <option value="2">Irrelevant</option>
+                    <option value="3">Neutral</option>
+                    <option value="4">Relevant</option>
+                    <option value="5">Very relevant</option>
+                </select>
+            </div>
         </div>
     </div>
     
@@ -1785,27 +1964,29 @@ a) the names of the units of the main three-stage territorial division of the st
             </div>
             
         </div>
-        <div title="Voting" style="padding: 2%; min-width: 10%;">
-            <select name="Vote">
-                <option value="0">Rate</option>
-                <option value="1">Very irrelevant</option>
-                <option value="2">Irrelevant</option>
-                <option value="3">Neutral</option>
-                <option value="4">Relevant</option>
-                <option value="5">Very relevant</option>
-            </select>
+        <div title="Voting" style="padding-top: 2%; min-width: 10%;">
+            <div class="select">
+                <select name="Vote">
+                    <option value="0">Rate</option>
+                    <option value="1">Very irrelevant</option>
+                    <option value="2">Irrelevant</option>
+                    <option value="3">Neutral</option>
+                    <option value="4">Relevant</option>
+                    <option value="5">Very relevant</option>
+                </select>
+            </div>
         </div>
     </div>
     
-    <div style="display: flex; justify-content:center">
-        <label style="margin-right: 5em">Your comments and suggestions (optional)</label>
+    <div style="display: flex; justify-content:center; padding: 2%">
+        <label style="margin-right: 2em">Your comments and suggestions (optional): </label>
         <textarea id="suggestions"></textarea>
     </div>
     <div style="display: flex; justify-content:center" title="Send email">
         <p><b>Note: </b> By submitting this survey, you consent to the usage of these results in the research.</p>
     </div>
     <div style="display: flex; justify-content:center" title="Send email">
-        <button id="submit">Submit</button>
+        <button class="button" id="submit">Submit</button>
     </div>
     <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
         integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
