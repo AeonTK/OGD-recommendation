@@ -87,9 +87,12 @@
         </div>
         <div title="Voting" style="padding: 2%; min-width: 10%;">
             <select name="Vote">
-                {% for i in range(11) %}
-                <option value="{{i}}">{{i}}</option>
-                {% endfor %}
+                <option value="0">Rate</option>
+                <option value="1">Very irrelevant</option>
+                <option value="2">Irrelevant</option>
+                <option value="3">Neutral</option>
+                <option value="4">Relevant</option>
+                <option value="5">Very relevant</option>
             </select>
         </div>
     </div>
