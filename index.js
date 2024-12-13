@@ -12,11 +12,11 @@ $(document).ready(function () {
 
     $("#submit").on('click', function (event) {
         event.preventDefault();
-        var email = 'huseynovramilism@gmail.com';
+        var email = 'ramil.huseynov@ut.ee';
         var subject = 'OGD Survey';
-        var emailBody = "";
+        var emailBody = "Ratings: ";
         var count = 0;
-        $("select").each(function () {
+        $(".rating").each(function () {
             if ($(this).val() != 0) {
                 count++;
             }
@@ -26,7 +26,11 @@ $(document).ready(function () {
             alert("You should rate at least 10 recommendations")
         }
         else {
-            emailBody += $("#suggestions").val();
+            emailBody += "\n Suggestions: " + $("#suggestions").val();
+            emailBody += "\n Portal frequency: " + $("#portal-freq").val();
+            emailBody += "\n EU portal frequency: " + $('#eu-portal-freq').val();
+            emailBody += "\n Navigation easiness: " + $('#easy-navigation').val();
+            emailBody += "\n Expectation: " + $('#expectation').val();
             window.location = 'mailto:' + email + '?subject=' + subject + '&body=' + emailBody;
         }
     })

@@ -48,7 +48,7 @@
     <div class="general-q-container" style="border-top: solid #128f8b;">
         <label>How often do you use any open data portal?: </label>
         <div class="select">
-                <select name="Vote">
+                <select id="portal-freq" name="Vote">
                     <option value="1">Never</option>
                     <option value="2">Once in a year</option>
                     <option value="3">Once in a month</option>
@@ -60,7 +60,7 @@
     <div class="general-q-container">
         <label>How often do you use European open data portal?: </label>
         <div class="select">
-            <select name="Vote">
+            <select id="eu-portal-freq" name="Vote">
                 <option value="1">Never</option>
                 <option value="2">Once in a year</option>
                 <option value="3">Once in a month</option>
@@ -72,7 +72,7 @@
     <div class="general-q-container">
         <label>How easy do you find it to navigate to datasets of your interest?: </label>
         <div class="select">
-            <select name="Vote">
+            <select id="easy-navigation" name="Vote">
                 <option value="1">Very easy</option>
                 <option value="2">Easy</option>
                 <option value="3">Neutral</option>
@@ -84,7 +84,7 @@
     <div class="general-q-container">
         <label>To what extent do the contents of portals meet your expectations/needs?: </label>
         <div class="select">
-            <select name="Vote">
+            <select id="expectation" name="Vote">
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -111,7 +111,7 @@
     
     <div style="display: flex; justify-content: space-around; overflow:auto; align-items:start; border-top: solid #128f8b">
         <div title="Main dataset" style="padding: 2%; min-width: 20%; max-width:20%">
-            <p><b>Order</b>: #1 out of 31</p>
+            <p><b>Order</b>: #1 out of 30</p>
             <p><b>Title</b>: Inspire data set BPL “Schafhof II and Schafhof III (amendment)”</p>
             <p data-more="https://data.europa.eu/data/datasets/8651a560-33ca-4ace-b050-f40785d28206?locale=en" class="description"><b>Description:</b> Building plan “Schafhof II and Schafhof III (Change)” of the city of Kirchheim under Teck based on an XPlanung dataset in version 5.0.</p>
             <p><b>Category:</b> Agriculture, fisheries, forestry and food</p>
@@ -164,7 +164,7 @@
         </div>
         <div title="Voting" style="padding-top: 2%; width: 10%;">
             <div class="select">
-                <select name="Vote">
+                <select class="rating" name="Vote">
                     <option value="0">Rate</option>
                     <option value="1">Very irrelevant</option>
                     <option value="2">Irrelevant</option>
@@ -178,7 +178,7 @@
     
     <div style="display: flex; justify-content: space-around; overflow:auto; align-items:start; border-top: solid #128f8b">
         <div title="Main dataset" style="padding: 2%; min-width: 20%; max-width:20%">
-            <p><b>Order</b>: #2 out of 31</p>
+            <p><b>Order</b>: #2 out of 30</p>
             <p><b>Title</b>: WFS XPlanung BPL “Ringstraße II”</p>
             <p data-more="https://data.europa.eu/data/datasets/db3ae33a-bda5-4c3f-bee3-9db10dc400b1?locale=en" class="description"><b>Description:</b> WFS service of the development plan “Ringstraße II” of the municipality Holzmaden from XPlanung 5.0. Description: Usage: WA, MI.</p>
             <p><b>Category:</b> Agriculture, fisheries, forestry and food</p>
@@ -231,7 +231,7 @@
         </div>
         <div title="Voting" style="padding-top: 2%; width: 10%;">
             <div class="select">
-                <select name="Vote">
+                <select class="rating" name="Vote">
                     <option value="0">Rate</option>
                     <option value="1">Very irrelevant</option>
                     <option value="2">Irrelevant</option>
@@ -245,7 +245,7 @@
     
     <div style="display: flex; justify-content: space-around; overflow:auto; align-items:start; border-top: solid #128f8b">
         <div title="Main dataset" style="padding: 2%; min-width: 20%; max-width:20%">
-            <p><b>Order</b>: #3 out of 31</p>
+            <p><b>Order</b>: #3 out of 30</p>
             <p><b>Title</b>: WMS XPlanung BPL “Seestraße (original)”</p>
             <p data-more="https://data.europa.eu/data/datasets/018d5e5d-f824-4919-acc4-236b26f86a3a?locale=en" class="description"><b>Description:</b> WMS service of the development plan “Seestraße (original)” of the municipality of Eriskirch from XPlanung 5.0. Description: § 6 Mixed areas (MI); BP “Seestraße”;.</p>
             <p><b>Category:</b> Agriculture, fisheries, forestry and food</p>
@@ -298,7 +298,7 @@
         </div>
         <div title="Voting" style="padding-top: 2%; width: 10%;">
             <div class="select">
-                <select name="Vote">
+                <select class="rating" name="Vote">
                     <option value="0">Rate</option>
                     <option value="1">Very irrelevant</option>
                     <option value="2">Irrelevant</option>
@@ -312,7 +312,7 @@
     
     <div style="display: flex; justify-content: space-around; overflow:auto; align-items:start; border-top: solid #128f8b">
         <div title="Main dataset" style="padding: 2%; min-width: 20%; max-width:20%">
-            <p><b>Order</b>: #4 out of 31</p>
+            <p><b>Order</b>: #4 out of 30</p>
             <p><b>Title</b>: WFS XPlanung BPL “Herrenberg-Stockmühle 2nd Amendment”</p>
             <p data-more="https://data.europa.eu/data/datasets/f459f1be-145f-4956-a69e-547e8bfe482f?locale=en" class="description"><b>Description:</b> WFS service of the development plan “Herrenberg-Stockmühle 2nd Amendment” of the municipality Schenkenzell from XPlanung 5.0. Description: WA.</p>
             <p><b>Category:</b> Agriculture, fisheries, forestry and food</p>
@@ -365,7 +365,7 @@
         </div>
         <div title="Voting" style="padding-top: 2%; width: 10%;">
             <div class="select">
-                <select name="Vote">
+                <select class="rating" name="Vote">
                     <option value="0">Rate</option>
                     <option value="1">Very irrelevant</option>
                     <option value="2">Irrelevant</option>
@@ -379,7 +379,7 @@
     
     <div style="display: flex; justify-content: space-around; overflow:auto; align-items:start; border-top: solid #128f8b">
         <div title="Main dataset" style="padding: 2%; min-width: 20%; max-width:20%">
-            <p><b>Order</b>: #5 out of 31</p>
+            <p><b>Order</b>: #5 out of 30</p>
             <p><b>Title</b>: SVS197 – Those who have experienced sexual violence as an adult and disclosed to others by how long it took to first disclose (% of persons aged 18 years and over who have experienced sexual violence as an adult and disclosed)</p>
             <p data-more="https://data.europa.eu/data/datasets/2c97770d-4023-4afc-855e-6fd429e5099d?locale=en" class="description"><b>Description:</b> Those who experienced sexual violence as an adult and disclosed to others by how long it took to first disclose (% of persons aged 18 years and over who experienced sexual violence as an adult and disclosed)</p>
             <p><b>Category:</b> Justice, legal system and public safety</p>
@@ -443,7 +443,7 @@ a) the names of the units of the main three-stage territorial division of the st
         </div>
         <div title="Voting" style="padding-top: 2%; width: 10%;">
             <div class="select">
-                <select name="Vote">
+                <select class="rating" name="Vote">
                     <option value="0">Rate</option>
                     <option value="1">Very irrelevant</option>
                     <option value="2">Irrelevant</option>
@@ -457,7 +457,7 @@ a) the names of the units of the main three-stage territorial division of the st
     
     <div style="display: flex; justify-content: space-around; overflow:auto; align-items:start; border-top: solid #128f8b">
         <div title="Main dataset" style="padding: 2%; min-width: 20%; max-width:20%">
-            <p><b>Order</b>: #6 out of 31</p>
+            <p><b>Order</b>: #6 out of 30</p>
             <p><b>Title</b>: State map 1:5 000 new form raster data - Boskovice 7-2</p>
             <p data-more="https://data.europa.eu/data/datasets/cz-cuzk-sm5-rb-bosk72?locale=en" class="description"><b>Description:</b> The product represents a new design of the State Map at a scale of 1:5,000 in raster form, whose advantages are recency and colour processing. The map contains planimetry based on cadastral map, altimetry adopted from the altimetry part of ZABAGED and map lettering based on database of geographic names Geonames and abbreviations of feature type signification coming up from attributes of selected ZABAGED features. The cartographic visualisation is solved automatically without manual works of a cartographer. This new design of the SM 5 is repeatedly generated once a year on the part of the Czech territory where the vector form of cadastral map is available. Therefore, part of export units (map sheets of SM 5) has not a full coverage (price of such export unit is then proportionally reduced).</p>
             <p><b>Category:</b> Justice, legal system and public safety</p>
@@ -510,7 +510,7 @@ a) the names of the units of the main three-stage territorial division of the st
         </div>
         <div title="Voting" style="padding-top: 2%; width: 10%;">
             <div class="select">
-                <select name="Vote">
+                <select class="rating" name="Vote">
                     <option value="0">Rate</option>
                     <option value="1">Very irrelevant</option>
                     <option value="2">Irrelevant</option>
@@ -524,7 +524,7 @@ a) the names of the units of the main three-stage territorial division of the st
     
     <div style="display: flex; justify-content: space-around; overflow:auto; align-items:start; border-top: solid #128f8b">
         <div title="Main dataset" style="padding: 2%; min-width: 20%; max-width:20%">
-            <p><b>Order</b>: #7 out of 31</p>
+            <p><b>Order</b>: #7 out of 30</p>
             <p><b>Title</b>: INSPIRE theme Cadastral Parcels Extended (CPX)</p>
             <p data-more="https://data.europa.eu/data/datasets/cz-00025712-cuzk_ds-md_cpx_725749?locale=en" class="description"><b>Description:</b> The extension targets on providing full cadastral map as defined in Cadastral Public Note in the form of vectror data in the structure fully conform to the INSPIRE Directive and Implementing Rules. The data extends the INSPIRE Data Specification for the theme Cadastral Parcels (CP) for easements, geodetic points, other features, original geometry and analogue cadastral parcels (those in the areas with analogue map only). It originates in the cadastral map that is a binding national map series at large scale, contains points of horizontal geodetic control, planimetric component and map lettering and can be maintained in the form of digital map, analogue map or digitized map. The data published in the frame of this product contain cadastral districts (for the whole Czech Republic), parcels, their boundaries, easements, other features, geodetic points and original geometries from the territory where the digital map occures (to the 2019-01-28 it is 96.25% of the Czech territory, i.e. 75 913.13km2) and analogue cadastral parcels in the areas with analogue map, containing only reference points as geometry. More in the Cadastral Law 344/1992 Coll., Cadastral Public Note No. 26/2007 Coll. as ammended and INSPIRE Data Specification on Cadastral Parcels v 3.0.1. Data in the GML 3.2.1 fotrmat are valid against XML Definition Schema for the Cadastral Parcels Extended in version 4.0.</p>
             <p><b>Category:</b> Justice, legal system and public safety</p>
@@ -577,7 +577,7 @@ a) the names of the units of the main three-stage territorial division of the st
         </div>
         <div title="Voting" style="padding-top: 2%; width: 10%;">
             <div class="select">
-                <select name="Vote">
+                <select class="rating" name="Vote">
                     <option value="0">Rate</option>
                     <option value="1">Very irrelevant</option>
                     <option value="2">Irrelevant</option>
@@ -591,7 +591,7 @@ a) the names of the units of the main three-stage territorial division of the st
     
     <div style="display: flex; justify-content: space-around; overflow:auto; align-items:start; border-top: solid #128f8b">
         <div title="Main dataset" style="padding: 2%; min-width: 20%; max-width:20%">
-            <p><b>Order</b>: #8 out of 31</p>
+            <p><b>Order</b>: #8 out of 30</p>
             <p><b>Title</b>: Cadastral cartography — Municipality of VARENNA</p>
             <p data-more="https://data.europa.eu/data/datasets/age-d_l680_varenna?locale=en" class="description"><b>Description:</b> Cadastral cartography</p>
             <p><b>Category:</b> Justice, legal system and public safety</p>
@@ -644,7 +644,7 @@ a) the names of the units of the main three-stage territorial division of the st
         </div>
         <div title="Voting" style="padding-top: 2%; width: 10%;">
             <div class="select">
-                <select name="Vote">
+                <select class="rating" name="Vote">
                     <option value="0">Rate</option>
                     <option value="1">Very irrelevant</option>
                     <option value="2">Irrelevant</option>
@@ -658,7 +658,7 @@ a) the names of the units of the main three-stage territorial division of the st
     
     <div style="display: flex; justify-content: space-around; overflow:auto; align-items:start; border-top: solid #128f8b">
         <div title="Main dataset" style="padding: 2%; min-width: 20%; max-width:20%">
-            <p><b>Order</b>: #9 out of 31</p>
+            <p><b>Order</b>: #9 out of 30</p>
             <p><b>Title</b>: PPRN — Regulatory layers of the PSS of the municipality of THIAVILLE-SUR-MEURTHE (54519)</p>
             <p data-more="https://data.europa.eu/data/datasets/fr-120066022-ldd-290f1079-e233-4096-8c50-bfa6ffdc71fb?locale=en" class="description"><b>Description:</b> The Barnier Law of 2 February 1995 gives PSS a risk prevention plan (PPR) status, making them enforceable against third parties. The PSS is a document that establishes a utility easement affecting land use.
 It allows the administration to oppose any action or work likely to impede the free flow of water or the conservation of flood fields (Article R425-21 of the Urban Code).</p>
@@ -718,7 +718,7 @@ a) the names of the units of the main three-stage territorial division of the st
         </div>
         <div title="Voting" style="padding-top: 2%; width: 10%;">
             <div class="select">
-                <select name="Vote">
+                <select class="rating" name="Vote">
                     <option value="0">Rate</option>
                     <option value="1">Very irrelevant</option>
                     <option value="2">Irrelevant</option>
@@ -732,7 +732,7 @@ a) the names of the units of the main three-stage territorial division of the st
     
     <div style="display: flex; justify-content: space-around; overflow:auto; align-items:start; border-top: solid #128f8b">
         <div title="Main dataset" style="padding: 2%; min-width: 20%; max-width:20%">
-            <p><b>Order</b>: #10 out of 31</p>
+            <p><b>Order</b>: #10 out of 30</p>
             <p><b>Title</b>: Registered autonomous population. Women. Annual average. Large regions of the Canary Islands. 2016. Thematic map of coroplets of 5 intervals per quantiles</p>
             <p data-more="https://data.europa.eu/data/datasets/https-datos-canarias-es-catalogos-estadisticas-dataset-psel_f-grandes-comarcas-canarias-2016-mapa-coropletas-5cuantiles?locale=en" class="description"><b>Description:</b> This thematic map of coroplets represents the labor indicator __Registered autonomous population. Women. Annual average__, calculated as 'Self-employed female population registered in the reference period' for the territorial delimitation of __large regions__ of the Canary Islands, based on administrative population and labour market registers in the reference quarter.</p>
             <p><b>Category:</b> Economy and finance</p>
@@ -804,7 +804,7 @@ Removal of personal data of individual applicants.</p>
         </div>
         <div title="Voting" style="padding-top: 2%; width: 10%;">
             <div class="select">
-                <select name="Vote">
+                <select class="rating" name="Vote">
                     <option value="0">Rate</option>
                     <option value="1">Very irrelevant</option>
                     <option value="2">Irrelevant</option>
@@ -818,7 +818,7 @@ Removal of personal data of individual applicants.</p>
     
     <div style="display: flex; justify-content: space-around; overflow:auto; align-items:start; border-top: solid #128f8b">
         <div title="Main dataset" style="padding: 2%; min-width: 20%; max-width:20%">
-            <p><b>Order</b>: #11 out of 31</p>
+            <p><b>Order</b>: #11 out of 30</p>
             <p><b>Title</b>: Projected number of extreme heatwaves (2068-2100; RCP 8.5; number in 33 years), Jul. 2015</p>
             <p data-more="https://data.europa.eu/data/datasets/a18bcf0e-14bc-43fc-adaf-8fd4f72efbd0?locale=en" class="description"><b>Description:</b> The gridded dataset presents the median of the projected number of extreme heatwaves in the future (2068–2100) in Europe, following the Representative Concentration Pathways (RCP) 8.5 scenario. The dataset is one of the multimodel ensemble used to project future occurrence and severity of heat waves under different RCP, which were adopted by the Intergovernmental Panel on Climate Change for its Fifth Assessment Report (AR5).
 The dataset is one of the output of the JRC “Number of heat waves” data described here: https://agupubs.onlinelibrary.wiley.com/doi/epdf/10.1002/2014JD022098
@@ -893,7 +893,7 @@ meaning only for scales greater than 1/100 000e.</p>
         </div>
         <div title="Voting" style="padding-top: 2%; width: 10%;">
             <div class="select">
-                <select name="Vote">
+                <select class="rating" name="Vote">
                     <option value="0">Rate</option>
                     <option value="1">Very irrelevant</option>
                     <option value="2">Irrelevant</option>
@@ -907,7 +907,7 @@ meaning only for scales greater than 1/100 000e.</p>
     
     <div style="display: flex; justify-content: space-around; overflow:auto; align-items:start; border-top: solid #128f8b">
         <div title="Main dataset" style="padding: 2%; min-width: 20%; max-width:20%">
-            <p><b>Order</b>: #12 out of 31</p>
+            <p><b>Order</b>: #12 out of 30</p>
             <p><b>Title</b>: Traffic census data on motorised individual traffic (hourly values), since 2012</p>
             <p data-more="https://data.europa.eu/data/datasets/6212fd20-e816-4828-a67f-90f057f25ddb-stadt-zurich~~1?locale=en" class="description"><b>Description:</b> The datasets available here include the **daily updated** measured values for motorised private transport (MIV) in the city of Zurich, which were measured by the numerous counting stations of the Department of Transport (DAV).
 
@@ -972,7 +972,7 @@ It’s the day.</p>
         </div>
         <div title="Voting" style="padding-top: 2%; width: 10%;">
             <div class="select">
-                <select name="Vote">
+                <select class="rating" name="Vote">
                     <option value="0">Rate</option>
                     <option value="1">Very irrelevant</option>
                     <option value="2">Irrelevant</option>
@@ -986,7 +986,7 @@ It’s the day.</p>
     
     <div style="display: flex; justify-content: space-around; overflow:auto; align-items:start; border-top: solid #128f8b">
         <div title="Main dataset" style="padding: 2%; min-width: 20%; max-width:20%">
-            <p><b>Order</b>: #13 out of 31</p>
+            <p><b>Order</b>: #13 out of 30</p>
             <p><b>Title</b>: Base of hydrate stability zone for biogenic gas. NW Europe.</p>
             <p data-more="https://data.europa.eu/data/datasets/5f88b89b-eae0-4a7f-a137-71260a010833?locale=en" class="description"><b>Description:</b> Base of hydrate stability zone for biogenic gas. Geographical site: NW Europe. Reference: Váquez-Izquierdo, A., Gimenez-Moreno, C.-J., León, R., 2018. Knowledge gaps in gas-hydrate assessment: theoretical considerations and practical implications. Geophysical Research Vol. 20, EGU2018-12847, 2018EGU General Assembly 2018 (Vol. 20, EGU2018-12847, 2018EGU General Assembly 2018).</p>
             <p><b>Category:</b> Science and technology</p>
@@ -1057,7 +1057,7 @@ Within the scope of the new Common Agricultural Policy of the European Union, in
         </div>
         <div title="Voting" style="padding-top: 2%; width: 10%;">
             <div class="select">
-                <select name="Vote">
+                <select class="rating" name="Vote">
                     <option value="0">Rate</option>
                     <option value="1">Very irrelevant</option>
                     <option value="2">Irrelevant</option>
@@ -1071,7 +1071,7 @@ Within the scope of the new Common Agricultural Policy of the European Union, in
     
     <div style="display: flex; justify-content: space-around; overflow:auto; align-items:start; border-top: solid #128f8b">
         <div title="Main dataset" style="padding: 2%; min-width: 20%; max-width:20%">
-            <p><b>Order</b>: #14 out of 31</p>
+            <p><b>Order</b>: #14 out of 30</p>
             <p><b>Title</b>: State map 1:5 000 new form raster data - Olomouc 9-2</p>
             <p data-more="https://data.europa.eu/data/datasets/cz-cuzk-sm5-rb-olom92?locale=en" class="description"><b>Description:</b> The product represents a new design of the State Map at a scale of 1:5,000 in raster form, whose advantages are recency and colour processing. The map contains planimetry based on cadastral map, altimetry adopted from the altimetry part of ZABAGED and map lettering based on database of geographic names Geonames and abbreviations of feature type signification coming up from attributes of selected ZABAGED features. The cartographic visualisation is solved automatically without manual works of a cartographer. This new design of the SM 5 is repeatedly generated once a year on the part of the Czech territory where the vector form of cadastral map is available. Therefore, part of export units (map sheets of SM 5) has not a full coverage (price of such export unit is then proportionally reduced).</p>
             <p><b>Category:</b> Justice, legal system and public safety</p>
@@ -1124,7 +1124,7 @@ Within the scope of the new Common Agricultural Policy of the European Union, in
         </div>
         <div title="Voting" style="padding-top: 2%; width: 10%;">
             <div class="select">
-                <select name="Vote">
+                <select class="rating" name="Vote">
                     <option value="0">Rate</option>
                     <option value="1">Very irrelevant</option>
                     <option value="2">Irrelevant</option>
@@ -1138,7 +1138,7 @@ Within the scope of the new Common Agricultural Policy of the European Union, in
     
     <div style="display: flex; justify-content: space-around; overflow:auto; align-items:start; border-top: solid #128f8b">
         <div title="Main dataset" style="padding: 2%; min-width: 20%; max-width:20%">
-            <p><b>Order</b>: #15 out of 31</p>
+            <p><b>Order</b>: #15 out of 30</p>
             <p><b>Title</b>: State map 1:5000 new form vector data - Nový Bor 6-0</p>
             <p data-more="https://data.europa.eu/data/datasets/cz-cuzk-sm5-v-nbor60?locale=en" class="description"><b>Description:</b> The product represents a new design of the State Map at a scale of 1:5,000 (SM 5) in vector form, whose advantages are recency and colour processing. The map contains planimetry based on cadastral map, altimetry adopted from the altimetry part of ZABAGED and map lettering based on database of geographic names Geonames and abbreviations of feature type signification coming up from attributes of selected ZABAGED features. This new design of the SM 5 is repeatedly generated once a year on the part of the Czech territory where the vector form of cadastral map is available. Therefore, part of export units (map sheets of SM 5) has not a full coverage (price of such export unit is then proportionally reduced).</p>
             <p><b>Category:</b> Justice, legal system and public safety</p>
@@ -1191,7 +1191,7 @@ Within the scope of the new Common Agricultural Policy of the European Union, in
         </div>
         <div title="Voting" style="padding-top: 2%; width: 10%;">
             <div class="select">
-                <select name="Vote">
+                <select class="rating" name="Vote">
                     <option value="0">Rate</option>
                     <option value="1">Very irrelevant</option>
                     <option value="2">Irrelevant</option>
@@ -1205,7 +1205,7 @@ Within the scope of the new Common Agricultural Policy of the European Union, in
     
     <div style="display: flex; justify-content: space-around; overflow:auto; align-items:start; border-top: solid #128f8b">
         <div title="Main dataset" style="padding: 2%; min-width: 20%; max-width:20%">
-            <p><b>Order</b>: #16 out of 31</p>
+            <p><b>Order</b>: #16 out of 30</p>
             <p><b>Title</b>: Inspire data set BPL “Im Hoefle”</p>
             <p data-more="https://data.europa.eu/data/datasets/43cdeb5a-3ec9-4849-9084-4e536e213dfe?locale=en" class="description"><b>Description:</b> According to INSPIRE transformed development plan “Im Hoefle” of the city of Haigerloch based on an XPlanung dataset in version 5.0.</p>
             <p><b>Category:</b> Justice, legal system and public safety</p>
@@ -1258,7 +1258,7 @@ Within the scope of the new Common Agricultural Policy of the European Union, in
         </div>
         <div title="Voting" style="padding-top: 2%; width: 10%;">
             <div class="select">
-                <select name="Vote">
+                <select class="rating" name="Vote">
                     <option value="0">Rate</option>
                     <option value="1">Very irrelevant</option>
                     <option value="2">Irrelevant</option>
@@ -1272,7 +1272,7 @@ Within the scope of the new Common Agricultural Policy of the European Union, in
     
     <div style="display: flex; justify-content: space-around; overflow:auto; align-items:start; border-top: solid #128f8b">
         <div title="Main dataset" style="padding: 2%; min-width: 20%; max-width:20%">
-            <p><b>Order</b>: #17 out of 31</p>
+            <p><b>Order</b>: #17 out of 30</p>
             <p><b>Title</b>: WFS INSPIRE BPL Extended Löwentorstraße Münster Plan 1</p>
             <p data-more="https://data.europa.eu/data/datasets/26c08063-8058-4756-be90-3ea6db92aeab?locale=en" class="description"><b>Description:</b> WFS service of the urban development plan “Extended Löwentorstraße Münster Plan 1” of the city of Stuttgart, which was transformed according to INSPIRE, based on an XPlanung dataset in version 5.0.</p>
             <p><b>Category:</b> Agriculture, fisheries, forestry and food</p>
@@ -1325,7 +1325,7 @@ Within the scope of the new Common Agricultural Policy of the European Union, in
         </div>
         <div title="Voting" style="padding-top: 2%; width: 10%;">
             <div class="select">
-                <select name="Vote">
+                <select class="rating" name="Vote">
                     <option value="0">Rate</option>
                     <option value="1">Very irrelevant</option>
                     <option value="2">Irrelevant</option>
@@ -1339,7 +1339,7 @@ Within the scope of the new Common Agricultural Policy of the European Union, in
     
     <div style="display: flex; justify-content: space-around; overflow:auto; align-items:start; border-top: solid #128f8b">
         <div title="Main dataset" style="padding: 2%; min-width: 20%; max-width:20%">
-            <p><b>Order</b>: #18 out of 31</p>
+            <p><b>Order</b>: #18 out of 30</p>
             <p><b>Title</b>: WFS INSPIRE BPL Furtstraße/Aschengasse</p>
             <p data-more="https://data.europa.eu/data/datasets/31d8d6bf-bb2f-4589-b6d2-0917c0bc4f29?locale=en" class="description"><b>Description:</b> WFS service of the urban development plan “Furtstraße/Aschengasse” of the municipality of Neuhausen, transformed according to INSPIRE, based on an XPlanung dataset in version 5.0.</p>
             <p><b>Category:</b> Agriculture, fisheries, forestry and food</p>
@@ -1392,7 +1392,7 @@ Within the scope of the new Common Agricultural Policy of the European Union, in
         </div>
         <div title="Voting" style="padding-top: 2%; width: 10%;">
             <div class="select">
-                <select name="Vote">
+                <select class="rating" name="Vote">
                     <option value="0">Rate</option>
                     <option value="1">Very irrelevant</option>
                     <option value="2">Irrelevant</option>
@@ -1406,7 +1406,7 @@ Within the scope of the new Common Agricultural Policy of the European Union, in
     
     <div style="display: flex; justify-content: space-around; overflow:auto; align-items:start; border-top: solid #128f8b">
         <div title="Main dataset" style="padding: 2%; min-width: 20%; max-width:20%">
-            <p><b>Order</b>: #19 out of 31</p>
+            <p><b>Order</b>: #19 out of 30</p>
             <p><b>Title</b>: WFS XPlanung BPL “Size meadow path/Polarstraße”</p>
             <p data-more="https://data.europa.eu/data/datasets/a8517777-2bd3-403c-b4a3-a9bfa9ca5643?locale=en" class="description"><b>Description:</b> WFS service of the development plan “Sise meadow path/Polarstraße” of the municipality of Urbach from XPlanung 5.0. Description: The development plan contains the legally binding determinations for the urban planning system. In principle, the development plan must be developed from the land use plan.</p>
             <p><b>Category:</b> Agriculture, fisheries, forestry and food</p>
@@ -1459,7 +1459,7 @@ Within the scope of the new Common Agricultural Policy of the European Union, in
         </div>
         <div title="Voting" style="padding-top: 2%; width: 10%;">
             <div class="select">
-                <select name="Vote">
+                <select class="rating" name="Vote">
                     <option value="0">Rate</option>
                     <option value="1">Very irrelevant</option>
                     <option value="2">Irrelevant</option>
@@ -1473,7 +1473,7 @@ Within the scope of the new Common Agricultural Policy of the European Union, in
     
     <div style="display: flex; justify-content: space-around; overflow:auto; align-items:start; border-top: solid #128f8b">
         <div title="Main dataset" style="padding: 2%; min-width: 20%; max-width:20%">
-            <p><b>Order</b>: #20 out of 31</p>
+            <p><b>Order</b>: #20 out of 30</p>
             <p><b>Title</b>: Daily air quality observation coverage avg (2021-06)</p>
             <p data-more="https://data.europa.eu/data/datasets/daily_air_quality_observation_coverage_avg_2021_06?locale=en" class="description"><b>Description:</b> The dataset provides the daily evolution of the estimation of the maximum, minimum and average concentrations of each pollulant. This dataset has been created in the context of the TRAFAIR project - https://trafair.eu/</p>
             <p><b>Category:</b> Government and public sector</p>
@@ -1535,7 +1535,7 @@ In response to the requirements of the Water Framework Directive, the Water and 
         </div>
         <div title="Voting" style="padding-top: 2%; width: 10%;">
             <div class="select">
-                <select name="Vote">
+                <select class="rating" name="Vote">
                     <option value="0">Rate</option>
                     <option value="1">Very irrelevant</option>
                     <option value="2">Irrelevant</option>
@@ -1549,7 +1549,7 @@ In response to the requirements of the Water Framework Directive, the Water and 
     
     <div style="display: flex; justify-content: space-around; overflow:auto; align-items:start; border-top: solid #128f8b">
         <div title="Main dataset" style="padding: 2%; min-width: 20%; max-width:20%">
-            <p><b>Order</b>: #21 out of 31</p>
+            <p><b>Order</b>: #21 out of 30</p>
             <p><b>Title</b>: 2016/12 - State Budget Payments by Mission</p>
             <p data-more="https://data.europa.eu/data/datasets/23b050fe-feed-46f8-aada-49a179d08099?locale=en" class="description"><b>Description:</b> Expenditure data relating to Payments State budget for the reference financial year and accounting month - [PBS_SPE_M12_MISS_001]</p>
             <p><b>Category:</b> Government and public sector</p>
@@ -1602,7 +1602,7 @@ In response to the requirements of the Water Framework Directive, the Water and 
         </div>
         <div title="Voting" style="padding-top: 2%; width: 10%;">
             <div class="select">
-                <select name="Vote">
+                <select class="rating" name="Vote">
                     <option value="0">Rate</option>
                     <option value="1">Very irrelevant</option>
                     <option value="2">Irrelevant</option>
@@ -1616,7 +1616,7 @@ In response to the requirements of the Water Framework Directive, the Water and 
     
     <div style="display: flex; justify-content: space-around; overflow:auto; align-items:start; border-top: solid #128f8b">
         <div title="Main dataset" style="padding: 2%; min-width: 20%; max-width:20%">
-            <p><b>Order</b>: #22 out of 31</p>
+            <p><b>Order</b>: #22 out of 30</p>
             <p><b>Title</b>: WMS INSPIRE BPL Meadow width III</p>
             <p data-more="https://data.europa.eu/data/datasets/1e363336-c075-40c7-a829-aaa2c0f6385b?locale=en" class="description"><b>Description:</b> WMS service of the urban development plan “Wiesenwidth III” of the city of Biberach an der Riß, transformed according to INSPIRE, based on an XPlanung dataset in version 5.0.</p>
             <p><b>Category:</b> Agriculture, fisheries, forestry and food</p>
@@ -1669,7 +1669,7 @@ In response to the requirements of the Water Framework Directive, the Water and 
         </div>
         <div title="Voting" style="padding-top: 2%; width: 10%;">
             <div class="select">
-                <select name="Vote">
+                <select class="rating" name="Vote">
                     <option value="0">Rate</option>
                     <option value="1">Very irrelevant</option>
                     <option value="2">Irrelevant</option>
@@ -1683,7 +1683,7 @@ In response to the requirements of the Water Framework Directive, the Water and 
     
     <div style="display: flex; justify-content: space-around; overflow:auto; align-items:start; border-top: solid #128f8b">
         <div title="Main dataset" style="padding: 2%; min-width: 20%; max-width:20%">
-            <p><b>Order</b>: #23 out of 31</p>
+            <p><b>Order</b>: #23 out of 30</p>
             <p><b>Title</b>: Regulated zone of the plan for the prevention of natural hazards of Entremont (Haute-Savoie) — approved on 24/11/1997</p>
             <p data-more="https://data.europa.eu/data/datasets/fr-120066022-jdd-bd5cc47b-951a-4c57-ae8f-529809b98f3b?locale=en" class="description"><b>Description:</b> For natural PPRs, the Environmental Code defines two categories of zones (L562-1): risk-exposed areas and areas that are not directly exposed to risks but where measures can be foreseen to avoid exacerbating the risk.
 Depending on the hazard level, each area is subject to an enforceable settlement. The regulations generally distinguish three types of zones:
@@ -1747,7 +1747,7 @@ The measuring table sheets are available plano and are mostly delivered as monoc
         </div>
         <div title="Voting" style="padding-top: 2%; width: 10%;">
             <div class="select">
-                <select name="Vote">
+                <select class="rating" name="Vote">
                     <option value="0">Rate</option>
                     <option value="1">Very irrelevant</option>
                     <option value="2">Irrelevant</option>
@@ -1761,7 +1761,7 @@ The measuring table sheets are available plano and are mostly delivered as monoc
     
     <div style="display: flex; justify-content: space-around; overflow:auto; align-items:start; border-top: solid #128f8b">
         <div title="Main dataset" style="padding: 2%; min-width: 20%; max-width:20%">
-            <p><b>Order</b>: #24 out of 31</p>
+            <p><b>Order</b>: #24 out of 30</p>
             <p><b>Title</b>: SM 1:5000 cadastral component raster data - Přeštice 8-5</p>
             <p data-more="https://data.europa.eu/data/datasets/cz-cuzk-sm5-rk-pres85?locale=en" class="description"><b>Description:</b> The data were created by transformation of vector cadastral component of SM 5 to raster file. In territories, where vector SM 5 has not been created yet, the cadastral and altimetry components were created by scanning of individual printing masters of planimetry and altimetry from the last issue of the State Map 1:5,000 - derived. The cadastral component does not contain parcel numbers.</p>
             <p><b>Category:</b> Justice, legal system and public safety</p>
@@ -1814,7 +1814,7 @@ The measuring table sheets are available plano and are mostly delivered as monoc
         </div>
         <div title="Voting" style="padding-top: 2%; width: 10%;">
             <div class="select">
-                <select name="Vote">
+                <select class="rating" name="Vote">
                     <option value="0">Rate</option>
                     <option value="1">Very irrelevant</option>
                     <option value="2">Irrelevant</option>
@@ -1828,7 +1828,7 @@ The measuring table sheets are available plano and are mostly delivered as monoc
     
     <div style="display: flex; justify-content: space-around; overflow:auto; align-items:start; border-top: solid #128f8b">
         <div title="Main dataset" style="padding: 2%; min-width: 20%; max-width:20%">
-            <p><b>Order</b>: #25 out of 31</p>
+            <p><b>Order</b>: #25 out of 30</p>
             <p><b>Title</b>: Cadastral map of the Czech Republic  - k.ú. Velká Veleň</p>
             <p data-more="https://data.europa.eu/data/datasets/cz-cuzk-km-778648?locale=en" class="description"><b>Description:</b> Cadastral map is a binding state map series of large scale. Its contents are points of minor horizontal geodetic control, planimetry and map lettering. It can have the form of digital map, analogue map or digitized map. More: Cadastral Notice No. 26/2007 Sb. as amended.</p>
             <p><b>Category:</b> Justice, legal system and public safety</p>
@@ -1881,7 +1881,7 @@ The measuring table sheets are available plano and are mostly delivered as monoc
         </div>
         <div title="Voting" style="padding-top: 2%; width: 10%;">
             <div class="select">
-                <select name="Vote">
+                <select class="rating" name="Vote">
                     <option value="0">Rate</option>
                     <option value="1">Very irrelevant</option>
                     <option value="2">Irrelevant</option>
@@ -1895,7 +1895,7 @@ The measuring table sheets are available plano and are mostly delivered as monoc
     
     <div style="display: flex; justify-content: space-around; overflow:auto; align-items:start; border-top: solid #128f8b">
         <div title="Main dataset" style="padding: 2%; min-width: 20%; max-width:20%">
-            <p><b>Order</b>: #26 out of 31</p>
+            <p><b>Order</b>: #26 out of 30</p>
             <p><b>Title</b>: SM 1:5000 altimetry component raster data - Pardubice 9-7</p>
             <p data-more="https://data.europa.eu/data/datasets/cz-cuzk-sm5-rv-pard97?locale=en" class="description"><b>Description:</b> Raster altimetry component of SM 5 is based on vector file of contour lines from ZABAGED®. However, this product has not been updated contrary to ZABAGED® since 2007.</p>
             <p><b>Category:</b> Environment</p>
@@ -1948,7 +1948,7 @@ The measuring table sheets are available plano and are mostly delivered as monoc
         </div>
         <div title="Voting" style="padding-top: 2%; width: 10%;">
             <div class="select">
-                <select name="Vote">
+                <select class="rating" name="Vote">
                     <option value="0">Rate</option>
                     <option value="1">Very irrelevant</option>
                     <option value="2">Irrelevant</option>
@@ -1962,7 +1962,7 @@ The measuring table sheets are available plano and are mostly delivered as monoc
     
     <div style="display: flex; justify-content: space-around; overflow:auto; align-items:start; border-top: solid #128f8b">
         <div title="Main dataset" style="padding: 2%; min-width: 20%; max-width:20%">
-            <p><b>Order</b>: #27 out of 31</p>
+            <p><b>Order</b>: #27 out of 30</p>
             <p><b>Title</b>: Courts: Federal states, reference date (until 31.12.2012), type of court</p>
             <p data-more="https://data.europa.eu/data/datasets/https-www-genesis-destatis-de-genesis-old-downloads-00-tables-24111-0001_00?locale=en" class="description"><b>Description:</b> Courts: Federal states, reference date (until 31.12.2012), type of court</p>
             <p><b>Category:</b> Justice, legal system and public safety</p>
@@ -2025,7 +2025,7 @@ Breakdown of criminal matters resolved by type of  resolved matter. Annual. Prov
         </div>
         <div title="Voting" style="padding-top: 2%; width: 10%;">
             <div class="select">
-                <select name="Vote">
+                <select class="rating" name="Vote">
                     <option value="0">Rate</option>
                     <option value="1">Very irrelevant</option>
                     <option value="2">Irrelevant</option>
@@ -2039,7 +2039,7 @@ Breakdown of criminal matters resolved by type of  resolved matter. Annual. Prov
     
     <div style="display: flex; justify-content: space-around; overflow:auto; align-items:start; border-top: solid #128f8b">
         <div title="Main dataset" style="padding: 2%; min-width: 20%; max-width:20%">
-            <p><b>Order</b>: #28 out of 31</p>
+            <p><b>Order</b>: #28 out of 30</p>
             <p><b>Title</b>: WFS INSPIRE PLU site plan for the development plan Bauplatzwiesen I</p>
             <p data-more="https://data.europa.eu/data/datasets/73cef2da-094e-49d0-827c-83e01de38d52?locale=en" class="description"><b>Description:</b> Inspire PLU site plan for the development plan Bauplatzwiesen I</p>
             <p><b>Category:</b> Agriculture, fisheries, forestry and food</p>
@@ -2092,7 +2092,7 @@ Breakdown of criminal matters resolved by type of  resolved matter. Annual. Prov
         </div>
         <div title="Voting" style="padding-top: 2%; width: 10%;">
             <div class="select">
-                <select name="Vote">
+                <select class="rating" name="Vote">
                     <option value="0">Rate</option>
                     <option value="1">Very irrelevant</option>
                     <option value="2">Irrelevant</option>
@@ -2106,7 +2106,7 @@ Breakdown of criminal matters resolved by type of  resolved matter. Annual. Prov
     
     <div style="display: flex; justify-content: space-around; overflow:auto; align-items:start; border-top: solid #128f8b">
         <div title="Main dataset" style="padding: 2%; min-width: 20%; max-width:20%">
-            <p><b>Order</b>: #29 out of 31</p>
+            <p><b>Order</b>: #29 out of 30</p>
             <p><b>Title</b>: XPlanning data set BPL “Stamping ground (2nd amendment)”</p>
             <p data-more="https://data.europa.eu/data/datasets/a7801744-8523-423f-a837-14117ff7e4b2?locale=en" class="description"><b>Description:</b> The development plan (BPL) contains the legally binding settlements for the urban planning order. In principle, the development plan must be developed from the land use plan. The available data is the development plan “Stampfegrund (2nd Amendment)” of the municipality of Bad Bellingen from XPlanung 5.0. Description: Deportation of a new building window for a youth house.</p>
             <p><b>Category:</b> Justice, legal system and public safety</p>
@@ -2160,7 +2160,7 @@ Planning areas 31.01 and 32.02</p>
         </div>
         <div title="Voting" style="padding-top: 2%; width: 10%;">
             <div class="select">
-                <select name="Vote">
+                <select class="rating" name="Vote">
                     <option value="0">Rate</option>
                     <option value="1">Very irrelevant</option>
                     <option value="2">Irrelevant</option>
@@ -2174,7 +2174,7 @@ Planning areas 31.01 and 32.02</p>
     
     <div style="display: flex; justify-content: space-around; overflow:auto; align-items:start; border-top: solid #128f8b">
         <div title="Main dataset" style="padding: 2%; min-width: 20%; max-width:20%">
-            <p><b>Order</b>: #30 out of 31</p>
+            <p><b>Order</b>: #30 out of 30</p>
             <p><b>Title</b>: Project and development plan “Gewerbestättengebiet Eggersdorf Baustoffzentrum Sommer” — Municipality Petershagen/Eggersdorf OT Eggersdorf</p>
             <p data-more="https://data.europa.eu/data/datasets/130bd54f-4f99-4380-90b4-a469b08d2765?locale=en" class="description"><b>Description:</b> As a binding construction plan, the project and development plan implements an object-related project planning into directly applicable law. The same rules apply to him as a project-related development plan, which are also relevant for the development plan. As a binding construction plan, the project and development plan implements an object-related project planning into directly applicable law.
 The same rules apply to him as a project-related development plan, which are also relevant for the development plan.</p>
@@ -2228,102 +2228,7 @@ The same rules apply to him as a project-related development plan, which are als
         </div>
         <div title="Voting" style="padding-top: 2%; width: 10%;">
             <div class="select">
-                <select name="Vote">
-                    <option value="0">Rate</option>
-                    <option value="1">Very irrelevant</option>
-                    <option value="2">Irrelevant</option>
-                    <option value="3">Neutral</option>
-                    <option value="4">Relevant</option>
-                    <option value="5">Very relevant</option>
-                </select>
-            </div>
-        </div>
-    </div>
-    
-    <div style="display: flex; justify-content: space-around; overflow:auto; align-items:start; border-top: solid #128f8b">
-        <div title="Main dataset" style="padding: 2%; min-width: 20%; max-width:20%">
-            <p><b>Order</b>: #31 out of 31</p>
-            <p><b>Title</b>: DBTR — Region — (REG_GPG)</p>
-            <p data-more="https://data.europa.eu/data/datasets/r_emiro_dbtr_reg_gpg?locale=en" class="description"><b>Description:</b> Defines the area of the Region as the composition of its provincial areas. Compared to the previous version of 2008, with the implementation of Law No 117 of 3 August 2009, it includes the municipalities ex Marche della Valmarecchia. In this edition there are the new municipalities of Montecopiolo and Sassofeltrio: OJ No 142 of 16 June 2021 — Law No 84 of 28 May 2021: Detachment of the municipalities of Montecopiolo and Sassofeltrio from the Marche region and their aggregation to the Emilia-Romagna region, within the province of Rimini, pursuant to the second paragraph of Article 132 of the Constitution.</p>
-            <p><b>Category:</b> Government and public sector</p>
-            <p><b>Last modification date:</b> 2023-01-30T00:00:00Z</p>
-            <p><a href="https://data.europa.eu/data/datasets/r_emiro_dbtr_reg_gpg?locale=en"  target="_blank">Link to the dataset</a></p>
-        </div>
-        <div
-            style="padding: 2%; padding-bottom:5%; display: flex; overflow:auto; width: 60%; border-left: solid #128f8b; border-right: solid #128f8b">
-            
-            <div title="dataset" style="padding: 1%; min-width: 20em;">
-                <p><b>Title:</b> Popular initiative “End with the tax privileges for millionaires (abrogation of flat-rate taxation)”</p>
-                <p data-more="https://data.europa.eu/data/datasets/vote-volksinitiative-schluss-mit-den-steuerprivilegien-fur-millionare-abschaffung-der-pauschalbesteuerung-standeskanzlei-graubuenden?locale=en" class="description"><b>Description:</b> Final results of the federal vote “People’s Initiative”Finishing the tax privileges for millionaires (exemption of flat-rate taxation)“”, 30 November 2014, Graubünden — Grischun — Grigioni, broken down by municipalities.</p>
-                <p><b>Category:</b> Government and public sector</p>
-                <p><b>Last modification date:</b> 2022-01-19T06:36:18Z</p>
-                <p><a href="https://data.europa.eu/data/datasets/vote-volksinitiative-schluss-mit-den-steuerprivilegien-fur-millionare-abschaffung-der-pauschalbesteuerung-standeskanzlei-graubuenden?locale=en" target="_blank">Link to the dataset</a></p>
-            </div>
-            
-            <div title="dataset" style="padding: 1%; min-width: 20em;">
-                <p><b>Title:</b> Upper secondary school pupils with a degree within 3 years, introduction programme of the municipality of residence, percentage (%)</p>
-                <p data-more="https://data.europa.eu/data/datasets/http-api-kolada-se-v2-kpi-n17541?locale=en" class="description"><b>Description:</b> Number of pupils registered in the municipality who started on introduction programmes at upper secondary school three years ago with a degree within three years divided by the number of pupils registered in the municipality who started on introduction programs at upper secondary school three years ago. Students who do not have a Swedish personal identity number at the beginning of their education (e.g. newly arrived pupils who have not yet been registered in the population register) are not included. As of 2021, IB students will be excluded. Data is available according to gender breakdown.</p>
-                <p><b>Category:</b> Government and public sector</p>
-                <p><b>Last modification date:</b> 2023-11-28</p>
-                <p><a href="https://data.europa.eu/data/datasets/http-api-kolada-se-v2-kpi-n17541?locale=en" target="_blank">Link to the dataset</a></p>
-            </div>
-            
-            <div title="dataset" style="padding: 1%; min-width: 20em;">
-                <p><b>Title:</b> Partial New-Aquitaine: Easement I4 — Electric lines — Perimeters (linear)</p>
-                <p data-more="https://data.europa.eu/data/datasets/91af2e5e-4f6c-42e5-839d-052afaff5498?locale=en" class="description"><b>Description:</b> These are two categories of servitudes established by the Act of 15 June 1906 on energy distributions.
-
-the easements provided for in paragraphs 1, 2, 3 and 4 of section 12 concerning all electrical energy distributions:
-— anchorage easement to permanently establish supports and anchorages for overhead electric conductors, either outside the walls or facades overlooking the public highway or on the roofs and terraces of buildings,
-— overhang easement allowing electric conductors to pass over private property,
-— passage or support easement to permanently establish underground pipes, or supports
-for air operators, on unbuilt private land, which is not closed with walls or other equivalent fences,
-— pruning and felling easement of trees for cutting trees and branches of trees that are located
-in the vicinity of overhead electric conductors, hinder their installation or could, by their movement or fall,
-cause short circuits or damage to works.
-These are easements that do not result in any dispossession of the owner who retains the right to demolish, repair,
-raise, close or build, subject to notifying the dealer one month before starting the work.
-
-perimeters established pursuant to Article 12 bis on either side of an overhead power line with a voltage of 130 kilovolts or more and within which:
-— the following shall be prohibited:
-• residential buildings,
-• places of welcome for Travellers,
-• certain categories of establishments receiving from the public: reception facilities for the elderly and disabled persons, hotels and accommodation facilities, educational establishments, holiday camps, health facilities, penitentiary establishments, outdoor establishments.
-— may be prohibited or subject to requirements:
-• other categories of establishments receiving the public,
-• installations classified for the protection of the environment subject to authorisation and manufacturing, using or storing oxidising, explosive, flammable or combustible substances without, however, hindering the adaptation, rehabilitation or extension of existing ones, provided that the capacity of inhabitants within the area of servitudes is not increased.
-
-PLEASE NOTE: this dataset is not exhaustive on the perimeter of New Aquitaine, it concerns the perimeter of the former Limousin region.</p>
-                <p><b>Category:</b> Government and public sector</p>
-                <p><b>Last modification date:</b> nan</p>
-                <p><a href="https://data.europa.eu/data/datasets/91af2e5e-4f6c-42e5-839d-052afaff5498?locale=en" target="_blank">Link to the dataset</a></p>
-            </div>
-            
-            <div title="dataset" style="padding: 1%; min-width: 20em;">
-                <p><b>Title:</b> Elections in Berlin 2016: Chamber of Deputies and District Assemblies (final result)</p>
-                <p data-more="https://data.europa.eu/data/datasets/f41eb818-5e4d-4067-aea0-f528cfa6ce37?locale=en" class="description"><b>Description:</b> The final outcome of the election of the House of Deputies and the District Assembly; First and Second Votes 
-Update of the record:
-Removal of personal data of individual applicants.The final outcome of the election of the House of Deputies and the District Assembly;
-First and Second Votes
- 
-Update of the record:
-Removal of personal data of individual applicants.</p>
-                <p><b>Category:</b> Government and public sector</p>
-                <p><b>Last modification date:</b> 2020-10-13T16:22:03.699384Z</p>
-                <p><a href="https://data.europa.eu/data/datasets/f41eb818-5e4d-4067-aea0-f528cfa6ce37?locale=en" target="_blank">Link to the dataset</a></p>
-            </div>
-            
-            <div title="dataset" style="padding: 1%; min-width: 20em;">
-                <p><b>Title:</b> Uncertainty figures – The supply of recycling centres in the municipality is good, share (%)</p>
-                <p data-more="https://data.europa.eu/data/datasets/http-api-kolada-se-v2-kpi-u01634?locale=en" class="description"><b>Description:</b> This is an uncertainty number, for more information see Unsafe data on kolada.se. “The range of recycling centres in the municipality is good, percentage (%)” is an excise estimate from a sample survey. This means that the estimate is not necessarily representative of the population as a whole. However, with the point estimate ± the uncertainty number, one can most likely say that the true mean is within the range. Data is available according to gender breakdown.</p>
-                <p><b>Category:</b> Government and public sector</p>
-                <p><b>Last modification date:</b> 2023-12-16</p>
-                <p><a href="https://data.europa.eu/data/datasets/http-api-kolada-se-v2-kpi-u01634?locale=en" target="_blank">Link to the dataset</a></p>
-            </div>
-            
-        </div>
-        <div title="Voting" style="padding-top: 2%; width: 10%;">
-            <div class="select">
-                <select name="Vote">
+                <select class="rating" name="Vote">
                     <option value="0">Rate</option>
                     <option value="1">Very irrelevant</option>
                     <option value="2">Irrelevant</option>
