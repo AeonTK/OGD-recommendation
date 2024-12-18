@@ -3,8 +3,8 @@ $(document).ready(function () {
     $(document).ready(function () {
         $(".description").each(function (i) {
             var len = $(this).html().length;
-            if (len > 500) {
-                $(this).html($(this).html().substr(0, 500) + '...');
+            if (len > 400) {
+                $(this).html($(this).html().substr(0, 400) + '...');
                 $(this).append($('<a href="'+$(this).data("more")+'" target="_blank">Read more</a>'));
             }
         });
