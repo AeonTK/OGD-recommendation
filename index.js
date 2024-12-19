@@ -1,4 +1,6 @@
 $(document).ready(function () {
+    Parse.initialize("mngedHY5lYolVxO2JUasuSk6K3VStvqxQvv1v1p7", "l2NHRBsGFqZzzh23E5YAAHIFOy2WCZG8fk76iwir"); //PASTE HERE YOUR Back4App APPLICATION ID AND YOUR JavaScript KEY
+    Parse.serverURL = "https://parseapi.back4app.com/";
 
     $(document).ready(function () {
         $(".description").each(function (i) {
@@ -12,8 +14,6 @@ $(document).ready(function () {
 
     $("#submit").on('click', function (event) {
         event.preventDefault();
-        var email = 'ramil.huseynov@ut.ee';
-        var subject = 'OGD Survey';
         var emailBody = "Ratings: ";
         var count = 0;
         $(".rating").each(function () {
@@ -22,7 +22,7 @@ $(document).ready(function () {
             }
             emailBody += $(this).val() + " "
         })
-        if (count < 10) {
+        if (count < 0) {
             alert("You should rate at least 10 recommendations")
         }
         else {
@@ -31,7 +31,19 @@ $(document).ready(function () {
             emailBody += "\n EU portal frequency: " + $('#eu-portal-freq').val();
             emailBody += "\n Navigation easiness: " + $('#easy-navigation').val();
             emailBody += "\n Expectation: " + $('#expectation').val();
-            window.location = 'mailto:' + email + '?subject=' + subject + '&body=' + emailBody;
-        }
+            emailBody += "\n Email: " + $('#email').val();
+            const Survey = Parse.Object.extend("Survey");
+            const survey = new Survey();
+            survey.set("Email", emailBody);
+            survey.save()
+                .then((survey) => {
+                // Execute any logic that should take place after the object is saved.
+                alert('Thank you! Form was submitted successfully');
+                }, (error) => {
+                // Execute any logic that should take place if the save fails.
+                // error is a Parse.Error with an error code and message.
+                alert('Error occured submitting formə');
+                });
+            }
     })
 })

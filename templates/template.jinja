@@ -175,19 +175,25 @@
             </div>
         </div>
         {% endfor %}
-        <div style="display: flex; justify-content:center; padding: 2%">
-            <label style="margin-right: 2em">Do you have any comments about the recommendations or suggestions?:
+        <div class="general-q-container-2">
+            <label>Do you have any comments about the recommendations or suggestions?
             </label>
             <textarea id="suggestions" name="suggestions"></textarea>
         </div>
+        <div class="general-q-container-2">
+            <label>If you want to participate in 25-euro Wolt voucher lottery, please include your email: </label>
+            <input type="text" id="email" name="email" />
+        </div>
         <div style="display: flex; justify-content:center" title="Send email">
-            <p><b>Note: </b> Submit button will redirect you to <b>mail</b> your responses. <br /> By submitting this
+            <p><b>Note: By submitting this
                 survey, you consent to the usage of these results in the research.</p>
         </div>
         <div style="display: flex; justify-content:center" title="Send email">
             <button class="button" id="submit">Submit</button>
         </div>
     </form>
+
+    <script type="text/javascript" src="https://npmcdn.com/parse/dist/parse.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
         integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
     <script src='https://cdn.jsdelivr.net/gh/FThompson/FormPersistence.js@2.0.6/form-persistence.min.js'></script>
