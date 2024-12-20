@@ -22,7 +22,7 @@ $(document).ready(function () {
             }
             emailBody += $(this).val() + " "
         })
-        if (count < 0) {
+        if (count < 10) {
             alert("You should rate at least 10 recommendations")
         }
         else {
