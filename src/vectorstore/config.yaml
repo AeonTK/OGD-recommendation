@@ -1,0 +1,8 @@
+embedding_model:
+  provider: cohere
+  model: embed-multilingual-v3.0
+
+  # provider: spacy
+  # model: en_core_web_lg
+
+# dim: 1024
