@@ -23,13 +23,15 @@ class Retriever:
         for hit in hits:
             cid_str = str(hit.get("id")) if isinstance(hit, dict) else str(getattr(hit, "id", ""))
             text = hit.get("text") if isinstance(hit, dict) else getattr(hit, "text", "")
+            metadata = hit.get("metadata") if isinstance(hit, dict) else getattr(hit, "metadata", None)
             distance = hit.get("distance") if isinstance(hit, dict) else getattr(hit, "distance", None)
             try:
                 dist = float(distance) if distance is not None else None
             except Exception:
                 dist = None
             pid = UUID(cid_str)
-            items.append(SearchItem(id=pid, text=text or "", distance=dist))
+            meta_dict = metadata if isinstance(metadata, dict) else None
+            items.append(SearchItem(id=pid, text=text or "", distance=dist, metadata=meta_dict))
         return items
 
     def retrieve(self, query: str, limit: int = 10) -> List[SearchItem]:

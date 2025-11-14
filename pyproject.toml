@@ -5,10 +5,14 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
+    "asyncio>=4.0.0",
+    "httpx[http2]>=0.28.1",
     "langchain>=0.3.27",
     "langchain-cohere>=0.4.6",
+    "langchain-ollama>=0.3.10",
     "pandas>=2.3.3",
     "pip>=25.2",
+    "pyinstrument>=5.1.1",
     "pymilvus>=2.6.2",
     "pyyaml>=6.0.3",
     "spacy>=3.8.7",

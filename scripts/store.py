@@ -22,9 +22,11 @@ import sys
 import uuid
 import logging
 from pathlib import Path
-from typing import List
-
-import pandas as pd
+from typing import List, Any, Dict
+import json
+import cProfile
+import pstats
+from src.vectorstore.data_store import DataVectorStore
 
 # Ensure 'src' is on sys.path so we can import vectorstore package
 CURRENT_DIR = Path(__file__).resolve().parent
@@ -32,107 +34,245 @@ SRC_DIR = CURRENT_DIR.parent / "src"
 if str(SRC_DIR) not in sys.path:
 	sys.path.insert(0, str(SRC_DIR))
 
-from vectorstore.data_store import DataVectorStore  # type: ignore  # noqa: E402
 
 # ---------------------------------------------------------------------------
 # Configuration Constants (modify as needed)
 # ---------------------------------------------------------------------------
-CSV_PATH: str = "dataset-500.csv"
-TEXT_COLUMN: str = "description.en"
+JSONL_PATH : str = "all_datasets_UNIQUE.jsonl"
 COLLECTION_NAME: str = "programs"
 RECREATE_COLLECTION: bool = False  # Set True to drop & recreate collection
-BATCH_SIZE: int = 512
+BATCH_SIZE: int = 1024
 ROW_LIMIT: int = 0  # 0 means ingest all rows
 LOG_LEVEL: str = "INFO"  # One of: CRITICAL, ERROR, WARNING, INFO, DEBUG
 
-# NOTE: Query/search functionality has been moved to scripts/search.py
+# Code profiler integration (cleaner & more detailed):
+# Enable to run the whole ingestion under a profiler backend.
+PROFILER_ENABLED: bool = True
+# 'pyinstrument' (preferred if installed) or 'cprofile' (stdlib fallback)
+PROFILER_BACKEND: str = "pyinstrument"
+PROFILER_OUTPUT_BASENAME: str = "store_profile"  # will create .html or .pstats next to this file
+
+# Max field lengths (characters)
+MAX_TITLE_CHARS: int = 512
+MAX_DESC_CHARS: int = 6144
+MAX_KEYWORDS_CHARS: int = 512
+MAX_DATASET_CHARS: int = 512
 
 
-# (Argument parsing removed per request; constants above control behavior.)
+def _pick_text(d: Dict[str, Any], *keys: str) -> str:
+	"""Return first non-empty text for provided keys.
 
-
-def load_dataframe(csv_path: str, column: str) -> pd.DataFrame:
-	df = pd.read_csv(csv_path)
-	if column not in df.columns:
-		raise ValueError(
-			f"Column '{column}' not in CSV. Available columns: {list(df.columns)[:10]}... (total {len(df.columns)})"
-		)
-	return df
-
-
-def select_ids(df: pd.DataFrame) -> List[str]:
-	"""Generate fresh UUIDv4 strings for every row.
-
-	This intentionally ignores any existing 'id' column in the CSV to ensure
-	compliance with the Milvus schema (VARCHAR(36)). Original IDs (if needed)
-	could be stored as an additional field in the schema in the future.
+	Handles nested dicts by preferring 'en' when present, or joining string values.
 	"""
-	return [str(uuid.uuid4()) for _ in range(len(df))]
-
-
-def clean_texts(series: pd.Series) -> List[str]:
-	texts: List[str] = []
-	for val in series.fillna("").astype(str).tolist():
-		t = val.strip()
-		if not t:
+	for k in keys:
+		if k not in d:
 			continue
-		texts.append(t)
-	return texts
-
-
-def ingest(csv_path: str, column: str, collection: str, recreate: bool, batch_size: int, limit: int) -> DataVectorStore:
-	logger = logging.getLogger(__name__)
-	store = DataVectorStore(collection=collection)
-	if recreate:
-		logger.info("Recreating collection '%s' ...", collection)
-		store.reset()
-	logger.info("Loading CSV: %s", csv_path)
-	df = load_dataframe(csv_path, column)
-
-	if limit and limit > 0:
-		df = df.head(limit)
-		logger.info("Limiting to first %d rows", len(df))
-
-	ids_full = select_ids(df)
-	texts_full = df[column].fillna("").astype(str).tolist()
-
-	# Filter out empty texts while keeping id alignment
-	filtered_ids: List[str] = []
-	filtered_texts: List[str] = []
-	for i, txt in enumerate(texts_full):
-		st = txt.strip()
-		if not st:
+		v = d.get(k)
+		if v is None:
 			continue
-		filtered_ids.append(ids_full[i])
-		filtered_texts.append(st)
+		# If nested dict (e.g., {"en": "...", ...})
+		if isinstance(v, dict):
+			# Prefer English if available, else concatenate string-like values
+			if "en" in v and isinstance(v["en"], str) and v["en"].strip():
+				return v["en"].strip()
+			parts = [str(x).strip() for x in v.values() if isinstance(x, (str, int, float))]
+			txt = " ".join([p for p in parts if p])
+			if txt:
+				return txt
+		# If list of strings (e.g., keywords)
+		if isinstance(v, list):
+			parts = [str(x).strip() for x in v if isinstance(x, (str, int, float))]
+			txt = ", ".join([p for p in parts if p])
+			if txt:
+				return txt
+		# Fallback to plain string/number
+		if isinstance(v, (str, int, float)):
+			s = str(v).strip()
+			if s:
+				return s
+	return ""
 
-	if not filtered_texts:
-		raise ValueError("No non-empty texts to ingest.")
 
-	embedder = store.embedder  # Reuse embedder to ensure dim consistency
-	logger.info(
-		"Embedding and upserting %d texts (batch size %d)...", len(filtered_texts), batch_size
+def _truncate(text: str, max_len: int) -> str:
+	"""Cut text to max_len characters if it exceeds; no ellipsis."""
+	if max_len > 0 and len(text) > max_len:
+		return text[:max_len]
+	return text
+
+
+def parse_jsonl_row(row: Dict[str, Any]) -> tuple[str, Dict[str, Any]]:
+	"""Convert a JSONL row into (text, metadata dict).
+
+	- text: concatenation of title, description, and keywords (for embedding/search).
+	- metadata: opaque dict stored alongside the vectors (NOT embedded or analyzed).
+	"""
+	title = _pick_text(row, "title", "title.en", "title_en")
+	desc = _pick_text(row, "description", "description.en", "description_en")
+	keywords = _pick_text(row, "keywords", "keyword", "tags")
+	# Try a few common URL keys
+	# Prefer 'dataset' key as provided in JSONL; fall back to common URL keys if needed
+	dataset = _pick_text(
+		row,
+		"dataset",
+		"url",
+		"link",
+		"landingPage",
+		"landing_page",
+		"website",
+		"source",
 	)
+
+	# Enforce maximum lengths
+	title = _truncate(title, MAX_TITLE_CHARS)
+	desc = _truncate(desc, MAX_DESC_CHARS)
+	keywords = _truncate(keywords, MAX_KEYWORDS_CHARS)
+	dataset = _truncate(dataset, MAX_DATASET_CHARS)
+
+	parts: List[str] = []
+	if title:
+		parts.append(title)
+	if desc:
+		parts.append(desc)
+	if keywords:
+		parts.append(f"Keywords: {keywords}")
+	text = "\n\n".join(parts).strip()
+	metadata: Dict[str, Any] = {}
+	if dataset:
+		metadata["dataset"] = dataset
+	return text, metadata
+
+
+def ingest_jsonl_batches() -> None:
+	"""Read JSONL file in batches and upsert into Milvus vector store.
+
+	Uses module-level constants: JSONL_PATH, COLLECTION_NAME, RECREATE_COLLECTION,
+	BATCH_SIZE, ROW_LIMIT. Generates UUIDv4 ids per row.
+	"""
+	logger = logging.getLogger(__name__)
+	store = DataVectorStore(collection=COLLECTION_NAME)
+	if RECREATE_COLLECTION:
+		logger.info("Recreating collection '%s' ...", COLLECTION_NAME)
+		store.reset()
 
 	total = 0
-	for start in range(0, len(filtered_texts), batch_size):
-		end = start + batch_size
-		batch_ids = filtered_ids[start:end]
-		batch_texts = filtered_texts[start:end]
-		vectors = embedder.embed_documents(batch_texts)
-		store.upsert(batch_ids, batch_texts, vectors)
-		total += len(batch_texts)
-		logger.debug("Batch upserted size=%d cumulative=%d", len(batch_texts), total)
+	batch_ids: List[str] = []
+	batch_texts: List[str] = []
+	batch_metadata: List[Dict[str, Any]] = []
+
+	path = Path(JSONL_PATH)
+	if not path.exists():
+		raise FileNotFoundError(f"JSONL file not found: {path}")
+
 	logger.info(
-		"Completed ingestion: %d texts into collection '%s' (dim=%d).",
-		total,
-		collection,
-		embedder.dim,
+		"Starting ingestion from %s (batch size=%d, row_limit=%s)",
+		path,
+		BATCH_SIZE,
+		ROW_LIMIT or "ALL",
 	)
-	return store
+
+	with path.open("r", encoding="utf-8") as f:
+		for line_no, line in enumerate(f, start=1):
+			if ROW_LIMIT and total >= ROW_LIMIT:
+				break
+			s = line.strip()
+			if not s:
+				continue
+			try:
+				obj = json.loads(s)
+				if not isinstance(obj, dict):
+					logger.debug("Skipping non-dict row at line %d", line_no)
+					continue
+			except json.JSONDecodeError as e:
+				logger.warning("Skipping malformed JSON at line %d: %s", line_no, e)
+				continue
+
+			text, metadata = parse_jsonl_row(obj)
+			if not text:
+				logger.debug("Skipping empty text at line %d", line_no)
+				continue
+
+			batch_ids.append(str(uuid.uuid4()))
+			batch_texts.append(text)
+			batch_metadata.append(metadata)
+
+			# If batch filled, embed + upsert
+			if len(batch_texts) >= BATCH_SIZE:
+				vectors = store.embedder.embed_documents(batch_texts)
+				store.upsert(batch_ids, batch_texts, vectors, metadatas=batch_metadata)
+				total += len(batch_texts)
+				logger.info("Ingested %d rows so far...", total)
+				batch_ids.clear()
+				batch_texts.clear()
+				batch_metadata.clear()
+
+		# Flush tail batch
+		if batch_texts:
+			vectors = store.embedder.embed_documents(batch_texts)
+			store.upsert(batch_ids, batch_texts, vectors, metadatas=batch_metadata)
+			total += len(batch_texts)
+			logger.info("Ingested %d rows total.", total)
+	logger.info("Completed ingestion into collection '%s'", COLLECTION_NAME)
 
 
-# Query logic moved to scripts/search.py
+def _run_with_profiler(func) -> None:
+	"""Run a function under a code profiler backend and save report to file.
+
+	- If PROFILER_BACKEND == 'pyinstrument', write an HTML report.
+	- Else (or if pyinstrument missing), use cProfile and write .pstats plus log top entries.
+	"""
+	out_base = Path(__file__).with_name(PROFILER_OUTPUT_BASENAME)
+	if PROFILER_BACKEND.lower() == "pyinstrument":
+		try:
+			from pyinstrument import Profiler  # type: ignore
+			profiler = Profiler()
+			profiler.start()
+			caught: BaseException | None = None
+			try:
+				func()
+			except BaseException as e:  # ensure we still save report
+				caught = e
+			finally:
+				profiler.stop()
+				out_html = out_base.with_suffix(".html")
+				try:
+					profiler.write_html(str(out_html))
+					logging.getLogger(__name__).info(
+						"PyInstrument profile saved to %s", out_html
+					)
+				except Exception as write_err:  # pragma: no cover
+					logging.getLogger(__name__).warning(
+						"Failed to write PyInstrument report: %s", write_err
+					)
+			if caught is not None:
+				raise caught
+			return
+		except Exception as e:  # pragma: no cover
+			logging.getLogger(__name__).warning(
+				"PyInstrument unavailable or failed (%s). Falling back to cProfile.", e
+			)
+	# Fallback to cProfile
+	pr = cProfile.Profile()
+	pr.enable()
+	caught: BaseException | None = None
+	try:
+		func()
+	except BaseException as e:
+		caught = e
+	finally:
+		pr.disable()
+		out_pstats = out_base.with_suffix(".pstats")
+		try:
+			pr.dump_stats(str(out_pstats))
+			logging.getLogger(__name__).info("cProfile stats saved to %s", out_pstats)
+			# Log top 30 by cumulative time
+			s = pstats.Stats(pr).strip_dirs().sort_stats("cumtime")
+			s.print_stats(30)
+		except Exception as write_err:  # pragma: no cover
+			logging.getLogger(__name__).warning(
+				"Failed to write cProfile stats: %s", write_err
+			)
+	if caught is not None:
+		raise caught
 
 
 def main() -> int:
@@ -140,22 +280,18 @@ def main() -> int:
 		level=getattr(logging, LOG_LEVEL.upper(), logging.INFO),
 		format="%(asctime)s %(levelname)s %(name)s - %(message)s",
 	)
-	logger = logging.getLogger(__name__)
 	try:
-		ingest(
-			csv_path=CSV_PATH,
-			column=TEXT_COLUMN,
-			collection=COLLECTION_NAME,
-			recreate=RECREATE_COLLECTION,
-			batch_size=BATCH_SIZE,
-			limit=ROW_LIMIT,
-		)
-		logger.info("Ingestion finished. Use scripts/search.py to run queries.")
+		if PROFILER_ENABLED:
+			_run_with_profiler(ingest_jsonl_batches)
+		else:
+			ingest_jsonl_batches()
 		return 0
 	except Exception as e:  # pragma: no cover
-		logger.exception("Error during ingestion: %s", e)
+		logging.exception("Ingestion failed: %s", e)
 		return 1
 
 
 if __name__ == "__main__":  # pragma: no cover
 	raise SystemExit(main())
+
+

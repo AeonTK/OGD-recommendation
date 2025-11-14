@@ -36,6 +36,11 @@ class CollectionManager:
         schema.add_field(
             field_name="id", datatype=DataType.VARCHAR, max_length=36, is_primary=True
         )
+        # Optional metadata stored as JSON (not analyzed/embedded)
+        schema.add_field(
+            field_name="metadata",
+            datatype=DataType.JSON,
+        )
         schema.add_field(
             field_name="text",
             datatype=DataType.VARCHAR,
@@ -111,10 +116,17 @@ class DataVectorStore:
         self.manager.reset_collection()
 
     def upsert(
-        self, ids: List[str], texts: List[str], dense_vectors: List[List[float]]
+        self,
+        ids: List[str],
+        texts: List[str],
+        dense_vectors: List[List[float]],
+        *,
+        metadatas: Optional[List[Optional[dict]]] = None,
     ) -> None:
         if not (len(ids) == len(texts) == len(dense_vectors)):
             raise ValueError("ids, texts, dense_vectors must be the same length")
+        if metadatas is not None and len(metadatas) != len(ids):
+            raise ValueError("metadatas (if provided) must be the same length as ids")
         # Validate vector dimensionality
         expected_dim = self.embedder.dim
         for i, v in enumerate(dense_vectors):
@@ -122,11 +134,33 @@ class DataVectorStore:
                 raise ValueError(
                     f"dense_vectors[{i}] has dim {len(v)} but collection expects {expected_dim}"
                 )
-        data = [
+        base_rows = [
             {"id": ids[i], "text": texts[i], "text_dense": dense_vectors[i]}
             for i in range(len(ids))
         ]
-        self.client.upsert(collection_name=self.collection, data=data)
+
+        # Prefer metadata JSON; finally base only
+        attempts: List[List[dict]] = []
+        if metadatas is not None:
+            rows = []
+            for i, row in enumerate(base_rows):
+                new_row = dict(row)
+                new_row["metadata"] = metadatas[i] or {}
+                rows.append(new_row)
+            attempts.append(rows)
+        attempts.append(base_rows)
+
+        last_err: Optional[Exception] = None
+        for payload in attempts:
+            try:
+                self.client.upsert(collection_name=self.collection, data=payload)
+                return
+            except Exception as e:  # pragma: no cover - depends on server schema
+                last_err = e
+                continue
+        # If all attempts failed, raise the last error
+        if last_err:
+            raise last_err
 
     def hybrid_search(self, query_text: str, query_dense: List[float], limit: int = 5):
         # Validate query vector dimensionality
@@ -149,10 +183,22 @@ class DataVectorStore:
             limit=limit,
         )
         ranker = RRFRanker(60)
-        return self.client.hybrid_search(
-            collection_name=self.collection,
-            reqs=[req_dense, req_sparse],
-            ranker=ranker,
-            limit=limit,
-            output_fields=["id", "text", "text_dense"],
-        )
+        # Prefer returning metadata JSON if the field exists; gracefully fall back
+        output_fields = ["id", "text", "text_dense", "metadata"]
+        try:
+            return self.client.hybrid_search(
+                collection_name=self.collection,
+                reqs=[req_dense, req_sparse],
+                ranker=ranker,
+                limit=limit,
+                output_fields=output_fields,
+            )
+        except Exception:
+            # Older collection without 'metadata'; retry without it
+            return self.client.hybrid_search(
+                collection_name=self.collection,
+                reqs=[req_dense, req_sparse],
+                ranker=ranker,
+                limit=limit,
+                output_fields=["id", "text", "text_dense"],
+            )

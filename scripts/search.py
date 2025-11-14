@@ -12,9 +12,10 @@ Environment:
 from __future__ import annotations
 
 import logging
+import json
 from pathlib import Path
 import sys
-from typing import Sequence
+from typing import List
 
 # Ensure 'src' on path
 CURRENT_DIR = Path(__file__).resolve().parent
@@ -22,28 +23,49 @@ SRC_DIR = CURRENT_DIR.parent / "src"
 if str(SRC_DIR) not in sys.path:
 	sys.path.insert(0, str(SRC_DIR))
 
-from vectorstore.retriever import Retriever  # type: ignore  # noqa: E402
-from vectorstore.schemas import SearchItem  # type: ignore  # noqa: E402
+from src.vectorstore.embeddings import Embedder  # type: ignore  # noqa: E402
+from src.vectorstore.data_store import DataVectorStore  # type: ignore  # noqa: E402
+from src.vectorstore.retriever import Retriever  # type: ignore  # noqa: E402
+from src.vectorstore.schemas import SearchItem, format_search_item  # type: ignore  # noqa: E402
 
 
 # ---------------------------------------------------------------------------
 # Configuration Constants
 # ---------------------------------------------------------------------------
 COLLECTION_NAME: str = "programs"
-QUERY_TEXT: str = "earth’s surface and all objects on it in the form of dots arranged in a regular lattice and georeferenced in position and height. In contrast to the digital terrain model (DGM), the vegetation and development surface is represented"
+QUERY_TEXT: str = "Gardens in Poland"
 TOP_K: int = 5
 LOG_LEVEL: str = "INFO"
 
 
-def run_query(query: str, top_k: int) -> Sequence[SearchItem]:
+def search(query: str, top_k: int = TOP_K) -> List[SearchItem]:
+	"""Retrieve items from the vector store using Retriever.
+
+	Returns a list of SearchItem and logs an aggregated multi-line block with results.
+	"""
 	logger = logging.getLogger(__name__)
-	retriever = Retriever()
+
+	# Share the same embedder between retriever and store to ensure matching dims.
+	embedder = Embedder()
+	store = DataVectorStore(collection=COLLECTION_NAME, embedder=embedder)
+	retriever = Retriever(store=store, embedder=embedder)
+
 	items = retriever.retrieve(query, limit=top_k)
-	header = f"Top {top_k} results for query={query!r} (returned={len(items)})"
-	lines: list[str] = [header]
+	header = f"Returned K={top_k} results. \nQuery: {query!r} \n"
+	lines: List[str] = [header]
 	for idx, item in enumerate(items, start=1):
-		dist_str = f"{item.distance:.4f}" if item.distance is not None else "?"
-		lines.append(f"{idx}. dist={dist_str} id={item.id} text={item.snippet()}")
+		lines.append(f"{idx}. {format_search_item(item)}")
+		# Also show metadata if present (prefer a concise dataset URL if available)
+		if item.metadata:
+			dataset = item.metadata.get("dataset") if isinstance(item.metadata, dict) else None
+			if dataset:
+				lines.append(f"    metadata.dataset: {dataset}")
+			else:
+				try:
+					meta_str = json.dumps(item.metadata, ensure_ascii=False)
+					lines.append(f"    metadata: {meta_str}")
+				except Exception:
+					lines.append("    metadata: <unserializable>")
 	logger.info("\n".join(lines))
 	return items
 
@@ -54,12 +76,11 @@ def main() -> int:
 		format="%(asctime)s %(levelname)s %(name)s - %(message)s",
 	)
 	try:
-		run_query(QUERY_TEXT, TOP_K)
+		search(QUERY_TEXT, TOP_K)
 		return 0
 	except Exception as e:  # pragma: no cover
 		logging.exception("Search failed: %s", e)
 		return 1
-
 
 if __name__ == "__main__":  # pragma: no cover
 	raise SystemExit(main())
