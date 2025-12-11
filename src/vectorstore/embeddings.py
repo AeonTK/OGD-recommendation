@@ -3,11 +3,14 @@ from pathlib import Path
 from langchain.embeddings.base import init_embeddings
 from langchain_community.embeddings.spacy_embeddings import SpacyEmbeddings
 from functools import cached_property
+from dotenv import load_dotenv
 import asyncio
 import logging
-from pathlib import Path
-from typing import Any, Dict
+import os
 import yaml
+
+
+load_dotenv()
 
 
 # The function now requires a path. No more magic defaults.
@@ -89,14 +92,24 @@ class Embedder:
             self.__dict__["dim"] = self._cfg.get("dim")
 
         provider_name = embedding_cfg.get("provider", "").lower()
+        if provider_name == "ollama":
+            base_url = os.getenv("OLLAMA_URI")
+            if base_url:
+                existing = embedding_cfg.get("base_url")
+                if existing and existing != base_url:
+                    logger.info(
+                        "Overriding Ollama base_url from config (%s) with OLLAMA_URI",
+                        existing,
+                    )
+                embedding_cfg["base_url"] = base_url
         if provider_name == "spacy":
             model_name = embedding_cfg.get("model", "en_core_web_lg")
             logger.info("Initializing spaCy embeddings with model '%s'", model_name)
             self._emb = SpacyEmbeddings(model_name=model_name)
         else:
             logger.info(
-                "Initializing embeddings via init_embeddings provider=%s model=%s", 
-                embedding_cfg.get("provider"), 
+                "Initializing embeddings via init_embeddings provider=%s model=%s",
+                embedding_cfg.get("provider"),
                 embedding_cfg.get("model"),
             )
             self._emb = init_embeddings(**embedding_cfg)

@@ -34,7 +34,7 @@ class CollectionManager:
         schema = MilvusClient.create_schema(auto_id=False)
         # Use string UUIDs (36 chars with dashes) as primary key
         schema.add_field(
-            field_name="id", datatype=DataType.VARCHAR, max_length=36, is_primary=True
+            field_name="id", datatype=DataType.VARCHAR, max_length=256, is_primary=True
         )
         # Optional metadata stored as JSON (not analyzed/embedded)
         schema.add_field(
@@ -162,25 +162,35 @@ class DataVectorStore:
         if last_err:
             raise last_err
 
-    def hybrid_search(self, query_text: str, query_dense: List[float], limit: int = 5):
+    def hybrid_search(self, query_text: str, query_dense: List[float], limit: int = 5, **kwargs):
         # Validate query vector dimensionality
         if len(query_dense) != self.embedder.dim:
             raise ValueError(
                 f"query_dense has dim {len(query_dense)} but collection expects {self.embedder.dim}"
             )
+        
+        filter_expression = kwargs.pop("filter_expression", None)
+
+        search_params = None
+        if filter_expression is not None:
+            search_params = {"hints": "iterative_filter"}
+
+
         # Dense ANN on text_dense
         req_dense = AnnSearchRequest(
             data=[query_dense],
             anns_field="text_dense",
             param={"nprobe": 10},
-            limit=limit,
+            limit=int(min(16384, max(512, limit * 10))),
+            expr=filter_expression,
         )
         # Sparse BM25 on text -> text_sparse
         req_sparse = AnnSearchRequest(
             data=[query_text],
             anns_field="text_sparse",
             param={"drop_ratio_search": 0.2},
-            limit=limit,
+            limit=int(min(16384, max(512, limit * 10))),
+            expr=filter_expression,
         )
         ranker = RRFRanker(60)
         # Prefer returning metadata JSON if the field exists; gracefully fall back
@@ -192,6 +202,7 @@ class DataVectorStore:
                 ranker=ranker,
                 limit=limit,
                 output_fields=output_fields,
+                search_params=search_params,
             )
         except Exception:
             # Older collection without 'metadata'; retry without it
@@ -201,4 +212,5 @@ class DataVectorStore:
                 ranker=ranker,
                 limit=limit,
                 output_fields=["id", "text", "text_dense"],
+                search_params=search_params,
             )

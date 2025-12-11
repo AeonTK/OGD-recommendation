@@ -1,9 +1,11 @@
 import json
 import sys
 import logging
+import re
+import html
 
 # --- Configuration ---
-INPUT_FILE = "all_datasets.jsonl"
+INPUT_FILE = "all_datasets_api_async.jsonl"
 OUTPUT_FILE = "all_datasets_UNIQUE.jsonl"
 # --- End of Configuration ---
 
@@ -18,6 +20,66 @@ logging.basicConfig(
     ]
 )
 # --- End Logging Setup ---
+
+
+def clean_text(text: str) -> str:
+    """Clean title/description-style text.
+
+    - Decode HTML entities (e.g. &agrave; -> à)
+    - Strip HTML tags while keeping inner text
+    - Simplify Markdown links/bold/italics
+    - Remove simple ASCII decorations
+    - Normalize whitespace
+    """
+    if not text:
+        return ""
+
+    # Decode HTML entities
+    text = html.unescape(text)
+
+    # Remove HTML tags (e.g. <a href="...">text</a> -> text)
+    text = re.sub(r"<[^>]+>", "", text)
+
+    # Markdown links: [Text](url) -> Text
+    text = re.sub(r"\[([^\]]+)\]\([^\)]+\)", r"\1", text)
+
+    # Markdown bold/italics: **Text** / __Text__ / *Text* / _Text_ -> Text
+    text = re.sub(r"[\*_]{2,}(.*?)[\*_]{2,}", r"\1", text)
+    text = re.sub(r"[\*_](.*?)[\*_]", r"\1", text)
+
+    # ASCII decorations like =====
+    text = re.sub(r"={3,}", "", text)
+
+    # Normalize whitespace and newlines
+    text = text.replace("\r\n", " ").replace("\n", " ")
+    text = re.sub(r"\s+", " ", text)
+
+    return text.strip()
+
+
+def clean_keywords(keywords_value):
+    """Clean keywords field.
+
+    - Treat "N_A" or empty as no keywords
+    - Split on semicolons
+    - Strip whitespace and drop empties
+    Returns a list of keyword strings.
+    """
+    if not keywords_value:
+        return []
+
+    # Many records use a single string; tolerate lists as well.
+    if isinstance(keywords_value, list):
+        raw = ";".join(str(k) for k in keywords_value)
+    else:
+        raw = str(keywords_value)
+
+    raw = raw.strip()
+    if not raw or raw.upper() == "N_A":
+        return []
+
+    parts = [p.strip() for p in raw.split(";")]
+    return [p for p in parts if p]
 
 def main():
     logging.info("Starting deduplication...")
@@ -61,10 +123,17 @@ def main():
                         # Check if we have seen this URI before
                         if uri not in seen_dataset_uris:
                             # This is a new, unique dataset
-                            # 1. Add its URI to our set
                             seen_dataset_uris.add(uri)
-                            # 2. Write the original, full line to our new file
-                            outfile.write(line)
+
+                            # Clean fields before writing
+                            cleaned_record = {
+                                "dataset": uri,
+                                "title": clean_text(record.get("title")),
+                                "description": clean_text(record.get("description")),
+                                "keywords": clean_keywords(record.get("keywords")),
+                            }
+
+                            outfile.write(json.dumps(cleaned_record, ensure_ascii=False) + "\n")
                         else:
                             # We've seen this URI. It's a duplicate.
                             dupe_count += 1

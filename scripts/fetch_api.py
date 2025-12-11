@@ -18,7 +18,7 @@ LIMIT = 1000  # docs: up to 1000
 USE_SCROLL = True
 MAX_CONCURRENCY = 20  # used for page-based parallel fetching
 INCLUDES = (
-    "id,title.en,description.en,languages,modified,keywords,issued,"
+    "id,title,title.en,description,description.en,languages,modified,keywords,issued,"
     "catalog.id,catalog.title,catalog.country.id,distributions.id,"
     "distributions.format.label,distributions.format.id,distributions.license,"
     "categories.label,publisher"
