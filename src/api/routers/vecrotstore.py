@@ -7,7 +7,7 @@ import os
 from dotenv import load_dotenv
 from pymilvus import connections, utility, Collection
 
-load_dotenv()
+load_dotenv(override=True)
 MILVUS_URI = os.getenv("MILVUS_URI", "http://localhost:19530")
 MILVUS_TOKEN = os.getenv("MILVUS_TOKEN", "root:Milvus")
 
@@ -180,10 +180,17 @@ async def drop_alias(collection_name: str, alias_name: str):
         # validate alias belongs to collection
         aliases = list(utility.list_aliases(collection_name))
         if alias_name not in aliases:
-            raise HTTPException(status_code=404, detail=f"Alias '{alias_name}' not found for collection '{collection_name}'")
+            raise HTTPException(
+                status_code=404,
+                detail=f"Alias '{alias_name}' not found for collection '{collection_name}'",
+            )
         utility.drop_alias(alias_name)
         aliases = list(utility.list_aliases(collection_name))
-        return {"status": "alias_dropped", "collection": collection_name, "aliases": aliases}
+        return {
+            "status": "alias_dropped",
+            "collection": collection_name,
+            "aliases": aliases,
+        }
     except HTTPException:
         raise
     except Exception as e:

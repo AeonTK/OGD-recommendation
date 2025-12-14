@@ -1,5 +1,5 @@
 import logging
-from typing import List, Optional
+from typing import List, Optional, Tuple
 
 from pymilvus import (
     AnnSearchRequest,
@@ -7,7 +7,7 @@ from pymilvus import (
     Function,
     FunctionType,
     MilvusClient,
-    RRFRanker,
+    WeightedRanker
 )
 
 from .milvus_client import get_milvus_client
@@ -34,7 +34,7 @@ class CollectionManager:
         schema = MilvusClient.create_schema(auto_id=False)
         # Use string UUIDs (36 chars with dashes) as primary key
         schema.add_field(
-            field_name="id", datatype=DataType.VARCHAR, max_length=256, is_primary=True
+            field_name="id", datatype=DataType.VARCHAR, max_length=36, is_primary=True
         )
         # Optional metadata stored as JSON (not analyzed/embedded)
         schema.add_field(
@@ -103,6 +103,7 @@ class DataVectorStore:
         collection: str = "programs",
         manager: Optional[CollectionManager] = None,
         embedder: Optional[Embedder] = None,
+        ranker_weights: Optional[Tuple[float, float]] = None,
     ) -> None:
         self.client = client or get_milvus_client()
         self.collection = collection
@@ -110,6 +111,7 @@ class DataVectorStore:
         self.manager = manager or CollectionManager(
             self.client, name=self.collection, embedder=self.embedder
         )
+        self.ranker_weights = ranker_weights
         self.manager.ensure_collection()
 
     def reset(self) -> None:
@@ -162,12 +164,29 @@ class DataVectorStore:
         if last_err:
             raise last_err
 
-    def hybrid_search(self, query_text: str, query_dense: List[float], limit: int = 5, **kwargs):
+    def hybrid_search(
+        self,
+        query_texts: List[str],
+        query_denses: List[List[float]],
+        limit: int = 5,
+        *,
+        ranker_weights: Optional[Tuple[float, float]] = None,
+        **kwargs,
+    ):
+        # Validate input lengths match
+        if len(query_texts) != len(query_denses):
+            raise ValueError("query_texts and query_denses must have the same length")
+        
+        if not query_texts:
+            return []
+        
         # Validate query vector dimensionality
-        if len(query_dense) != self.embedder.dim:
-            raise ValueError(
-                f"query_dense has dim {len(query_dense)} but collection expects {self.embedder.dim}"
-            )
+        expected_dim = self.embedder.dim
+        for i, query_dense in enumerate(query_denses):
+            if len(query_dense) != expected_dim:
+                raise ValueError(
+                    f"query_denses[{i}] has dim {len(query_dense)} but collection expects {expected_dim}"
+                )
         
         filter_expression = kwargs.pop("filter_expression", None)
 
@@ -175,24 +194,28 @@ class DataVectorStore:
         if filter_expression is not None:
             search_params = {"hints": "iterative_filter"}
 
+        weights = ranker_weights or self.ranker_weights or (0.5, 0.5)
+        if len(weights) != 2:
+            raise ValueError("ranker_weights must contain two values (dense, sparse)")
+        ranker = WeightedRanker(weights[0], weights[1])
 
-        # Dense ANN on text_dense
+        # Dense ANN on text_dense - batch all query vectors
         req_dense = AnnSearchRequest(
-            data=[query_dense],
+            data=query_denses,
             anns_field="text_dense",
             param={"nprobe": 10},
             limit=int(min(16384, max(512, limit * 10))),
             expr=filter_expression,
         )
-        # Sparse BM25 on text -> text_sparse
+        # Sparse BM25 on text -> text_sparse - batch all query texts
         req_sparse = AnnSearchRequest(
-            data=[query_text],
+            data=query_texts,
             anns_field="text_sparse",
             param={"drop_ratio_search": 0.2},
             limit=int(min(16384, max(512, limit * 10))),
             expr=filter_expression,
         )
-        ranker = RRFRanker(60)
+        # ranker = RRFRanker(60)
         # Prefer returning metadata JSON if the field exists; gracefully fall back
         output_fields = ["id", "text", "text_dense", "metadata"]
         try:
@@ -203,6 +226,7 @@ class DataVectorStore:
                 limit=limit,
                 output_fields=output_fields,
                 search_params=search_params,
+                **kwargs,
             )
         except Exception:
             # Older collection without 'metadata'; retry without it
@@ -212,5 +236,5 @@ class DataVectorStore:
                 ranker=ranker,
                 limit=limit,
                 output_fields=["id", "text", "text_dense"],
-                search_params=search_params,
+                **kwargs,
             )

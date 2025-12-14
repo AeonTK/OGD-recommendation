@@ -9,6 +9,7 @@ from fastapi.responses import JSONResponse
 from fastapi.openapi.docs import get_swagger_ui_html
 from fastapi.middleware.cors import CORSMiddleware
 from .routers.vecrotstore import router as vectorstore_router
+from .routers.search import router as search_router
 
 
 # Configure logging
@@ -68,6 +69,7 @@ app.add_middleware(
 
 # Mount routers
 app.include_router(vectorstore_router)
+app.include_router(search_router)
 
 
 @app.get("/health", tags=["ops"], summary="Health check")
